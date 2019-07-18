@@ -63,11 +63,11 @@ class Order extends CI_Controller {
 		$where['cat_id'] = $id;
 		$pricedata = $this->crud->get_data("basePrice","categories",$where,true);
 		
-		$data['price'] = '<h3>Price : $'.$pricedata->basePrice.' </h3>';
+		$data['price'] = 'Price : $'.$pricedata->basePrice.'';
 		$this->load->view('public/includes/header',$data);
 		$this->load->view('public/includes/leftsidebar');	
-		$this->load->view('public/order/readymade',$data);
 		$this->load->view('public/includes/left_icons');
+		$this->load->view('public/order/readymade',$data);
 		$this->load->view('public/includes/footer');
 		
 	}

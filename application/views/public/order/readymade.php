@@ -7,6 +7,7 @@
   }
 
   .btn-circle.btn-xl {
+
     width: 70px;
     height: 70px;
     padding: 10px 16px;
@@ -16,10 +17,11 @@
   }
 
   .btn-circle {
+    color:white;
+    background-color: #4db68a;
     width: 30px;
     height: 30px;
     padding: 6px 0px;
-    border-radius: 15px;
     text-align: center;
     font-size: 12px;
     line-height: 1.42857;
@@ -36,6 +38,129 @@
     display:inline-block;
   }
 
+
+/*newwwwwwwwwwwwww*/
+body { 
+      background: url('assets/images/backgroundimgae.png') no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-color: rgba(48,194,131,0.5019607843137255);
+
+    }
+    .center-text{
+      font-family: Lato-Black, AdobeInvisFont, MyriadPro-Regular;
+      color: white;
+      font-size: 42px;
+      font-weight: bold;      
+    }
+    .circles {
+        width: 315px;
+        height: 315px;
+        border-radius: 224px;
+        margin-left: 43px;
+        background-color: rgba(48,194,131,0.5019607843137255);
+        border: 5px solid #ffffff;
+    }
+    .textstyle {
+        color: white;
+        font-size: 34px;
+        font-weight: bold;
+        margin-top: 111px;
+    }
+    .inside-text{
+        font-size: 17px;
+        color: white;
+
+    }
+    .float-right{
+      float: right !important;
+    }
+    a:focus, a:hover{
+      text-decoration: none;
+    }
+  
+    .bottom-button{
+          background-color: #fba7b0;
+          border: 2px solid #fba7b0;
+          color: white;
+          font-size: 29px;
+          margin-bottom: 28px;
+          padding-left: 40px;
+        padding-right: 40px;
+          padding-top: 5px;
+          padding-bottom: 8px;
+          font-weight: bold;
+          border-radius: 4px;
+    }
+    .card{
+        margin-left: 53px;
+        margin-right: 53px;
+        border-radius: 3px;
+        padding-top: 0px;
+        padding-left: 12px;
+        padding-right: 0px;
+          padding-bottom: 0px;
+          overflow-x: hidden;
+          overflow-y: hidden;
+          height: 693px
+            
+    }
+    .card-title{
+        text-align: center;
+      font-weight: bold;
+      margin-top: 46px;
+    }
+    .width-20{
+      width: 25%;
+      text-align: center;
+    }
+    .round-border-select{
+       padding-top: 9px;
+      border-radius: 109px;
+        height: 205px;
+        width: 205px;
+      border: 1px solid #4db68a;
+    }
+    .round-border:hover {
+        border: 1px solid #4db68a;
+    }
+    .round-border:hover .plus-minus{
+      display: block;
+    }
+    .round-border{
+      padding-top: 9px;
+      border-radius: 109px;
+        height: 205px;
+        width: 205px;
+    }
+    .span-text{
+      color:#4db68a;
+      font-weight: bold;
+      font-size: 17px;
+    }
+    .glyphicon-plus{
+        background-color: #4db68a;
+        padding: 5px 6px 6px 7px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .glyphicon-minus{
+        background-color: #4db68a;
+        padding: 5px 6px 6px 7px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .custom-height{
+        height: 153px;
+    }
+    .show{
+      display: block;
+    }
 
 </style>
 
@@ -77,6 +202,32 @@
 //$price = "<h3>Price : $0 </h3> ";
 ?>
 <div class="container-fluid">
+  <div class="row">
+        <div class="card text-center">
+              <div class="col-lg-9" style="overflow-x: hidden;overflow-y: auto;height: 693px;background-color: white;">
+              
+                
+
+              <div class="row">
+                <div id="products"></div>
+              </div>
+             
+        </div>
+
+        <div class="col-lg-3 text-center" style="background-color: #ececec;height: 1060px;width: 300px;">
+          <h3 class="card-title">SPEICY THAI SALAD</h3>
+          <br>
+          <h5>Fill your Bowl</h5>
+          <h5><b><div id="pricetag"><?php echo $price; ?></div></b></h5><br>
+          <h5><div id="myDIV"></div></h5>
+        </div>
+  </div>
+</div>
+</div>
+
+
+<!-- 
+<div class="container-fluid">
   <div class="row ">
    <div class="col-lg-1 col-md-2 col-sm-12 col-xs-12 bg-dark hide ">
    </div>
@@ -100,11 +251,11 @@
 
 
 </div>
-</div>
+</div> -->
 
 
 <!-- Modal -->
-<div class="modal" id="bowlModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" >
+<!-- <div class="modal" id="bowlModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" >
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -138,7 +289,7 @@
    <p class="mini_content">Bowl</p>
 
  </a>
-</div>
+</div> -->
 
 <?php
 $price = 0;
