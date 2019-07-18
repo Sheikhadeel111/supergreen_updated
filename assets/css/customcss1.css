@@ -1,0 +1,124 @@
+.circles {
+	width: 349px;
+	height: 349px;
+	border-radius: 224px;
+	background-color: rgba(48,194,131,0.5019607843137255);
+	border: 5px solid #ffffff;
+
+
+}
+.hovercircle:hover{
+	background: rgba(255, 255, 255, 0.05);
+	-webkit-transform: scale(0.93);
+	-moz-transform: scale(0.93);
+	-ms-transform: scale(0.93);
+	transform: scale(0.93);
+	background-color: rgba(48,194,131,0.5019607843137255);
+	-moz-transition: -moz-transform ease-out 0.3s, background 0.3s;
+	-webkit-transition: -webkit-transform ease-out 0.30s, background 0.30s;
+	transition: transform ease-out 0.1s, background 0.2s;
+}
+.btns{
+	width: 149px;
+	height: 62px;
+	border-radius: 4px;
+	background-color: #30c283;
+	border:none;
+	color:white;
+}
+.btnhover:hover{
+	background-color: #33cc8a;
+}
+		/*.margin{
+			margin-top:80px;
+			height: 200px;
+			}*/
+			.imgset{
+				margin-top:100px;
+				width:80px;
+				height:80px;
+			}
+			.textstyle{
+				color:white;
+				font-size:34px;
+				font-weight: bold;
+			}
+			@media (min-width: 320px) and (max-width: 630px){
+				body{
+					overflow: scroll;
+					margin:10px;
+				}
+				.circles {
+					width: 249px;
+					height: 249px;
+					border-radius: 224px;
+					background-color: rgba(48,194,131,0.5019607843137255);
+					border: 5px solid #ffffff;
+				}
+				.textcolor{
+					font-size: 14px!important;
+				}
+				.imgset{
+					margin-top:50px;
+				}
+				.custom_margin{
+					margin-left:10px!important; 
+					margin-right:10px!important;
+				}	
+				.mt30sm{
+					margin-top: 30px!important;
+				}
+				.textstyle{
+					font-size: 26px;
+					padding-top: 10px;
+				}
+				.pl0sm{
+					padding-left: 0px!important;
+				}
+				.circles {
+					width: 150px!important;
+					height: 150px!important;
+				}
+				.plateimage {
+					margin-top:0px !important;
+					width: 140px!important; 
+					height: 140px!important; 
+					
+				}
+			}
+			@media (min-width: 768px) and (max-width: 991px){
+				.circles {
+					width: 230px!important;
+					height: 230px!important;
+				}
+				.plateimage {
+					height: 260px !important;
+					width: 270px !important;
+				}
+
+			}
+
+			.mt20{
+				margin-top: 20px!important;
+			}
+			.mb70{
+				margin-bottom: 70px!important;
+			}
+			.custom_margin{
+				margin-left:50px; 
+				margin-right:50px;
+			}
+			.vertical_center{
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				width: 80%;
+				height: 30%;
+				margin: auto;
+			}
+			.plr0{
+				padding-left: 0px!important;
+				padding-right: 0px!important;
+			}
