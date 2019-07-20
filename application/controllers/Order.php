@@ -89,8 +89,8 @@ class Order extends CI_Controller {
 		//debug($data);
 		$this->load->view('public/includes/header',$data);
 		$this->load->view('public/includes/leftsidebar');	
-		$this->load->view('public/order/readymadeProduct',$data);
 		$this->load->view('public/includes/left_icons');
+		$this->load->view('public/order/readymadeProduct',$data);
 		$this->load->view('public/includes/footer');
 		
 	}
@@ -146,6 +146,7 @@ class Order extends CI_Controller {
 			$data['perv_button'] = FALSE;
 			$data['next_button'] = FALSE;
 			$data['done_button'] = TRUE;
+
 		}
 		elseif($_POST['skip'] == 0)
 		{
@@ -199,8 +200,9 @@ class Order extends CI_Controller {
 		$data['title'] = "Drinks";
 		$this->load->view('public/includes/header',$data);
 		$this->load->view('public/includes/leftsidebar');
-		$this->load->view('public/order/'.$view,$data);
 		$this->load->view('public/includes/left_icons');
+		$this->load->view('public/order/'.$view,$data);
+		
 		$this->load->view('public/includes/footer');
 	}
 
@@ -401,8 +403,8 @@ class Order extends CI_Controller {
 		$data['categories'] = $this->category->get_data("*","",$where);
 		$this->load->view('public/includes/header',$data);
 		$this->load->view('public/includes/leftsidebar');	
-		$this->load->view('public/order/addmorepage');
 		$this->load->view('public/includes/left_icons');
+		$this->load->view('public/order/addmorepage');
 		$this->load->view('public/includes/footer');
 	}
 
@@ -423,8 +425,8 @@ class Order extends CI_Controller {
 
 		$this->load->view('public/includes/header',$data);
 		$this->load->view('public/includes/leftsidebar');	
-		$this->load->view('public/order/cart');
 		$this->load->view('public/includes/left_icons');
+		$this->load->view('public/order/cart');
 		$this->load->view('public/includes/footer');
 	}
 	}
@@ -585,8 +587,8 @@ class Order extends CI_Controller {
 
 		$this->load->view('public/includes/header',$data);
 		$this->load->view('public/includes/leftsidebar');	
-		$this->load->view('public/order/editPage',$data);
 		$this->load->view('public/includes/left_icons');
+		$this->load->view('public/order/editPage',$data);
 		$this->load->view('public/includes/footer');
 	}
 

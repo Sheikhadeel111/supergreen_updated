@@ -1,10 +1,10 @@
 <style type="text/css">
 	.newcircel {
-	border-radius: 50%;
-	border: #f88f26 2px solid;
-}
-.inbtn{
-    position: fixed;
+   border-radius: 50%;
+   border: #f88f26 2px solid;
+ }
+ .inbtn{
+  position: fixed;
 
 }
 .counter{
@@ -14,15 +14,15 @@
 }
 
 .mybtn{
-    background: transparent;
-    border: #f88f26 solid;
-    padding: 4px 7px !important;
+  background: transparent;
+  border: #f88f26 solid;
+  padding: 4px 7px !important;
 }
 
 .mybtn:hover{
   background: transparent;
-    border: #f88f26 solid;
-    padding: 4px 7px !important;
+  border: #f88f26 solid;
+  padding: 4px 7px !important;
 }
 
 
@@ -36,22 +36,15 @@
 }
 
 .circled-1 {  
-  position: fixed;
-  top: 116px;
-  left: 103px;
-  line-height: 150px;
-  height: 170px !important;
-  width: 170px !important;
   background-color: transparent;
   border-radius: 50%;
-  display: inline-block;
   border: 5px solid #fff;
   border-style: dotted;
 }
 
 .ib1{
-  top: 10px;
-  margin-left: 30px;
+
+  margin-left: 70px;
 }
 
 
@@ -65,22 +58,14 @@
 }
 
 .circled-2 {  
- position: fixed;
- top: 70px;
- left: 309px;
- line-height: 150px;
- height: 195px;
- width: 195px;
  background-color: transparent;
- border-radius: 50%;
- display: inline-block;
- border: 5px solid #fff;
- border-style: dotted;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  border-style: dotted;
 }
 
 .ib2{
-     top: -33px;
-    margin-left: 46px;
+ margin-left: 70px;
 }
 
 
@@ -95,23 +80,16 @@
 
 
 .circled-3 {  
-  position: fixed;
-  top: 203px;
-  left: 534px;
-  line-height: 150px;
-  height: 170px !important;
-  width: 170px !important;
   background-color: transparent;
   border-radius: 50%;
-  display: inline-block;
   border: 5px solid #fff;
-   border-style: dotted;
+  border-style: dotted;
   
 }
 
 .ib3{
-      top: 93px;
-    margin-left: 32px;
+  top: 93px;
+  margin-left: 32px;
 }
 
 
@@ -127,22 +105,15 @@
 
 
 .circled-4 {  
-  position: fixed;
-  top: -2px;
-  left: 806px;
-  line-height: 150px;
-  height: 170px !important;
-  width: 170px !important;
   background-color: transparent;
   border-radius: 50%;
-  display: inline-block;
   border: 5px solid #fff;
-   border-style: dotted;
+  border-style: dotted;
   
 }
 .ib4{
   top: 11px;
-    margin-left: 172px;
+  margin-left: 172px;
 }
 
 .d-5{
@@ -155,24 +126,17 @@
 }
 
 .circled-5 {  
- position: fixed;
- top: 107px;
- left: 1078px;
- line-height: 150px;
- height: 170px !important;
- width: 170px !important;
  background-color: transparent;
- border-radius: 50%;
- display: inline-block;
- border: 5px solid #fff;
+  border-radius: 50%;
+  border: 5px solid #fff;
   border-style: dotted;
 
 }
 
 
 .ib5{
-     top: 4px;
-    margin-left: 30px;
+ top: 4px;
+ margin-left: 30px;
 }
 
 
@@ -187,17 +151,10 @@
 
 
 .circled-6{  
- position: fixed;
- top: 187px;
- left: 1318px;
- line-height: 150px;
- height: 170px !important;
- width: 170px !important;
  background-color: transparent;
- border-radius: 50%;
- display: inline-block;
- border: 5px solid #fff;
-border-style: dotted;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  border-style: dotted;
 
 }
 
@@ -232,7 +189,7 @@ border-style: dotted;
 .order{  
  position: fixed;
  top: 520px;
-left: 680px;
+ left: 680px;
  line-height: 220px;
  height: 220px !important;
  width: 220px !important;
@@ -240,16 +197,282 @@ left: 680px;
  border-radius: 50%;
  display: inline-block;
  border: 5px solid #fff;
-border-style: dotted;
+ border-style: dotted;
+</style>
+<style>
+  /* bottle */
+  .bottle_circles{
+    width: 125px;
+    height: 125px;
+    border-radius: 224px;
+    background-color: rgba(48,194,131,0.7);
+    border: 2px solid #ffffff;
 
+  }
+  .middle_text{
+    margin-top: 47%;
+  }
+  .bottle_text{
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  .bottle1{
+    justify-content: center;
+    display: flex;
+    margin-top: 110px;
+  }
+  .bottle2{
+    justify-content: center;
+    display: flex;
+    margin-top: 119px;
+  }
+  @media (min-width:320px) and (max-width:576px){
+    .mt30sm{
+      margin-top: 30px;    
+    }
+    .mh380{
+      min-height: 380px!important;
+    }
+    .mh400{
+      min-height: 400px!important;
+    }
+  }
+  @media (min-width:768px) and (max-width:2600px){
+    .mt25{
+      margin-top: 25px;
+    }
+    .mt40{
+      margin-top: 40px;
+    }
+    .mt_100{
+      margin-top: -100px;
+    }
+    .mt_60{
+      margin-top: -60px;
+    }
+    .mt100{
+      margin-top: 100px;
+    }
+  }
+  .light_pink_btn{
+    border-width: 3px;
+    border-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-radius: 4px;
+    background-color: rgb(251, 167, 176);
+    color: #ffffff;
+  }
+  .mlr0{
+    margin-left: 0px!important;
+    margin-right:0px!important;
+  }
+</style>
+<style type="text/css">
+ body { 
+  background: url('assets/images/backgroundbottles.png') no-repeat center top fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
+  background-color: rgba(48,194,131,0.5019607843137255);
+}
+.bg_bottle{
+  background: url('assets/images/bottle1.png') no-repeat center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: contain;
+  overflow: hidden;
+  min-height: 440px;
 
+}
+.bg_bottle1{
+  background: url('assets/images/bottle2.png') no-repeat center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: contain;
+  overflow: hidden;
+  min-height: 440px;
+}
+.bg_bottle2{
+  background: url('assets/images/botlle3.png') no-repeat center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: contain;
+  overflow: hidden;
+  min-height: 380px;
+}
+.bg_bottle3{
+  background: url('assets/images/bottol.png') no-repeat center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: contain;
+  overflow: hidden;
+  min-height: 537px;  
+}
+.bg_bottle4{
+  background: url('assets/images/bottle5.png') no-repeat center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: contain;
+  overflow: hidden;
+  min-height: 440px;
+}
+.bg_bottle5{
+  background: url('assets/images/bottle4.png') no-repeat center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: contain;
+  overflow: hidden;
+  min-height: 440px;
+}
 
 </style>
+<div class="container-fluid">
+  <div class="row" style="margin-top:90px;">
+    <!-- First Bottle -->
+    <div class="col-lg-2 col-xs-6">
+      <div class="bg_bottle">
+        <div class="row bottle1">
+          <div class="option">
+            <div class="col-lg-2  grow  bottle_circles hovercircle" onclick="encirecl(this);" data-drinks= "1">
+              <center><div class="bottle_text middle_text" style="font-size:16px;">
+                <?=$drink1->name."<br>$".$drink1->price?>
+              </div></center>
+            </div>
+            <div class="inbtn ib1" style="display: none;">
+                <button type="button" class="btn mybtn btn-circle" onclick="plus(this,<?=$drink1->id?>)"><i class="fa fa-plus"></i></button>
+                <input class="counter" id="<?=$drink1->id?>" value="1">
+                <button type="button" class="btn mybtn btn-circle" onclick="minus(this,<?=$drink1->id?>)"><i class="fa fa-minus"></i></button>
+              </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+    <!-- End -->
+
+    <!-- Second Bottle -->
+    <div class="col-lg-2 col-xs-6 mtbottle5 mt100">
+      <div class="bg_bottle1">
+        <div class="row bottle2">
+         <div class="option">
+            <div class="col-lg-2  grow  bottle_circles hovercircle" onclick="encirecl(this);" data-drinks= "2">
+              <center><div class="bottle_text middle_text" style="font-size:16px;">
+                <?=$drink2->name."<br>$".$drink2->price?>
+              </div></center>
+            </div>
+            <div class="inbtn ib1" style="display: none;">
+                <button type="button" class="btn mybtn btn-circle" onclick="plus(this,<?=$drink2->id?>)"><i class="fa fa-plus"></i></button>
+                <input class="counter" id="<?=$drink1->id?>" value="1">
+                <button type="button" class="btn mybtn btn-circle" onclick="minus(this,<?=$drink2->id?>)"><i class="fa fa-minus"></i></button>
+              </div>
+          </div>
+      </div>
+    </div>  
+  </div>
+  <!-- End -->
+
+  <!-- third Bottle -->
+  <div class="col-lg-2 col-xs-6 mtbottle4 mt_60">
+    <div class="bg_bottle2 mt30sm">
+      <div class="row bottle1">
+         <div class="option" >
+            <div class="col-lg-2 grow  bottle_circles hovercircle" onclick="encirecl(this);" data-drinks= "3">
+             <center><div class="bottle_text middle_text" style="font-size:16px;">
+              <?=$drink3->name."<br>$".$drink3->price?>
+            </div></center>
+          </div>
+          <div class="inbtn ib1" style="display: none;">
+            <button type="button" class="btn mybtn btn-circle" onclick="plus(this,<?=$drink3->id?>)"><i class="fa fa-plus"></i></button>
+            <input class="counter" id="<?=$drink2->id?>" value="1">
+            <button type="button" class="btn mybtn btn-circle" onclick="minus(this,<?=$drink3->id?>)"><i class="fa fa-minus"></i></button>
+          </div>
+      </div>
+    </div>
+  </div>  
+</div>
+<!-- End -->
+
+<!-- fourth Bottle -->
+<div class="col-lg-2 col-xs-6 mtbottle3 mt_100">
+  <div class="bg_bottle3 mt30sm mh380">
+    <div class="row bottle1">
+      <div class="option" >
+            <div class="col-lg-2 grow  bottle_circles hovercircle" onclick="encirecl(this);" data-drinks= "4">
+             <center><div class="bottle_text middle_text" style="font-size:16px;">
+              <?=$drink4->name."<br>$".$drink4->price?>
+            </div></center>
+          </div>
+          <div class="inbtn ib1" style="display: none;">
+            <button type="button" class="btn mybtn btn-circle" onclick="plus(this,<?=$drink4->id?>)"><i class="fa fa-plus"></i></button>
+            <input class="counter" id="<?=$drink2->id?>" value="1">
+            <button type="button" class="btn mybtn btn-circle" onclick="minus(this,<?=$drink4->id?>)"><i class="fa fa-minus"></i></button>
+          </div>
+      </div>
+  </div>
+</div>  
+</div>
+<!-- End -->
 
 
+<!-- fifth Bottle -->
+<div class="col-lg-2 col-xs-6 mtbottle2">
+  <div class="bg_bottle4 mt30sm">
+    <div class="row bottle1">
+      <div class="option" >
+            <div class="col-lg-2 grow  bottle_circles hovercircle" onclick="encirecl(this);" data-drinks= "5">
+             <center><div class="bottle_text middle_text" style="font-size:16px;">
+              <?=$drink5->name."<br>$".$drink5->price?>
+            </div></center>
+          </div>
+          <div class="inbtn ib1" style="display: none;">
+            <button type="button" class="btn mybtn btn-circle" onclick="plus(this,<?=$drink5->id?>)"><i class="fa fa-plus"></i></button>
+            <input class="counter" id="<?=$drink2->id?>" value="1">
+            <button type="button" class="btn mybtn btn-circle" onclick="minus(this,<?=$drink5->id?>)"><i class="fa fa-minus"></i></button>
+          </div>
+      </div>
+  </div>
+</div>  
+</div>
+<!-- End -->
 
-<section class="menu-section pt50" >
+
+<!-- sixth Bottle -->
+<div class="col-lg-2 col-xs-6 mtbottle1">
+  <div class="bg_bottle5 mt30sm mh400">
+    <div class="row bottle1">
+      <div class="option" >
+            <div class="col-lg-2 grow  bottle_circles hovercircle" onclick="encirecl(this);" data-drinks= "6">
+             <center><div class="bottle_text middle_text" style="font-size:16px;">
+              <?=$drink6->name."<br>$".$drink6->price?>
+            </div></center>
+          </div>
+          <div class="inbtn ib1" style="display: none;">
+            <button type="button" class="btn mybtn btn-circle" onclick="plus(this,<?=$drink6->id?>)"><i class="fa fa-plus"></i></button>
+            <input class="counter" id="<?=$drink2->id?>" value="1">
+            <button type="button" class="btn mybtn btn-circle" onclick="minus(this,<?=$drink6->id?>)"><i class="fa fa-minus"></i></button>
+          </div>
+      </div>
+    </div>
+  </div>  
+</div>
+<!-- End -->
+<div class="row mlr0">
+  <div class="col-md-12 col-xs-12 text-center mb70">
+    <button class="btn light_pink_btn" onclick="order_now();">ORDER NOW</button>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- <section class="menu-section pt50" >
   <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 " > 
     <div class="" > 
       <div class="row center-div">
@@ -337,7 +560,7 @@ border-style: dotted;
       </div>
     </div>
   </div>
-</section>  
+</section>   -->
 
 
 
@@ -347,18 +570,18 @@ border-style: dotted;
   var products = [];
   var newProducts = [];
   var c= 0;
-	function encirecl(ele) {
-
+  function encirecl(ele) {
     if ($(ele).hasClass('grow')) {
       $(ele).addClass(addclass);
       var drink = $(ele).attr("data-drinks");
+      //$(ele).closest("div .option").addClass('circled-1');
       $(ele).closest("div .option").addClass('circled-'+drink);
       $(ele).next().fadeIn();
       $(ele).removeClass(removeclass);
-     newProducts[c] = {'drink':drink,'quantity':1};
-     console.log(newProducts);
-     c++;
-   
+      newProducts[c] = {'drink':drink,'quantity':1};
+      console.log(newProducts);
+      c++;
+
     } else {
       var drink = $(ele).attr("data-drinks");
       $(ele).closest("div .option").removeClass('circled-'+drink);
@@ -366,23 +589,23 @@ border-style: dotted;
       $(ele).addClass(removeclass);
       $(ele).removeClass(addclass);
       $(newProducts).each(function( index, element ) {
-      if(element.drink == drink){
-       newProducts.splice(index, 1);
-       return false;
-     }
-   });
+        if(element.drink == drink){
+         newProducts.splice(index, 1);
+         return false;
+       }
+     });
       console.log(newProducts);
       c--;
- 
-	}
-}
 
-function plus(ele,id){
+    }
+  }
+
+  function plus(ele,id){
 
     var count =   $(ele).parents(".inbtn").find("input").val();
     var updatedCount = parseInt(count)+parseInt(1);
     $(ele).parents(".inbtn").find("input").val(updatedCount);
-     $(newProducts).each(function( index, element ) {
+    $(newProducts).each(function( index, element ) {
       if(element.drink == id){
        newProducts.splice(index, 1);
        return false;
@@ -396,22 +619,22 @@ function plus(ele,id){
   }
 
   function minus(ele,id){
-      var count =   $(ele).parents(".inbtn").find("input").val();
-     if(count<=1){
+    var count =   $(ele).parents(".inbtn").find("input").val();
+    if(count<=1){
       return false;
-     }else{
-    var updatedCount = parseInt(count)-parseInt(1);
-    $(ele).parents(".inbtn").find("input").val(updatedCount);
-     $(newProducts).each(function( index, element ) {
-      if(element.drink == id){
-       newProducts.splice(index, 1);
-       return false;
-     }
-   });
-     var newarr = {"drink":id,"quantity":updatedCount};
+    }else{
+      var updatedCount = parseInt(count)-parseInt(1);
+      $(ele).parents(".inbtn").find("input").val(updatedCount);
+      $(newProducts).each(function( index, element ) {
+        if(element.drink == id){
+         newProducts.splice(index, 1);
+         return false;
+       }
+     });
+      var newarr = {"drink":id,"quantity":updatedCount};
       newProducts.push(newarr);
       console.log(newProducts);
-     }
+    }
     
   }
 
@@ -420,24 +643,24 @@ function plus(ele,id){
     console.log(newProducts);
 
     $.ajax({
-    method:'POST',
-    url:"<?php echo base_url('order/order_drinks');?>",
-    data:{drinks:newProducts,},
-    dataType:'json',
-    success:function(data)
-    {
-      if(data.status){
-        var url = "<?php echo base_url("order/add_more"); ?>";
-       window.location = url;
-      }
-      else
+      method:'POST',
+      url:"<?php echo base_url('order/order_drinks');?>",
+      data:{drinks:newProducts,},
+      dataType:'json',
+      success:function(data)
       {
-        toasterOptions();
-        toastr.error(data.msg);
+        if(data.status){
+          var url = "<?php echo base_url("order/add_more"); ?>";
+          window.location = url;
+        }
+        else
+        {
+          toasterOptions();
+          toastr.error(data.msg);
 
+        }
       }
-    }
-  }); 
+    }); 
   }
 
 
@@ -450,8 +673,8 @@ function plus(ele,id){
         $(this).find(".inbtn").hide();
       }
     });
-  
-});
+
+  });
 
 
 

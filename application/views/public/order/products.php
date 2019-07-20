@@ -37,6 +37,7 @@ if(isset($selected)){
 	<div class="animated fadeInDown">
 		<h3 class="card-title"><?php echo $subcategories->name; ?></div>
 			<h5>CHOSE AS MANY AS YOU LIKE</h5>
+			<br/>
 			<div>
 				<?php 
 
@@ -96,6 +97,9 @@ if(isset($selected)){
 						</div>
 
 					<?php }if(strtolower($subcategories->name) == "dressings"){ ?>
+						<?php $done_button = true; 
+							  $next_button = false;
+						?>
 
 						<div class="col-lg-3 col-sm-12 col-xs-12 col-md-3 option">
 							<div class="ci circle <?php if (in_array($value->cat_pro_id, $productItems)) { echo "color"; }else{ echo "spin"; }?>"  onclick="encirecl(this);" data-name="<?php echo $value->cat_pro_name ?>" data-price = "<?=$value->cat_pro_price?>" data-id="<?php echo $value->cat_pro_id ?>" data-index= "<?=$arrayIndex?>">
@@ -114,7 +118,7 @@ if(isset($selected)){
 								<input type="hidden" id="ingSize<?php echo $value->cat_pro_id; ?>" value = "">
 							</div>
 
-							<div class="sczrbtn" style="display: none;">
+							<div class="sczrbtn" style=" <?php if (in_array($value->cat_pro_id, $productItems)) { echo ""; }else{ echo "display:none"; }?>">
 								<input type="hidden" id="ingServing<?php echo $value->cat_pro_id; ?>" value = "">
 
 								<button type="button" class="btn mybtn btn-circle" data-index= "<?=$arrayIndex?>" onclick="serving(this,<?php echo $value->cat_pro_id; ?>,'Side')">Side</button>
@@ -137,27 +141,28 @@ if(isset($selected)){
 
 
 					<?php } else { ?>
-						 <div class="col-md-3 width-20  option" >
-						 	<div class="round-border ">
-							<div class="<?php if (in_array($value->cat_pro_id, $productItems)) { echo "color"; }else{ echo "spin"; }?>"  
-							onclick="encirecl(this);" data-name="<?php echo $value->cat_pro_name ?>" data-price = "<?=$value->cat_pro_price?>" data-id="<?php echo $value->cat_pro_id ?>" data-index= "<?=$arrayIndex?>"
-							>
-							<div class="custom-height">
-								<img class="basemenuimage" src="<?php echo PRODUCT_IMAGE_UPLOAD.$value->cat_pro_image  ?>" />
-							</div>
-						</div>
+						<!-- <div class="col-md-3 width-20  option" >
+							<div class=" ">
+								<div class="ci circle <?php if (in_array($value->cat_pro_id, $productItems)) { echo "color"; }else{ echo "spin"; }?>"  
+									onclick="encirecl(this);" data-name="<?php echo $value->cat_pro_name ?>" data-price = "<?=$value->cat_pro_price?>" data-id="<?php echo $value->cat_pro_id ?>" data-index= "<?=$arrayIndex?>"
+									>
+									<div class="custom-height">
+										<img class="basemenuimage" src="<?php echo PRODUCT_IMAGE_UPLOAD.$value->cat_pro_image  ?>" />
+									</div>
 
-							<span class="span-text">Aspargus</span>
-							<div class="qtybtn" style=" <?php if (in_array($value->cat_pro_id, $productItems)) { echo ""; }else{ echo "display:none"; }?>"  onclick="encirecl(this);" data-name="<?php echo $value->cat_pro_name ?>">
-								<button type="button"  data-index= "<?=$arrayIndex?>"	 class="btn mybtn btn-circle" onclick="plus(this,<?=$value->cat_pro_id?>)"><i class="fa fa-plus"></i></button>
-								<input class="counter" id="<?=$value->cat_pro_id?>" 
-								value="<?= $qtyval ?>" />
-								<button type="button"  data-index= "<?=$arrayIndex?>"	 class="btn mybtn btn-circle" onclick="minus(this,<?=$value->cat_pro_id?>)"><i class="fa fa-minus"></i></button>
-								<input type="hidden" id="<?=$value->cat_pro_id?>Qty" value=''>
+
+								<span class="span-text">Aspargus</span>
+								</div>
+								<div class="qtybtn" style=" <?php if (in_array($value->cat_pro_id, $productItems)) { echo ""; }else{ echo "display:none"; }?>"  onclick="encirecl(this);" data-name="<?php echo $value->cat_pro_name ?>">
+									<button type="button"  data-index= "<?=$arrayIndex?>"	 class="btn mybtn btn-circle" onclick="plus(this,<?=$value->cat_pro_id?>)"><i class="fa fa-plus"></i></button>
+									<input class="counter" id="<?=$value->cat_pro_id?>" 
+									value="<?= $qtyval ?>" />
+									<button type="button"  data-index= "<?=$arrayIndex?>"	 class="btn mybtn btn-circle" onclick="minus(this,<?=$value->cat_pro_id?>)"><i class="fa fa-minus"></i></button>
+									<input type="hidden" id="<?=$value->cat_pro_id?>Qty" value=''>
+								</div>
 							</div>
-						</div>
-					</div> 
-					 <!-- <div class="col-lg-3 col-sm-12 col-xs-12 col-md-3 option">
+						</div>  -->
+					 <div class="col-lg-3 col-sm-12 col-xs-12 col-md-3 option">
 						<div class="ci circle <?php if (in_array($value->cat_pro_id, $productItems)) { echo "color"; }else{ echo "spin"; }?> " onclick="encirecl(this);" data-name="<?php echo $value->cat_pro_name ?>" data-price = "<?=$value->cat_pro_price?>" data-id="<?php echo $value->cat_pro_id ?>" data-index= "<?=$arrayIndex?>">
 							<img class="basemenuimage" src="<?php echo PRODUCT_IMAGE_UPLOAD.$value->cat_pro_image  ?>">
 							<p class="menu_text">
@@ -188,38 +193,34 @@ if(isset($selected)){
 							<input type="hidden" id="<?=$value->cat_pro_id?>Qty" value=''>
 						</div>
 						
-					</div> -->
+					</div> 
 
 					<?php if(in_array($value->cat_pro_id, $productItems)) {?>
 						<script> cout(); </script> 
 					<?php } ?>
 				<?php } }?>
 
-				<input type="hidden" id="allcountvalue<?=$arrayIndex?>" value="<?= $qtycount ?>" />
+				<input type="hidden" id="allcountvalue<?=@$arrayIndex?>" value="<?= $qtycount ?>" />
 
-				<input type="hidden" id="countervalue<?=$arrayIndex?>" value="<?= $qtycount ?>">
+				<input type="hidden" id="countervalue<?=@$arrayIndex?>" value="<?= $qtycount ?>">
+
 			</div>
 
-			<div class="">
-				<div class="row">
-
-					<div class="col-lg-4">
-					</div>
+			
+				<div class="row" style="justify-content: center;">
+					<div class="col-lg-12">
+					<div class="col-lg-4"></div>
 					<div class="col-lg-4 text-center">
-						<br/><br/>
+						<br/><br/><br/><br/>
 						<?php if ($perv_button === TRUE): ?>
 							<button class="bottom-button" onclick="change_page(<?php echo $skip-1 ?>);">Previous </button>
 						<?php endif; ?>
 						<?php if ($next_button === TRUE): ?>
 
 							<button type="button" class="bottom-button"  onclick="change_page(<?php echo $skip+1 ?>);">Next</button>
-
-
-
-
 						<?php endif; ?>
 						<?php if ($done_button === TRUE): ?>
-							<button class="btn-grad btn-n" onclick="order_now();">Done </button>
+							<button type="button"  class="bottom-button" onclick="order_now();">Done </button>
 						<?php endif; ?>
 					</div>
 					<div class="col-lg-4">
@@ -229,5 +230,5 @@ if(isset($selected)){
 				<input type="hidden" id="minQty" value="<?=$subcategories->minQty?>">
 				<input type="hidden" id="subCat" value="<?=$subcategories->cat_id?>">
 				<input type="hidden" id="counter" value="<?=$counter?>">
-			</div>
+				</div>
 		</div>

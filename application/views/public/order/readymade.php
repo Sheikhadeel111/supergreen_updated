@@ -27,7 +27,7 @@
     line-height: 1.42857;
   }
   .sczrbtn{
-        position: absolute;
+    position: absolute;
     top: -33px;
 
   }
@@ -39,159 +39,240 @@
   }
 
 
-/*newwwwwwwwwwwwww*/
-body { 
-      background: url('assets/images/backgroundimgae.png') no-repeat center center fixed; 
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-      background-color: rgba(48,194,131,0.5019607843137255);
+  /*newwwwwwwwwwwwww*/
+  body { 
+    background: url('assets/images/backgroundimgae.png') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: rgba(48,194,131,0.5019607843137255);
 
-    }
-    .center-text{
-      font-family: Lato-Black, AdobeInvisFont, MyriadPro-Regular;
-      color: white;
-      font-size: 42px;
-      font-weight: bold;      
-    }
-    .circles {
-        width: 315px;
-        height: 315px;
-        border-radius: 224px;
-        margin-left: 43px;
-        background-color: rgba(48,194,131,0.5019607843137255);
-        border: 5px solid #ffffff;
-    }
-    .textstyle {
-        color: white;
-        font-size: 34px;
-        font-weight: bold;
-        margin-top: 111px;
-    }
-    .inside-text{
-        font-size: 17px;
-        color: white;
+  }
+  .center-text{
+    font-family: Lato-Black, AdobeInvisFont, MyriadPro-Regular;
+    color: white;
+    font-size: 42px;
+    font-weight: bold;      
+  }
+  .circles {
+    width: 315px;
+    height: 315px;
+    border-radius: 224px;
+    margin-left: 43px;
+    background-color: rgba(48,194,131,0.5019607843137255);
+    border: 5px solid #ffffff;
+  }
+  .textstyle {
+    color: white;
+    font-size: 34px;
+    font-weight: bold;
+    margin-top: 111px;
+  }
+  .inside-text{
+    font-size: 17px;
+    color: white;
 
-    }
-    .float-right{
-      float: right !important;
-    }
-    a:focus, a:hover{
-      text-decoration: none;
-    }
+  }
+  .float-right{
+    float: right !important;
+  }
+  a:focus, a:hover{
+    text-decoration: none;
+  }
   
-    .bottom-button{
-          background-color: #fba7b0;
-          border: 2px solid #fba7b0;
-          color: white;
-          font-size: 29px;
-          margin-bottom: 28px;
-          padding-left: 40px;
-        padding-right: 40px;
-          padding-top: 5px;
-          padding-bottom: 8px;
-          font-weight: bold;
-          border-radius: 4px;
-    }
-    .card{
-        margin-left: 53px;
-        margin-right: 53px;
-        border-radius: 3px;
-        padding-top: 0px;
-        padding-left: 12px;
-        padding-right: 0px;
-          padding-bottom: 0px;
-          overflow-x: hidden;
-          overflow-y: hidden;
-          height: 693px
-            
-    }
-    .card-title{
-        text-align: center;
-      font-weight: bold;
-      margin-top: 46px;
-    }
-    .width-20{
-      width: 25%;
-      text-align: center;
-    }
-    .round-border-select{
-       padding-top: 9px;
-      border-radius: 109px;
-        height: 205px;
-        width: 205px;
-      border: 1px solid #4db68a;
-    }
-    .round-border:hover {
-        border: 1px solid #4db68a;
-    }
-    .round-border:hover .plus-minus{
-      display: block;
-    }
-    .round-border{
-      padding-top: 9px;
-      border-radius: 109px;
-        height: 205px;
-        width: 205px;
-    }
-    .span-text{
-      color:#4db68a;
-      font-weight: bold;
-      font-size: 17px;
-    }
-    .glyphicon-plus{
-        background-color: #4db68a;
-        padding: 5px 6px 6px 7px;
-        color: white;
-        font-weight: bold;
-        cursor: pointer;
-    }
+  .bottom-button{
+    background-color: #fba7b0;
+    border: 2px solid #fba7b0;
+    color: white;
+    font-size: 29px;
+    margin-bottom: 28px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 5px;
+    padding-bottom: 8px;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+  .card{
+    margin-left: 53px;
+    margin-right: 53px;
+    border-radius: 3px;
+    padding-top: 0px;
+    padding-left: 12px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    /*overflow-x: hidden;
+    overflow-y: hidden;*/
+    height: 768px;
 
-    .glyphicon-minus{
-        background-color: #4db68a;
-        padding: 5px 6px 6px 7px;
-        color: white;
-        font-weight: bold;
-        cursor: pointer;
+  }
+  .card-title{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 46px;
+  }
+  .width-20{
+    width: 25%;
+    text-align: center;
+  }
+  .round-border-select{
+   padding-top: 9px;
+   border-radius: 109px;
+   height: 205px;
+   width: 205px;
+   border: 1px solid #4db68a;
+ }
+ .round-border:hover {
+  border: 1px solid #4db68a;
+}
+.round-border:hover .plus-minus{
+  display: block;
+}
+.round-border{
+  padding-top: 9px;
+  border-radius: 109px;
+  height: 205px;
+  width: 205px;
+}
+.span-text{
+  color:#4db68a;
+  font-weight: bold;
+  font-size: 17px;
+}
+.glyphicon-plus{
+  background-color: #4db68a;
+  padding: 5px 6px 6px 7px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.glyphicon-minus{
+  background-color: #4db68a;
+  padding: 5px 6px 6px 7px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.custom-height{
+  height: 153px;
+}
+.show{
+  display: block;
+}
+.price-column{
+  background-color: #ececec;
+  height: 100%;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+   /*Awais .col-md-3{
+      z-index: 999999999;
+      justify-content: center;
+    display: grid;
+    }*/
+    .col-sm-4{
+      z-index: 999999999;
+      justify-content: center;
+      display: grid;
     }
-    .custom-height{
-        height: 153px;
+    .btn-circle {
+      z-index: 9999999999999;
     }
-    .show{
-      display: block;
+    .fa{
+      z-index: 9999999999999;
     }
+    .price-column {
+    background-color: #ececec;
+    height: 28%;
+    padding-top: 2px;
+    }
+   .qtybtn {
+    position: absolute !important;
+    top: 52px !important;
+    left: 177px !important;
+    }
+}
+@media (min-width: 360px) and (max-width: 384px) {
+  .qtybtn {
+    position: absolute !important;
+    top: 52px !important;
+    left: 229px !important;
+    }
+    .price-column {
+    background-color: #ececec;
+    height: 28%;
+    padding-top: 2px;
+  }
+}
+  @media (min-width: 320px) and (max-width: 590px) {
+    .price-column {
+    background-color: #ececec;
+    height: 28%;
+    padding-top: 2px;
+    }
+    .card {
+
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 3px;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+   /* overflow-x: hidden; Awais
+    overflow-y: hidden;*/
+    /*height: wrap-content;Awais*/ 
+
+}
+    .col-xs-12{
+      z-index: 999999999;
+      justify-content: center;
+      display: grid;
+    }
+    .btn-circle {
+      z-index: 9999999999999;
+    }
+    .fa{
+      z-index: 9999999999999;
+    }
+   .qtybtn {
+    position: absolute !important;
+    top: 52px !important;
+    left: 215px !important;
+    }
+  }
 
 </style>
 
 <?php
-  
-  $order = $this->session->userdata("order_cart");
 
-  if(isset($product)){
+$order = $this->session->userdata("order_cart");
+
+if(isset($product)){
 
   $pro_items = json_decode($product->product_items);
   $names = [];
   $proIds = [];
 
   foreach ($pro_items as $k2 => $v2) {
-     foreach ($v2 as $k3 => $v3) {
-      $pro = ingredients_price($v3->product);
-       $newarr = $pro->cat_pro_name;
-       array_push($names, $newarr);
-     }
-    }
-
-    foreach ($pro_items as $k3 => $v2) {
-     foreach ($v2 as $k3 => $v3) {
-       $idArr = $v3->product;
-       array_push($proIds, $idArr);
-     }
-    }
-
-    $namesArray = array_combine($proIds,$names);
-    
+   foreach ($v2 as $k3 => $v3) {
+    $pro = ingredients_price($v3->product);
+    $newarr = $pro->cat_pro_name;
+    array_push($names, $newarr);
   }
+}
+
+foreach ($pro_items as $k3 => $v2) {
+ foreach ($v2 as $k3 => $v3) {
+   $idArr = $v3->product;
+   array_push($proIds, $idArr);
+ }
+}
+
+$namesArray = array_combine($proIds,$names);
+
+}
 
 
 
@@ -203,29 +284,38 @@ body {
 ?>
 <div class="container-fluid">
   <div class="row">
-        <div class="card text-center">
-              <div class="col-lg-9" style="overflow-x: hidden;overflow-y: auto;height: 693px;background-color: white;">
-              
-                
+    <div class="card text-center">
+      <div class="col-lg-9" style="height: 100%;background-color: white;overflow-y: auto;
+overflow-x: hidden;">
 
-              <div class="row">
-                <div id="products"></div>
-              </div>
-             
+
+        <div class="row">
+          <div id="products" style="height: 963px;"></div>
         </div>
 
-        <div class="col-lg-3 text-center" style="background-color: #ececec;height: 1060px;width: 300px;">
-          <h3 class="card-title">SPEICY THAI SALAD</h3>
-          <br>
-          <h5>Fill your Bowl</h5>
-          <h5><b><div id="pricetag"><?php echo $price; ?></div></b></h5><br>
-          <h5><div id="myDIV"></div></h5>
-        </div>
+      </div>
+
+      <div class="col-lg-3 text-center price-column" style="">
+        <h3 class="card-title">SPEICY THAI SALAD</h3>
+        <br>
+        <h5>Fill your Bowl</h5>
+        <h5><b><div id="pricetag"><?php echo $price; ?></div></b></h5><br>
+        <h5>
+          <div id="myDIV"></div></h5>
+      </div>
+    </div>
   </div>
 </div>
-</div>
 
-
+<!-- <div class="row">
+      <div class="col-lg-3 text-center" style="background-color: #ececec;height: 100%;">
+        <h3 class="card-title">SPEICY THAI SALAD</h3>
+        <br>
+        <h5>Fill your Bowl</h5>
+        <h5><b><div id="pricetag"><?php echo $price; ?></div></b></h5><br>
+        <h5>
+          <div id="myDIV"></div></h5>
+      </div></div> -->
 <!-- 
 <div class="container-fluid">
   <div class="row ">
@@ -306,40 +396,40 @@ $info = categoryInfo($category);
 	var removeclass = 'spin';
   var products = [];
   <?php 
-if(isset($product)){
+  if(isset($product)){
     echo "var newProducts =".$product->product_items; //json of db product items
 
-}else{
-  echo "var newProducts = {
+  }else{
+    echo "var newProducts = {
      base: [],
-  top: [],
-  pre: [],
-  dress: []
- 
+     top: [],
+     pre: [],
+     dress: []
+
 };"; //initialize newPorduct array
 }
-  
-  ?>
 
-  var names = [];
+?>
 
-  $(document).ready(function() {
+var names = [];
 
-    var category_id = <?php echo $category; ?>;
-    var productId = "";
-    var skip = 0;
-    var flag = 0;
-    <?php 
-    if(isset($product)){ ?>
-      productId = "<?php echo $product->product_id; ?>";
-      <?php echo "names = ".json_encode($namesArray).";"; ?>
-      $.each( names, function( key, value ) {
+$(document).ready(function() {
+
+  var category_id = <?php echo $category; ?>;
+  var productId = "";
+  var skip = 0;
+  var flag = 0;
+  <?php 
+  if(isset($product)){ ?>
+    productId = "<?php echo $product->product_id; ?>";
+    <?php echo "names = ".json_encode($namesArray).";"; ?>
+    $.each( names, function( key, value ) {
         $('.ptext').append("<div data-salad-id='" + key + "'>" + value + "</div>"); //get array of product name and id only
       });
-    <?php } ?>
+  <?php } ?>
 
-    $.ajax({
-      method:'POST',
+  $.ajax({
+    method:'POST',
       url:"<?php echo base_url('order/get_products');?>", //get products
       data:{id:category_id,selected:newProducts,productId:productId,skip:skip,flag:flag},
       dataType:'text',
@@ -351,19 +441,19 @@ if(isset($product)){
 
     });
 
-    $(".color").click(function() {
-      $(".ptext").empty();
-    });
-
-
+  $(".color").click(function() {
+    $(".ptext").empty();
   });
 
 
-  var counter = 0;
-  var flag = 0;
-  function cout(){
-    counter++;
-  }
+});
+
+
+var counter = 0;
+var flag = 0;
+function cout(){
+  counter++;
+}
   function change_page(skip)  //get next products
   { 
 
@@ -380,7 +470,7 @@ if(isset($product)){
       }
     }); 
 
- }
+  }
 
 
 
@@ -427,7 +517,7 @@ if(isset($product)){
       $(ele).find(".inc").html('Included');
       $("#countervalue"+abc).val(parseInt($("#countervalue"+abc).val())+parseInt(1));
       var currentPrice = $("#price").val();
-     
+
       var updatedPrice = 0;
 
       if(minQty < 1 || totlco >= 4){
@@ -436,47 +526,47 @@ if(isset($product)){
       }else{
         updatedPrice = parseFloat(<?php echo $info->basePrice ?>);
       }
-      $("#pricetag").html("<h3>Price : $"+updatedPrice+" </h3>");
+      $("#pricetag").html("Price : $"+updatedPrice+"");
       $("#price").val(updatedPrice);
       
-   
+
     } else {
         // remove form array
-      counter--;
-       var item11 = $(ele).data('id');
-      $("#"+item11).val(parseInt(1));
-      
-      var allvalue = $("#countervalue"+abc).val();
-      var qty = 0;
-       $(newProducts[abc]).each(function( index, element ) {
-        if(element.product == item11){
+        counter--;
+        var item11 = $(ele).data('id');
+        $("#"+item11).val(parseInt(1));
+
+        var allvalue = $("#countervalue"+abc).val();
+        var qty = 0;
+        $(newProducts[abc]).each(function( index, element ) {
+          if(element.product == item11){
             var val = parseInt($("#countervalue"+abc).val()) - parseInt(element.quantity);
             $("#countervalue"+abc).val(parseInt(val + 1));
             totlco = totlco - parseInt(element.quantity);
             qty = parseInt(element.quantity);
-         }
-      });
-
-      var prc = $(ele).data('price');
-      var currentPrice = $("#price").val();
-      var updatedPrice = 0;
-      if(minQty < 1 || totlco >= 4){
-        updatedPrice = parseFloat(currentPrice) - parseFloat(1); 
-      }else{
-        updatedPrice = currentPrice;
-      }
-      if(parseInt(allvalue) > parseInt(minQty) && parseInt(qty) > parseInt(minQty))
-      {
-          var looprun = (parseInt(allvalue) + parseFloat(1) ) - parseInt(minQty) ;
-          if(parseInt(looprun) > parseInt(minQty)){
-          for(var i = 1; i < looprun; i++){
-              //alert(i);
-              updatedPrice = updatedPrice - parseFloat(1) ; 
-            }
           }
-       }
+        });
 
-      $("#pricetag").html("<h3>Price : $"+updatedPrice+" </h3>");
+        var prc = $(ele).data('price');
+        var currentPrice = $("#price").val();
+        var updatedPrice = 0;
+        if(minQty < 1 || totlco >= 4){
+          updatedPrice = parseFloat(currentPrice) - prc; 
+        }else{
+          updatedPrice = currentPrice;
+        }
+      // if(parseInt(allvalue) > parseInt(minQty) && parseInt(qty) > parseInt(minQty))
+      // {
+      //     var looprun = (parseInt(allvalue) + parseFloat(1) ) - parseInt(minQty) ;
+      //     if(parseInt(looprun) > parseInt(minQty)){
+      //     for(var i = 1; i < looprun; i++){
+      //         //alert(i);
+      //         updatedPrice = updatedPrice - parseFloat(1) ; 
+      //       }
+      //     }
+      //  }
+
+      $("#pricetag").html("Price : $"+updatedPrice+"");
       $("#price").val(updatedPrice);
       $(ele).addClass(removeclass);
       var item = $(ele).data('id');
@@ -486,7 +576,7 @@ if(isset($product)){
       $(ele).parent().find(".sczrbtn").fadeOut();
       $(ele).parent().find(".qtybtn").fadeOut();
 
-     
+
       
       $(newProducts[abc]).each(function( index, element ) {
         if(element.product == item){
@@ -494,16 +584,16 @@ if(isset($product)){
          return false;
        }
 
-      });
-    $("#countervalue"+abc).val(parseInt($("#countervalue"+abc).val())-parseInt(1));
+     });
+      $("#countervalue"+abc).val(parseInt($("#countervalue"+abc).val())-parseInt(1));
       
       $(ele).find(".inc").html('');
     }
 
-    }
+  }
 
 
-    function plus(ele,id){
+  function plus(ele,id){
     var abc = $(ele).data("index");
     var count =   $(ele).parents(".qtybtn").find("input").val();
     ///alert(count);
@@ -515,40 +605,40 @@ if(isset($product)){
     var countqty = $("#allcountvalue").val();
 
     if(count == maxQty || totlco == maxQty){
-       toasterOptions();
-         toastr.error('You Reached Maximun Limit');
-        return false;
-    }
-    $("#countervalue"+abc).val(parseInt($("#countervalue"+abc).val())+parseInt(1));
-    $(ele).parents(".qtybtn").find(".counter").val(updatedCount);
-    $(ele).parents(".qtybtn").find("#counting"+id).val(updatedCount);
-    $(newProducts[abc]).each(function( index, element ) {
-        if(element.product == id){
+     toasterOptions();
+     toastr.error('You Reached Maximun Limit');
+     return false;
+   }
+   $("#countervalue"+abc).val(parseInt($("#countervalue"+abc).val())+parseInt(1));
+   $(ele).parents(".qtybtn").find(".counter").val(updatedCount);
+   $(ele).parents(".qtybtn").find("#counting"+id).val(updatedCount);
+   $(newProducts[abc]).each(function( index, element ) {
+    if(element.product == id){
          newProducts[abc].splice(index, 1); //remove form array
          return false;
        }
 
-      });
+     });
 
-    var size;
-    var serving;
-    if(typeof $("#ingSize"+id).val() === "undefined"){
-       size = '';
-    }else{
-      size = $("#ingSize"+id).val();
-    }
+   var size;
+   var serving;
+   if(typeof $("#ingSize"+id).val() === "undefined"){
+     size = '';
+   }else{
+    size = $("#ingSize"+id).val();
+  }
 
-    if(typeof $("#ingServing"+id).val() === "undefined"){
-      serving = '';
-    }else{
-      serving = $("#ingServing"+id).val();
-    }
+  if(typeof $("#ingServing"+id).val() === "undefined"){
+    serving = '';
+  }else{
+    serving = $("#ingServing"+id).val();
+  }
 
-    $("#"+id+"Qty").val(updatedCount);
+  $("#"+id+"Qty").val(updatedCount);
    var addeddata = {'product':id,'quantity':updatedCount,'size':size,'serving':serving}; //create object of product
-    addToArray(abc,addeddata);
-        var category_id = <?php echo $category; ?>;
-        var currentPrice = $("#price").val();
+   addToArray(abc,addeddata);
+   var category_id = <?php echo $category; ?>;
+   var currentPrice = $("#price").val();
       $.ajax({ //get price if ingredients
         method:'POST',
         url:"<?php echo base_url('order/getIngPrice');?>",
@@ -566,42 +656,42 @@ if(isset($product)){
           }
           
           
-          $("#pricetag").html("<h3>Price : $"+updatedPrice+" </h3>");
+          $("#pricetag").html("Price : $"+updatedPrice+"");
           $("#price").val(updatedPrice);
 
         }
       }); 
 
-    
 
 
-  }
 
-  function minus(ele,id){
+    }
+
+    function minus(ele,id){
      var abc = $(ele).data("index");
      var minQty = $("#minQty").val();
-      var count =   $(ele).parents(".qtybtn").find("input").val();
+     var count =   $(ele).parents(".qtybtn").find("input").val();
      if(count<=1){
       return false;
-     }else{
-    var updatedCount = parseInt(count)-parseInt(1);
-    $(ele).parents(".qtybtn").find("input").val(updatedCount);
-     $(ele).parents(".qtybtn").find("#counting"+id).val(updatedCount);
+    }else{
+      var updatedCount = parseInt(count)-parseInt(1);
+      $(ele).parents(".qtybtn").find("input").val(updatedCount);
+      $(ele).parents(".qtybtn").find("#counting"+id).val(updatedCount);
       $(newProducts[abc]).each(function( index, element ) {
-    
+
         if(element.product == id){
          newProducts[abc].splice(index, 1); //remove form array
          return false;
        }
 
-      });
+     });
 
-       $("#"+id+"Qty").val(updatedCount);
-    var size;
-    var serving;
-    if(typeof $("#ingSize"+id).val() === "undefined"){
+      $("#"+id+"Qty").val(updatedCount);
+      var size;
+      var serving;
+      if(typeof $("#ingSize"+id).val() === "undefined"){
        size = '';
-    }else{
+     }else{
       size = $("#ingSize"+id).val();
     }
 
@@ -610,11 +700,11 @@ if(isset($product)){
     }else{
       serving = $("#ingServing"+id).val();
     }
-      var countinput =  $(ele).parent().find(".qtybtn").find("input").val();
-      $("#countervalue"+abc).val(parseInt($("#countervalue"+abc).val())-parseInt(1));
+    var countinput =  $(ele).parent().find(".qtybtn").find("input").val();
+    $("#countervalue"+abc).val(parseInt($("#countervalue"+abc).val())-parseInt(1));
      var addeddata = {'product':id,'quantity':updatedCount,'size':size,'serving':serving}; //create object of product
-      addToArray(abc,addeddata);
-          var category_id = <?php echo $category; ?>;
+     addToArray(abc,addeddata);
+     var category_id = <?php echo $category; ?>;
       $.ajax({ //get price if ingredients
         method:'POST',
         url:"<?php echo base_url('order/getIngPrice');?>",
@@ -625,7 +715,7 @@ if(isset($product)){
 
           var updatedPrice = 0;
           var currentPrice = $("#price").val();
-           var totlco = $("#countervalue"+abc).val();
+          var totlco = $("#countervalue"+abc).val();
           //alert(totlco+" "+minQty);
           if(totlco == minQty || totlco > minQty){
             updatedPrice = parseFloat(currentPrice) - parseFloat(res.price);
@@ -634,13 +724,13 @@ if(isset($product)){
           }
           
           
-          $("#pricetag").html("<h3>Price : $"+updatedPrice+" </h3>");
+          $("#pricetag").html("Price : $"+updatedPrice+"");
           $("#price").val(updatedPrice);
 
         }
       }); 
-    
-     }
+
+    }
     
   }
 
@@ -652,23 +742,23 @@ if(isset($product)){
         $(ele).closest("div .inbtn").children().removeClass("active");
       }
       var abc = $(ele).data("index");
-       $(newProducts[abc]).each(function( index, element ) {
-          if(element.product == id) {
-            newProducts[abc].splice(index, 1);
-            return false;
-          }
+      $(newProducts[abc]).each(function( index, element ) {
+        if(element.product == id) {
+          newProducts[abc].splice(index, 1);
+          return false;
+        }
         
       });
       var qunty =  $("#"+id+"Qty").val();
 
 
       
-    var serving;
-    if(typeof $("#ingServing"+id).val() === "undefined"){
-      serving = '';
-    }else{
-      serving = $("#ingServing"+id).val();
-    }
+      var serving;
+      if(typeof $("#ingServing"+id).val() === "undefined"){
+        serving = '';
+      }else{
+        serving = $("#ingServing"+id).val();
+      }
       $(ele).addClass("active");
       var addeddata = {'product':id,'quantity':qunty,'size':size,'serving':serving};
       addToArray(abc,addeddata);
@@ -693,21 +783,21 @@ if(isset($product)){
 
       }
       var abc = $(ele).data("index");
-       $(newProducts[abc]).each(function( index, element ) {
-          if(element.product == id) {
-            newProducts[abc].splice(index, 1);
-            return false;
-          }
+      $(newProducts[abc]).each(function( index, element ) {
+        if(element.product == id) {
+          newProducts[abc].splice(index, 1);
+          return false;
+        }
         
       });
       $(ele).addClass("active");
-       var qunty =    $("#"+id+"Qty").val();
+      var qunty =    $("#"+id+"Qty").val();
 
       var addeddata = {'product':id,'quantity':qunty,'size':size,'serving':serve};
       addToArray(abc,addeddata);
       $("#ingServing"+id).val(serve);
-     
-       
+
+
 
     }
 
