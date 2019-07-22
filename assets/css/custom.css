@@ -233,7 +233,7 @@
 		width: 80%!important;
 	}
 	.color {
-		border: gray 1px solid !important;
+		border: #44b284 1px solid !important;
 	}
 
 	.pl150{
@@ -668,15 +668,14 @@
 	clip-path: ellipse(93em 143% at right);
 }
 .ci {
-	margin-right: 5px;
 	background: none;
 	border: 0;
 	box-sizing: border-box;
 	padding: 1em 2em;
 	font-size: inherit;
 	cursor: pointer;
-	height: 200px;
-	max-width: 200px;
+	height: 185px;
+	max-width: 185px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -693,7 +692,9 @@
 
 .spin::before, .spin::after {
 	top: 0;
-	left: 0;
+	left: 20;
+	width: 185px; 
+	height: 185px;
 }
 .spin::before {
 	border: 1px solid transparent;
@@ -721,9 +722,9 @@
 }
 .circle::before, .circle::after {
 	border-radius: 50%;
-	height:205px !important;
+	/*height:205px !important;
 	width: 205px !important;
-	margin-left:20px;
+	margin-left:20px;*/
 }
 .circleheight{
 	height: 270px!important;

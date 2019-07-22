@@ -64,7 +64,7 @@ class Products extends SU_Controller {
 			unset($data['product_custom']);
 		}
 
-		$cat_image = $this->crud_model->upload_file($_FILES['file_name'],'file_name',PRODUCT_IMAGE_UPLOAD,'product');
+		$cat_image = $this->crud_model->upload_file($_FILES['file_name'],'file_name',PRODUCT_IMAGE_UPLOAD,'product');  
 
 		//step1 unset all feild except array of ingredients with key
 

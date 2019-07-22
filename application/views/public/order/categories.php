@@ -35,16 +35,16 @@
   	height: 60px;
   }
   .circles {
-  	width: 300px;
-  	height: 300px;
+  	width: 280px;
+  	height: 280px;
   }
   .imgset{
   	margin-top:0px;
   	margin-right:0px;
   }
   .plateimage{
-  	width: 260px; 
-  	height: 270px; 
+  	width: 240px; 
+  	height: 250px; 
   	margin-top:10px; 
   	border-radius:50%;
   	
@@ -139,7 +139,7 @@ if($count==0){
 </section> -->
 
 <div class="container">
-	<div class="col-lg-12">
+	<div class="col-lg-12" style="margin-top:-50px;">
 		<div class="row">
 			<div class="col-lg-12"><center><div class="textstyle">SALADS</div></center></div>
 		</div>
@@ -149,7 +149,7 @@ if($count==0){
 	
 	<div class="col-lg-12">
 		<div class="row " >
-			<div class="custom_row displayflex" style="text-align: center; justify-content: center;">
+			<div class="custom_row displayflex" style="text-align: center; justify-content: center; margin-left:30px;">
 				<?php 
 				$i = 1;
 				foreach ($products as $key => $value) {
@@ -161,7 +161,7 @@ if($count==0){
 						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 mt20 plr0">
 							<center>
 								<a href="">
-									<div class="col-lg-2 circles hovercircle pl0sm">
+									<div class="col-lg-2 circles hovercircle pl0sm" >
 										<div class="plateimage" style="background: url('assets/images/products/<?php echo $value->product_image; ?>') no-repeat center center; background-size: cover;">
 											<div class="vertical_center">
 												<div class="textcolor"><?php echo $value->product_name; ?></div>
@@ -174,7 +174,7 @@ if($count==0){
 						</div>
 						<?php if($i % 3 == 0){?>
 						</div>
-						<div class="custom_row displayflex" style="text-align: center; justify-content: center;">
+						<div class="custom_row displayflex" style="text-align: center; justify-content: center; margin-left:30px;">
 						<?php } ?>
 
 					<?php }else{ ?>
@@ -196,7 +196,7 @@ if($count==0){
 							</div>
 							<?php if($i % 3 == 0){?>
 							</div>
-							<div class="custom_row displayflex" style="text-align: center; justify-content: center;">
+							<div class="custom_row displayflex" style="text-align: center; justify-content: center; margin-left:30px;">
 							<?php } ?>
 							
 						<?php } ?>
@@ -213,7 +213,7 @@ if($count==0){
 						<div class="col-lg-4">
 							<center>
 								<a href="<?php echo base_url('order/product/').$category; ?>">
-									<div class="col-lg-2 circles hovercircle">
+									<div class="col-lg-2 circles hovercircle" style="width: 250px; height: 250px; margin-left:30px;">
 										<div class="vertical_center">
 											<center><div class="textcolor">CREATE YOUR<br/> OWN</div></center>
 										</div>
@@ -225,6 +225,8 @@ if($count==0){
 				</div>
 				<!-- end -->
 			</div>
+			<div class="col-lg-12">&nbsp;</div>
+		</div>
 			<script type="text/javascript">
 
 				$(document).ready(function(){

@@ -300,16 +300,19 @@
 <div class="container-fluid">
 
 	<div class="row">
-		<div class="col-lg-12 col-xs-12">
+		<div class="col-lg-12 col-xs-12" style="margin-top:-50px;">
 			<center>
-				<span class="center-text">YOUR ORDER</span>
+				<span class="center-text" >YOUR ORDER</span>
 			</center>
 		</div>
 	</div>
 	<br><br>
-	<div class="container-fluid">
+	<div>
+			<div class="col-lg-1">&nbsp;</div>
+		<div class="col-lg-10">
 		<div class="full-card">
 			<div class="row">
+				
 				<div class="col-lg-9">
 					<?php 
 
@@ -389,18 +392,21 @@
 								<span style="color: #fff">
 									<?php if($value['custom'] == 0){ echo "This Product Is Non Editable."; } ?>
 								</span>
+								<br/>
 									<?php if($value['custom'] == 1){ ?>
 										<?php if($value['order_category'] == "drinks"){ ?>
 											<a  href="<?php echo base_url('order/edit_drink/').$value['slug']."/".$key; ?>" style="color:white;"><button type="button" class="ed-button">Edit</button></a>
 										<?php } else { ?> 
-											<a  href="<?php echo base_url('order/edit/').$value['slug']."/".$key; ?>" style="color:white;"><button type="button" class="ed-button">Edit</button></a>
+											<a  href="<?php echo base_url('order/edit/').$value['slug']."/".$key; ?>" style="color:white; "><button type="button" class="ed-button">Edit</button></a>
 										<?php } ?>
 									<?php } ?>
 									<a  href="<?php echo base_url('order/deleteItem/').$key; ?>" style="color:white;"><button type="button" class="ed-button">Delete</button></a>
 									
 								</div>
-								<div class="col-lg-2 text-center side-bar-content" >
-									<div class="plus-minus" style="border: none;">
+
+								<div class="col-lg-2 text-center side-bar-content">
+									
+									<div class="plus-minus" style="border: none; text-align: center;justify-content: center; display: grid;">
 										<br>
 										<input type="hidden" id="qty<?php echo $key; ?>" name="qty[]" value = "<?=$qty?>">
 										<p class="p-plus">
@@ -427,6 +433,7 @@
 											<input type="hidden" class="order-price price<?php echo $key; ?>"  value="$ <?php echo $value['order_price']; ?>">
 										</p>							    	
 									</div>
+
 								</div>
 							</div>
 
@@ -457,13 +464,14 @@
 									<span class="total-text" style="float: left;font-weight: bold;">Total:</span><span class="to-tal-number" style="float: right;font-weight: bold;">$ <input type="text" style="width:50px; height:15px;background-color: transparent;border:none" name="total_price" readonly class="order-price total-amount" value="<?php echo $order_price; ?>"></span>
 								</p>
 								<br><br><br>
-								<a style="color:white" href="<?php echo base_url('order/checkout'); ?>"><button type="button" class="ed-button" style="font-size: 13px;font-weight: 600;padding: 9px 18px;">Check Out</button></a>
-								<a style="color:white" href="<?php echo base_url('order/'); ?>"><button type="button" class="ed-button" style="font-size: 13px;font-weight: 600;padding: 9px 18px;margin-right: 0px;">Add More</button></a>
+								<a style="color:white" href="<?php echo base_url('order/checkout'); ?>"><button type="button" class="ed-button" style="font-size: 13px;font-weight: 600;padding: 9px 18px; text-transform: uppercase;">Check Out</button></a>
+								<a style="color:white" href="<?php echo base_url('order/'); ?>"><button type="button" class="ed-button" style="font-size: 13px;font-weight: 600;padding: 9px 18px;margin-right: 0px; text-transform: uppercase;">Add More</button></a>
 							</div>
 						</div>
 					</div>
+
 				</div>
-				
+				</div>
 			</div>
 			<br><br>
 		</div>

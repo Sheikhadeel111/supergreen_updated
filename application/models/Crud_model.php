@@ -133,7 +133,7 @@ public function get_data($select = "",$table="",$where = array(),$single_row = f
 
 
 	public function upload_file($file,$input_name,$path,$resize = ""){
-		
+		$this->load->library('image_lib');
 		if($resize == 'product'){
 			$config['image_library'] = 'gd2';
 			$config['quality'] = '100%';
@@ -143,8 +143,8 @@ public function get_data($select = "",$table="",$where = array(),$single_row = f
 		if($resize == 'category'){
 			$config['image_library'] = 'gd2';
 			$config['quality'] = '100%';
-			$config['width'] = 60;
-			$config['height'] = 70;
+			$config['width'] = 57;
+			$config['height'] = 65;
 		}
 
 		$file['name'] = str_replace(" ", "", $file['name']);
@@ -155,6 +155,7 @@ public function get_data($select = "",$table="",$where = array(),$single_row = f
 		$config['file_name'] = $file_name;
 
 		$this->load->library('upload', $config);
+		
 
 		if ( $this->upload->do_upload($input_name))
 		{

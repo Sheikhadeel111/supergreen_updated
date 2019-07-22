@@ -25,6 +25,7 @@
 	background-color: #30c283;
 	border:none;
 	color:white;
+	font-size: 18px;
 }
 .btnhover:hover{
 	background-color: #33cc8a;

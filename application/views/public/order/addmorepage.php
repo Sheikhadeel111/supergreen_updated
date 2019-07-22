@@ -12,17 +12,19 @@
 			height: 60px;
 		}
 		.circles {
-			width: 300px;
-			height: 300px;
+			width: 280px;
+  	height: 280px;
 		}
 		.imgset{
 			margin-top:-20px;
 			margin-right:0px;
+			width:60px;
+				height:60px;
 		}
 		.plateimage{
 			
-			height: 320px;
-			width: 275px;
+			width: 240px; 
+  	height: 250px;
 			background-size: 290px 290px;
 		}
 		.textcolor{
@@ -98,7 +100,7 @@
 	</style>
 
 <div class="container">
-		<div class="col-lg-12">
+		<div class="col-lg-12" style="margin-top:-50px;">
 			<div class="row">
 				<div class="col-lg-12"><center><div class="textstyle">WOULD YOU LIKE TO ADD ANYTHING?</div></center></div>
 			</div>
@@ -108,7 +110,7 @@
 
 		<div class="col-lg-12">
 			<div class="row">
-				<div class="custom_row displayflex" style="text-align: center; justify-content: center;">
+				<div class="custom_row displayflex" style="text-align: center; justify-content: center; ">
 		<?php
 			$count = count($categories);
 			  $drinks = array("name"=>"Drinks");
@@ -135,7 +137,7 @@
 				
 				<?php if($i % 3 == 0){?>
 					</div>
-					<div class="custom_row displayflex" style="text-align: center; justify-content: center;">
+					<div class="custom_row displayflex" style="text-align: center; justify-content: center;  margin-left:50px;">
 				<?php } ?>
 			<?php $i++; } }?>
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 mt20 plr0">
@@ -167,7 +169,7 @@
 			
 				
 				<center>
-					<a href="<?php echo base_url('order/view_cart'); ?>"><button type="button" class="bottom-button" style="ma">NO THANKS</button>
+					<a href="<?php echo base_url('order/view_cart'); ?>"><button type="button" class="bottom-button" style="">NO THANKS</button>
 					</a>
 				</center>
 				

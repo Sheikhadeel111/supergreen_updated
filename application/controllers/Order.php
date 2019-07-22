@@ -181,16 +181,11 @@ class Order extends CI_Controller {
 	public function drinks()
 	{
 		$this->load->library('user_agent');
-		 if ($this->agent->is_mobile()) {
-          $data['class'] = "drinksmbl";
-          $view = "drinkmblpage";
-          
-     }
-     else {
+		
      	 $view = "drinkpage";
          $data['class'] = "drinksbg";
         
-     }	
+     
 		$data['drink1'] = $this->drink->getDrink(1,0);
 		$data['drink2'] = $this->drink->getDrink(1,1);
 		$data['drink3'] = $this->drink->getDrink(1,2);

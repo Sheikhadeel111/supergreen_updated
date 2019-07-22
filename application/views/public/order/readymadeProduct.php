@@ -1,30 +1,46 @@
 <style type="text/css">
 	.qtybtn{
 		position: absolute;
-		top: 52px;
-		left: 186px;
+		top: 170px;
+		left: 62px;
 	}
 
 	.sczrbtn{
 		display: block;
 		position: absolute;
-		top: -40px;
-		left: 31px;
+		top: -27px;
+		left: 66px;
 	}
 
 	.inbtn{
 		display: block;
 		position: absolute;
-		top: 211px;
-		left: 28px;
+		top: 209px;
+		left: 49px;
 	}
+	.btn-circle {
+    color:white;
+    background-color: #4db68a;
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+    border:none;
+  }
+  .centeraline{
+	text-align: center; 
+	justify-content: center; 
+	display: flex;
+  }
 
 	.option{
 		margin-top: 100px;
 	}
 	.active{
 		border: #f88f26 2px solid!important;
-		background: transparent;
+		
 	}
 	.counter{
 		width: 10px;
@@ -42,7 +58,7 @@
 		}
 		.active{
 			border: #f88f26 2px solid!important;
-			background: transparent;
+			
 		}
 		.hidden{
 			display: none;
@@ -115,14 +131,14 @@
 			font-weight: bold;			
 		}
 		.circles {
-			width: 315px;
-			height: 315px;
-			border-radius: 224px;
-			margin-left: 0px !important;
-			cursor: pointer;
-			background-color: rgba(48,194,131,0.5019607843137255);
-			border: 5px solid #ffffff;
-		}
+    width: 315px;
+    height: 315px;
+    border-radius: 224px;
+    margin-left: 43px;
+    background-color: rgba(48,194,131,0.5019607843137255);
+    border: 5px solid #ffffff;
+  }
+
 		.textstyle {
 			color: white;
 			font-size: 34px;
@@ -145,7 +161,7 @@
 			background-color: #fba7b0;
 			border: 2px solid #fba7b0;
 			color: white;
-			font-size: 29px;
+			font-size: 22px;
 			margin--bottom: 28px;
 			padding-left: 15px;
 			padding-right: 15px;
@@ -224,6 +240,16 @@
 		.mt20{
 			margin-top: 20px!important;
 		}
+		.btn-circle-top{
+      color:white;
+    background-color: #4db68a;
+    padding: 0px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+    border:none;
+    padding:5px;
+  }
 
 
 		@media (min-width: 768px) and (max-width: 991px) {
@@ -312,6 +338,11 @@
 		}
 
 		@media (min-width: 320px) and (max-width: 590px) {
+			.centeraline{
+				text-align: center; 
+				justify-content: center; 
+				display: block;
+			  }
 			.width-20{
 				width: 50%;
 				margin-bottom: 32px;
@@ -442,12 +473,13 @@
 
 		<div class="col-lg-12">
 			<div class="row all_center" >
+				<div class="row centeraline">
 				<input id="price1" type="hidden" value="<?php echo $re_product->product_price	; ?>">
 				<?php foreach ($categories as $key => $value) { 
 
 					if($value->name == "TOPPINGS"){?>
 						<a class="show_items top clicked" style data-id = "<?=$value->cat_id?>">
-							<div class="col-lg-3 col-sm-6" style="text-align: center; justify-content: center; display: flex;">
+							<div class="col-lg-2 col-sm-6" style="text-align: center; justify-content: center;">
 								<div class="circles hovercircle">
 									<center><div class="textstyle clicked"><?=$value->name?></div>
 
@@ -478,7 +510,7 @@
 						}
 						?>
 						<a  class="show_items  <?php echo $arrayIndex; ?>"  data-id = "<?=$value->cat_id?>">
-							<div class="col-lg-3 col-sm-6 " style="text-align: center; justify-content: center; display: flex;">
+							<div class="col-lg-3 col-sm-6 " style="text-align: center; justify-content: center;">
 
 								<div class="circles hovercircle clicked">
 									<center><div class="textstyle "><?=$value->name?></div>
@@ -507,9 +539,9 @@
 				<div class="row all_center">
 					<div class="card text-center">
 						<h3 class="card-title"></h3>
-						<div class="row" style="padding-left:25px;">
 						
 							<?php foreach ($categories as $key1 => $value1) { 
+
 								if(strtolower($value1->name) == "toppings"){
 									$arrayIndex = "top"; 
 									$searchArray =  $top;
@@ -534,7 +566,7 @@
 									$arrayIndex = "dress";?>
 									<input type="hidden" id="countervalue<?=$arrayIndex?>" value="<?php echo count($dress); ?>"><?php 
 								}?>
-
+								<div class="row">
 								<div class=" bg-white animated slideInUp items  hidden <?=$value1->cat_id?>" data-max = "<?=$value1->maxQty?>" data-min = "<?=$value1->minQty?>">
 
 									<div>
@@ -546,6 +578,10 @@
 										$ingredients = has_ingredeients($value1->cat_id); 
 										foreach ($ingredients as $key2 => $value2) { 
 											if(strtolower($value1->name) == "dressings"){ ?>
+												<?php if($key2 % 6 == 0){?>
+													</div>
+													<div class="row centeraline">
+												<?php } ?>
 												<div class="col-lg-2 col-sm-6 option" style="padding-bottom:25px;">
 													<div class="ci circle  <?php $classChk = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($classChk)?'color':'spin'; ?>" onclick="encirecl(this,<?=$value1->cat_id?>);" data-name="<?php echo $value2->cat_pro_name ?>" data-price = "<?=$value2->cat_pro_price?>" data-id="<?php echo $value2->cat_pro_id ?>" data-index= "<?=$arrayIndex?>">
 														<img class="basemenuimage" src="<?php echo PRODUCT_IMAGE_UPLOAD.$value2->cat_pro_image  ?>">
@@ -555,17 +591,17 @@
 													</div>
 													<div class="inbtn" style="display:<?php $classChk = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($classChk)?'block':'none'; ?>;">
 
-														<button type="button" class="btn mybtn btn-circle <?php foreach ($searchArray as $k => $v) {
+														<button type="button" class="btn-circle <?php foreach ($searchArray as $k => $v) {
 															if($v['product'] ==  $value2->cat_pro_id && $v['size'] == 'S'){
 																echo 'active';
 															}
 														} ?>" data-index= "<?=$arrayIndex?>" onclick="toppingSize(this,<?php echo $value2->cat_pro_id; ?>,'S')">S</button>
-														<button type="button" class="btn mybtn btn-circle <?php foreach ($searchArray as $k => $v) {
+														<button type="button" class="btn-circle <?php foreach ($searchArray as $k => $v) {
 															if($v['product'] ==  $value2->cat_pro_id && $v['size'] == 'M'){
 																echo 'active';
 															}
 														} ?>" data-index= "<?=$arrayIndex?>" onclick="toppingSize(this,<?php echo $value2->cat_pro_id; ?>,'M')">M</button>
-														<button type="button" class="btn mybtn btn-circle <?php foreach ($searchArray as $k => $v) {
+														<button type="button" class="btn-circle <?php foreach ($searchArray as $k => $v) {
 															if($v['product'] ==  $value2->cat_pro_id && $v['size'] == 'L'){
 																echo 'active';
 															}
@@ -576,12 +612,12 @@
 
 													<div class="sczrbtn" style="display: <?php $classChk = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($classChk)?'block':'none'; ?>;">
 														<input type="hidden" id="ingServing<?php echo $value2->cat_pro_id; ?>" value = "<?php foreach ($searchArray as $k => $v) {echo $v['serving'];} ?>">
-														<button type="button" class="btn mybtn btn-circle <?php foreach ($searchArray as $kx => $vx) {
+														<button type="button" class="btn-circle-top <?php foreach ($searchArray as $kx => $vx) {
 															if($vx['product'] ==  $value2->cat_pro_id && $vx['serving'] == 'Side'){
 																echo 'active';
 															}
 														} ?>" data-index= "<?=$arrayIndex?>" onclick="serving(this,<?php echo $value2->cat_pro_id; ?>,'Side')">Side</button>
-														<button type="button" class="btn mybtn btn-circle <?php foreach ($searchArray as $kx => $vx) {
+														<button type="button" class="btn-circle-top <?php foreach ($searchArray as $kx => $vx) {
 															if($vx['product'] ==  $value2->cat_pro_id && $vx['serving'] == 'Mixed'){
 																echo 'active';
 															}
@@ -591,7 +627,7 @@
 
 
 													<div class="qtybtn" style="display: <?php $checkStatus = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($checkStatus)?'block':'none';  ?>;">
-														<button type="button"  data-index= "<?=$arrayIndex?>"	 class="btn mybtn btn-circle" onclick="plus(this,<?=$value2->cat_pro_id?>)"><i class="fa fa-plus"></i></button>
+														<button type="button"  data-index= "<?=$arrayIndex?>"	 class="btn-circle" onclick="plus(this,<?=$value2->cat_pro_id?>)"><i class="fa fa-plus"></i></button>
 														<input class="counter" id="<?=$value2->cat_pro_id?>" value="<?php foreach ($searchArray as $k => $v) {
 
 
@@ -601,23 +637,27 @@
 														} ?>">
 
 														<input type="hidden" id="<?=$value2->cat_pro_id?>Qty" value=''>
-														<button type="button"  data-index= "<?=$arrayIndex?>"	 class="btn mybtn btn-circle" onclick="minus(this,<?=$value2->cat_pro_id?>)"><i class="fa fa-minus"></i></button>
+														<button type="button"  data-index= "<?=$arrayIndex?>"	 class="btn-circle" onclick="minus(this,<?=$value2->cat_pro_id?>)"><i class="fa fa-minus"></i></button>
 													</div>
 													
 												</div>
 											<?php }else{ ?>
 
-												<div class="col-lg-2 col-sm-6 " style="padding-bottom:25px;">
+												<?php if($key2 % 6 == 0){?>
+													</div>
+													<div class="row centeraline" >
+												<?php } ?>
+												<div class="col-lg-2 col-sm-6 " style="padding-bottom:25px;margin-left:30px;">
 													<div class="ci circle <?php $classChk = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($classChk)?'color':'spin'; ?>"" onclick="encirecl(this,<?=$value1->cat_id?>);" data-name="<?php echo $value2->cat_pro_name ?>" data-price = "<?=$value2->cat_pro_price?>" data-id="<?php echo $value2->cat_pro_id ?>" data-index= "<?=$arrayIndex?>">
 														<img class="basemenuimage" src="<?php echo PRODUCT_IMAGE_UPLOAD.$value2->cat_pro_image  ?>">
 														<p class="menu_text">
 															<?php echo $value2->cat_pro_name ?>
 														</p>
-														<p class="menu_text inc"><?php $classChk = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($classChk)?'Included':''; ?></p>
+														<!-- <p class="menu_text inc"><?php $classChk = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($classChk)?'Included':''; ?></p> -->
 													</div>
 
 													<div class="qtybtn" style="display:<?php $classChk = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($classChk)?'block':'none'; ?>;">
-														<button type="button"  data-index= "<?=$arrayIndex?>" class="btn mybtn btn-circle" onclick="plus(this,<?=$value2->cat_pro_id?>)"><i class="fa fa-plus"></i></button>
+														<button type="button"  data-index= "<?=$arrayIndex?>" class="btn-circle" onclick="plus(this,<?=$value2->cat_pro_id?>)"><i class="fa fa-plus"></i></button>
 														<input class="counter" id="<?=$value2->cat_pro_id?>" value="<?php foreach ($searchArray as $k => $v) {
 															if($v['product'] ==  $value2->cat_pro_id){
 																echo $v['qty'];
@@ -625,7 +665,7 @@
 														} ?>">
 
 														<input type="hidden" id="<?=$value2->cat_pro_id?>Qty" value=''>
-														<button type="button"  data-index= "<?=$arrayIndex?>" class="btn mybtn btn-circle" onclick="minus(this,<?=$value2->cat_pro_id?>)"><i class="fa fa-minus"></i></button>
+														<button type="button"  data-index= "<?=$arrayIndex?>" class="btn-circle" onclick="minus(this,<?=$value2->cat_pro_id?>)"><i class="fa fa-minus"></i></button>
 													</div>
 
 												</div>
@@ -635,10 +675,10 @@
 
 										</div>
 									</div>
-
+									</div>
 
 								<?php } ?>
-							</div>
+							
 
 						</div>
 					</div>

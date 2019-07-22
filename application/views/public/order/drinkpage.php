@@ -24,7 +24,20 @@
   border: #f88f26 solid;
   padding: 4px 7px !important;
 }
-
+.bottom-button{
+          background-color: #fba7b0;
+          border: 2px solid white;
+          color: white;
+          font-size: 29px;
+          margin-bottom: 28px;
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-top: 5px;
+          padding-bottom: 8px;
+          font-weight: bold;
+          border-radius: 4px;
+          margin-top: 83px;
+    }
 
 .d-1{
   position: fixed;
@@ -466,7 +479,7 @@
 <!-- End -->
 <div class="row mlr0">
   <div class="col-md-12 col-xs-12 text-center mb70">
-    <button class="btn light_pink_btn" onclick="order_now();">ORDER NOW</button>
+    <button class="bottom-button" onclick="order_now();">ORDER NOW</button>
   </div>
 </div>
 </div>

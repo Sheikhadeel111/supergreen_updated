@@ -25,15 +25,26 @@
     text-align: center;
     font-size: 12px;
     line-height: 1.42857;
+    border:none;
+  }
+  .btn-circle-top{
+      color:white;
+    background-color: #4db68a;
+    padding: 0px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+    border:none;
+    padding:5px;
   }
   .sczrbtn{
     position: absolute;
-    top: -33px;
+    top: -15px;
+    left: 56px;
 
   }
 
   .sczrbtn button{
-    width: 100px;
     height:auto;
     display:inline-block;
   }
@@ -85,7 +96,7 @@
     background-color: #fba7b0;
     border: 2px solid #fba7b0;
     color: white;
-    font-size: 29px;
+    font-size: 22px;
     margin-bottom: 28px;
     padding-left: 40px;
     padding-right: 40px;
@@ -165,6 +176,11 @@
   background-color: #ececec;
   height: 100%;
 }
+.centeraline{
+  text-align: center; 
+  justify-content: center; 
+  display: flex
+}
 @media (min-width: 768px) and (max-width: 991px) {
    /*Awais .col-md-3{
       z-index: 999999999;
@@ -204,6 +220,9 @@
     height: 28%;
     padding-top: 2px;
   }
+  .centeraline{
+      display: block;
+    }
 }
   @media (min-width: 320px) and (max-width: 590px) {
     .price-column {
@@ -223,7 +242,9 @@
    /* overflow-x: hidden; Awais
     overflow-y: hidden;*/
     /*height: wrap-content;Awais*/ 
-
+    .centeraline{
+      display: block;
+    }
 }
     .col-xs-12{
       z-index: 999999999;
@@ -238,8 +259,14 @@
     }
    .qtybtn {
     position: absolute !important;
-    top: 52px !important;
-    left: 215px !important;
+    top: 163px !important;
+    left: 134px !important;
+    }
+    .sczrbtn{
+      left:137px;
+    }
+    .centeraline{
+      display: block;
     }
   }
 
@@ -283,6 +310,8 @@ $namesArray = array_combine($proIds,$names);
 //$price = "<h3>Price : $0 </h3> ";
 ?>
 <div class="container-fluid">
+  <div class="col-lg-1"></div>
+  <div class="col-lg-10">
   <div class="row">
     <div class="card text-center">
       <div class="col-lg-9" style="height: 100%;background-color: white;overflow-y: auto;
@@ -304,6 +333,7 @@ overflow-x: hidden;">
           <div id="myDIV"></div></h5>
       </div>
     </div>
+  </div>
   </div>
 </div>
 

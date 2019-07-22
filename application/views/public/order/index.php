@@ -17,6 +17,8 @@
 		.imgset{
 			margin-top:-20px;
 			margin-right:0px;
+			width:60px;
+				height:60px;
 		}
 		.plateimage{
 			
@@ -28,6 +30,7 @@
 			color:white;
 			font-size:24px;
 			font-weight: bold;
+			text-transform: uppercase;
 		}
 		.bottom-button{
 			    background-color: #fba7b0;

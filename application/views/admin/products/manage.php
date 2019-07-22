@@ -38,7 +38,7 @@
                   <p></p>
                 </div>
                 <form class="form form-horizontal form-bordered" novalidate enctype="multipart/form-data" action="<?php echo base_url('admin/products/manage'); ?>" method="POST" >
-                  <div class="form-body">
+                  <div class="form-body"> 
                     <div class="form-group row">
                       <label class="col-md-3 label-control" for="product_name">Product Name</label>
                       <div class="col-md-9">
@@ -55,7 +55,7 @@
                     <div class="form-group row">
                       <label class="col-md-3 label-control" for="product_category">Product Category</label>
                       <div class="col-md-9">
-                        <select name="product_category" id="product_category"  required class="form-control select2">
+                        <select name="product_category" id="product_category" class="form-control select2" required>
                           <option value="none" selected="" disabled="">Product Category</option>
                          <?php
                             foreach ($categories as $key => $value) { ?>
