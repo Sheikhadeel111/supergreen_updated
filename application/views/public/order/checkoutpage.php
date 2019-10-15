@@ -27,6 +27,9 @@
 
   </script>
   <style type="text/css">
+     label{
+      font-size:14px;
+     }
     .error{
 
       color: red;
@@ -40,6 +43,9 @@
   -moz-transition: all 0.30s ease-in-out;
   -ms-transition: all 0.30s ease-in-out;
   -o-transition: all 0.30s ease-in-out;
+    }
+    .form-control{
+      font-size:18px !important;
     }
   </style>
   <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/extensions/toastr.css">
@@ -92,20 +98,19 @@
     ?>
     <div class=" text-center">
 
-      <h2 class="pb-5">Checkout form</h2>
+      <h2 class="pb-5"  style="font-size:22px;">Checkout form</h2>
 
     </div>
     <div class="row">
       <div class="col-md-4 order-md-2 mb-4">
         <h4 class="d-flex justify-content-between align-items-center mb-3">
-          <span class="text-muted">Your cart</span>
+           <span class="text-muted" style="font-size:16px;">Your cart</span>
 
           <span class="badge badge-secondary badge-pill"><?php echo sizeof($order); ?></span>
         </h4>
         <ul class="list-group mb-3">
           <?php 
-
-       
+        
           foreach ($order as $key => $value) {
             if(!empty($value['qty']))
             {  
@@ -117,61 +122,68 @@
             }
             $odr_pr = $value['order_price'];
               if($value['order_category'] == "drinks"){
-                $odr_pr = $value['order_price']/$qty;
+               // $odr_pr = $value['order_price']/$qty;
               }
             ?>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
-                <h6 class="my-0"><?php echo $value['order_name']; ?></h6>
-                <small class="text-muted">Qty <span class="badge badge-secondary badge-pill"><?php echo $qty; ?></span></small>
+                <h6 class="my-0" style="font-size:16px;"><?php echo $value['order_name']; ?></h6>
+                <small class="text-muted" style="font-size:12px;">Qty <span class="badge badge-secondary badge-pill"><?php echo $qty; ?></span></small>
               </div>
-              <span class="text-muted">$<?php echo $odr_pr*$qty; ?></span>
+              <span class="text-muted"><?php echo MONEY_SIGN; ?><?php echo $odr_pr*$qty; ?></span>
             </li>
             <?php 
             if($value['order_category'] == "drinks"){
-                $sum += $odr_pr*$value['qty'];
+                $sum = $sum + ($odr_pr*$qty);
             }else{
-              $sum += $odr_pr; 
-            }
+              $sum = $sum + $odr_pr*$qty; 
+             }
         }
     
            ?>
 
 
-            <li class="list-group-item d-flex justify-content-between">
-              <span>Total (USD)</span>
-              <strong>$<?php  echo $sum; ?></strong>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+               <div>
+                 <h6 class="my-0" style="font-size:16px;">VAT</h6><br/>
+                 <h6 class="my-0" style="font-size:20px;">Total</h6>
+              </div>
+              <!-- <span style="font-size:18px;">Total</span> -->
+              <div>
+                <div style="font-size:16px;"><?php echo MONEY_SIGN; ?><?php  echo ($sum*6)/100; ?></div><br/>
+                <div style="font-size:20px;"><?php echo MONEY_SIGN; ?><?php  echo $sum; ?></div>
+              </div>
             </li>
           </ul>
         </div>
         <div class="col-md-8 order-md-1">
-          <h4 class="mb-3">Billing address</h4>
+          <h4 class="mb-3"  style="font-size:18px;">Billing address</h4>
           <form class="form" method="POST" novalidate action="<?php echo base_url('Ingenico/methods'); ?>" >
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>
-                <input type="text" class="form-control" name="firstName" id="firstName" placeholder="" value="<?php if(!empty($user->name)){ echo $user->name; } ?>" required>
+                <input type="text" class="form-control" onKeyPress="return ValidateAlpha(event);" name="firstName" id="firstName" placeholder="" maxlength="35" size="35" value="<?php if(!empty($user->name)){ echo $user->name; } ?>" required>
                 <div class="invalid-feedback">
                   Valid Name is required.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="firstName">Email</label>
-                <input type="text" class="form-control" name="email" id="email" placeholder="" value="<?php if(!empty($user->email)){ echo $user->email; } ?>" required>
+                <input type="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" maxlength="200" size="200" name="email" id="email" placeholder="" value="<?php if(!empty($user->email)){ echo $user->email; } ?>" required>
                 <div class="invalid-feedback">
                   Valid Email is required.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="firstName">Phone</label>
-                <input type="text" class="form-control" name="phone" id="phone" placeholder="" value="<?php if(!empty($user->phone)){ echo $user->phone; } ?>" required>
+                <input type="number" class="form-control" maxlength="25" size="25" name="phone" id="phone" placeholder="" value="<?php if(!empty($user->phone)){ echo $user->phone; } ?>" required>
                 <div class="invalid-feedback">
                   Valid Phone is required.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="city">City</label>
-                <input type="text" class="form-control" name="city" id="city" placeholder="" value="<?php if(!empty($user->city)){ echo $user->city; } ?>" required>
+                <input type="text" class="form-control" maxlength="100" size="100" onKeyPress="return ValidateAlpha(event);" name="city" id="city" placeholder="" value="<?php if(!empty($user->city)){ echo $user->city; } ?>" required>
                 <div class="invalid-feedback">
                   Valid City is required.
                 </div>
@@ -186,7 +198,7 @@
 
               <div class="col-md-6 mb-3">
                 <label for="countryCode">Country</label>
-                <select class="form-control" name="countryCode" id="countryCode" required>
+                <select class="form-control" name="countryCode" style="height: 50px;" id="countryCode" required>
                    <option value="" selected="" disabled="">Select Country</option>
                   <?php foreach ($countries as $key => $value) 
                   { ?>
@@ -203,14 +215,14 @@
               </div>
               <div class="col-md-6 mb-3">
                 <label for="street">Street</label>
-                <input type="text" class="form-control" name="street" id="street" placeholder="" value="<?php if(isset($user->street)){ echo $user->street; } ?>" required>
+                <input type="text" class="form-control" maxlength="100" size="100" name="street" id="street" placeholder="" value="<?php if(isset($user->street)){ echo $user->street; } ?>" required>
                 <div class="invalid-feedback">
                   Valid Street is required.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="houseNumber">House Number</label>
-                <input type="number" class="form-control" name="houseNumber" id="houseNumber" placeholder="<?php if(isset($user->houseno)){ echo $user->houseno; } ?>" value="<?php if(isset($user->houseno)){ echo $user->houseno; } ?>" required>
+                <input type="number" min="0" class="form-control" maxlength="25" size="25" name="houseNumber" id="houseNumber" placeholder="<?php if(isset($user->houseno)){ echo $user->houseno; } ?>" value="<?php if(isset($user->houseno)){ echo $user->houseno; } ?>" required>
                 <div class="invalid-feedback">
                   Valid House# is required.
                 </div>
@@ -218,7 +230,7 @@
 
               <div class="col-md-6 mb-3">
                 <label for="zip">Zip</label>
-                <input type="text" class="form-control" name="zip" id="zip" placeholder="" value="<?php if(isset($user->zip)){ echo $user->zip; } ?>" required>
+                <input type="text" class="form-control" maxlength="25" size="25" name="zip" id="zip" placeholder="" value="<?php if(isset($user->zip)){ echo $user->zip; } ?>" required>
                 <div class="invalid-feedback">
                   Valid Zip is required.
                 </div>
@@ -231,5 +243,15 @@
         </div>
       </div>
     </div>
+     <script type="text/javascript">
+    function ValidateAlpha(evt)
+    {
+        var keyCode = (evt.which) ? evt.which : evt.keyCode
+        if ((keyCode < 65 || keyCode > 90) && (keyCode < 97 || keyCode > 123) && keyCode != 32)
+         
+        return false;
+            return true;
+    }
+    </script>
   </body>
   </html>

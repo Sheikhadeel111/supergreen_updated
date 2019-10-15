@@ -1,46 +1,63 @@
 <style type="text/css">
 	.qtybtn{
 		position: absolute;
-		top: 170px;
-		left: 62px;
+		top: 178px;
+   		 left: 70px;
 	}
 
 	.sczrbtn{
 		display: block;
 		position: absolute;
-		top: -27px;
-		left: 66px;
+    top: 186px;
+    left: 97px;
 	}
 
 	.inbtn{
 		display: block;
 		position: absolute;
-		top: 209px;
-		left: 49px;
+		top: 193px;
+		left: 55px;
 	}
-	.btn-circle {
-    color:white;
-    background-color: #4db68a;
-    width: 30px;
-    height: 30px;
-    padding: 6px 0px;
-    text-align: center;
-    font-size: 12px;
-    line-height: 1.42857;
-    border:none;
-  }
+	 .btn-circle {
+	    color:white;
+	    background-color: #e5acbc;
+	    width: 30px;
+	    height: 30px;
+	    padding: 6px 0px;
+	    text-align: center;
+	    font-size: 12px;
+	    line-height: 1.42857;
+	    border:none;
+	    outline: none !important;
+	  }
+	   .otherbtn{
+	    width: 67px !important;
+	    height: 67px !important;
+	    border-radius: 100% !important;
+	    font-size: 10px !important;
+	    outline: none !important;
+	  }
+	  .otherbtn:hover{
+	    background-color: #189271 !important;
+	  }
+	   .ci_dressing{
+	    height: 220px!important;
+	    max-width: 220px!important;
+	  }
+
   .centeraline{
 	text-align: center; 
 	justify-content: center; 
 	display: flex;
+	   margin-left: 70px;
+          margin-right: 70px;
   }
 
 	.option{
 		margin-top: 100px;
 	}
 	.active{
-		border: #f88f26 2px solid!important;
-		
+		background-color: #189271 !important;
 	}
 	.counter{
 		width: 10px;
@@ -50,16 +67,7 @@
 	/*body{
 		overflow: hidden;
 		}*/
-		.items{
-			
-			
-			
-			
-		}
-		.active{
-			border: #f88f26 2px solid!important;
-			
-		}
+		
 		.hidden{
 			display: none;
 		}
@@ -111,33 +119,35 @@
 			border-left: 4px solid #fff;
 			height: 35px;
 		}
-		
+		.left_pd5{
+			padding-left:5%;
+		}
 		
 	</style>
 	<style type="text/css">
 		body { 
-			background: url('assets/images/backgroundimgae.png') no-repeat center center fixed; 
+			background: url('assets/images/background2.png') no-repeat center center fixed; 
 			-webkit-background-size: cover;
 			-moz-background-size: cover;
 			-o-background-size: cover;
 			background-size: cover;
 			background-color: rgba(48,194,131,0.5019607843137255);
-
+			height: auto;
 		}
 		.center-text{
-			font-family: Lato-Black, AdobeInvisFont, MyriadPro-Regular;
 			color: white;
 			font-size: 42px;
-			font-weight: bold;			
+			font-weight: bold;	
+			text-transform: capitalize;		
 		}
 		.circles {
-    width: 315px;
-    height: 315px;
-    border-radius: 224px;
-    margin-left: 43px;
-    background-color: rgba(48,194,131,0.5019607843137255);
-    border: 5px solid #ffffff;
-  }
+		    width: 315px;
+		    height: 315px;
+		    border-radius: 224px;
+		    margin-left: 43px;
+		    background-color: rgba(48,194,131,0.5019607843137255);
+		    border: 5px solid #ffffff;
+		  }
 
 		.textstyle {
 			color: white;
@@ -158,17 +168,19 @@
 		}
 
 		.bottom-button{
-			background-color: #fba7b0;
-			border: 2px solid #fba7b0;
-			color: white;
-			font-size: 22px;
-			margin--bottom: 28px;
-			padding-left: 15px;
-			padding-right: 15px;
-			padding-top: 5px;
-			padding-bottom: 8px;
-			font-weight: bold;
-			border-radius: 4px;
+			background-color: #e5acbc;
+			border: 1px solid #e5acbc;
+			padding: 10px 30px !important;
+			border-radius: 3px;
+			font-size: 15px!important;
+			font-weight: 400!important;
+			text-transform: capitalize!important;
+			width:156px;
+			color:white !important;
+			outline:none !important;
+		}
+		.bottom-button:hover{
+			background-color: #F292AE!important;
 		}
 		.card{
 			background-color: white;
@@ -242,7 +254,7 @@
 		}
 		.btn-circle-top{
       color:white;
-    background-color: #4db68a;
+    background-color: #e5acbc;
     padding: 0px;
     text-align: center;
     font-size: 12px;
@@ -250,15 +262,43 @@
     border:none;
     padding:5px;
   }
+  .items_div{
+  	font-size: 16px;
+  }
 
+.extracls{
+  position: absolute !important;
+    top: 71px !important;
+    left: 195px !important;
+}
+.mediumcls{
+  position: absolute !important;
+    top: -27px !important;
+    left: 93px  !important;  
+}
+.largecls{
+  position: absolute !important;
+    top: 71px !important;
+    left: -14px !important;
+}
 
-		@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 900px) and (max-width: 1440px) {
+		.circles {
+				    width: 115px;
+				    height: 115px;
+				    border-radius: 224px;
+				    margin-left: 43px;
+				    background-color: rgba(48,194,131,0.5019607843137255);
+				    border: 5px solid #ffffff;
+				  }
+				  .items_div{
+				  	font-size: 14px;
+				  }
 			.all_center {
-
+				
 				text-align: center;
 				justify-content: center;
-				display: grid;
-
+				
 			}
 			.width-20{
 				width: 25%;
@@ -282,13 +322,109 @@
 				height: 53px;
 			}
 			.custom_margin{
-				margin-left: 0px!important;
 				margin-right: 0px!important;
 			}
 			.all_center{
 				text-align: center;
 				justify-content: center;
 				display: grid;
+				padding-left: 7px !important;
+			}
+
+			.circles {
+				width: 269px;
+				height: 269px;
+				border-radius: 224px;
+				margin-left: 0px !important;
+				background-color: rgba(48,194,131,0.5019607843137255);
+				border: 5px solid #ffffff;
+				margin-bottom: 32px;
+
+			}
+			.plus-minus{
+				display: block !important;
+			}
+			.textstyle {
+				color: white;
+				font-size: 24px;
+				font-weight: bold;
+				margin-top: 60px;
+			}
+			.text1{
+				margin-top: 77px !important;
+			}
+			.text2{
+				margin-top: 76px !important;
+			}
+			img.images{
+				width: 93px;
+			}
+		
+}
+@media (min-width: 1200px) and (max-width: 1440px){
+	.custom_col{
+	     width: 18.66666667% !important; 
+	}
+	.custom_col_dressing{
+		width: 20.66666667% !important; 
+	}
+}
+
+@media (min-width: 800px) and (max-width: 1280px) {
+				.qtybtn{
+					    top: 178px;
+    					left: 57px;
+				}
+					.circles {
+				    width: 115px;
+				    height: 115px;
+				    border-radius: 224px;
+				    margin-left: 43px;
+				    background-color: rgba(48,194,131,0.5019607843137255);
+				    border: 5px solid #ffffff;
+				  }
+				  .items_div{
+				  	font-size: 14px;
+				  }
+			.all_center {
+
+				text-align: center;
+				justify-content: center;
+				display: grid;
+
+			}
+			.centerinmobile{
+				display: flex !important;
+    			justify-content: center !important;
+			}
+			.width-20{
+				width: 25%;
+				margin-bottom: 32px;
+			}
+
+			.round-border{
+				border: 1px solid #4db68a;
+				padding-top: 9px;
+				border-radius: 109px;
+				height: 146px;
+				width: 145px;
+			}
+			.custom-height {
+				height: 67px;
+				margin-top: 27px;
+			}
+			.btns{
+				width: 130px;
+
+				height: 53px;
+			}
+			.custom_margin{
+				margin-right: 0px!important;
+			}
+			.all_center{
+				text-align: center;
+				justify-content: center;
+				
 				-padding-left: 7px !important;
 			}
 
@@ -307,10 +443,100 @@
 			}
 			.textstyle {
 				color: white;
-				font-size: 34px;
+				font-size: 24px;
 				font-weight: bold;
-				margin-top: 92px;
+				margin-top: 60px;
 			}
+			.text1{
+				margin-top: 77px !important;
+			}
+			.text2{
+				margin-top: 76px !important;
+			}
+			img.images{
+				width: 93px;
+			}
+			
+
+}
+
+		@media (min-width: 768px) and (max-width: 1024px) {
+			.custom_col_tab{
+				float: none !important;
+			}
+				.left_pd5{
+				padding-left:0% !important;
+			}
+			.centerinmobile{
+				display: flex;
+    			justify-content: center;
+			}
+				.ci::before, .ci::after{
+	      		content: none !important;
+	  		}
+			.textstyle {
+				color: white;
+				font-size: 24px;
+				font-weight: bold;
+				margin-top: 23px;
+			}
+			.respns{
+				text-align: center!important;
+				justify-content: center!important;
+				display: flex!important;
+			}
+			.centeraline{
+				text-align: center !important; 
+				justify-content: center !important; 
+				display: block !important;
+			  }
+			.width-20{
+				width: 50%;
+				margin-bottom: 32px;
+			}
+
+			.round-border{
+				border: 1px solid #4db68a;
+				padding-top: 9px;
+				border-radius: 109px;
+				height: 146px;
+				width: 145px;
+			}
+			.custom-height {
+				height: 67px;
+				margin-top: 27px;
+			}
+			.btns{
+				width: 130px;
+				height: 53px;
+			}
+			.custom_margin{
+				margin-right: 0px!important;
+			}
+			.all_center{
+				text-align: center;
+				justify-content: center;
+				display: grid;
+				
+			}
+
+			.circles {
+				width: 269px !important;
+				height: 269px !important;
+				border-radius: 224px;
+				margin-left: 0px !important;
+				background-color: rgba(48,194,131,0.5019607843137255);
+				border: 5px solid #ffffff;
+				margin-bottom: 32px;
+				display: flex;
+				text-align: center; 
+				justify-content: center;
+
+			}
+			.plus-minus{
+				display: block !important;
+			}
+			
 			.text1{
 				margin-top: 77px !important;
 			}
@@ -333,11 +559,33 @@
 				overflow-x: hidden;
 				overflow-y: auto;
 				height: 693px;
-
+				width: 330px;
 			}
+			
 		}
 
-		@media (min-width: 320px) and (max-width: 590px) {
+		@media (min-width: 320px) and (max-width: 812px) {
+			.left_pd5{
+				padding-left:0% !important;
+			}
+			.centerinmobile{
+				display: flex;
+    			justify-content: center;
+			}
+			.ci::before, .ci::after{
+      content: none !important;
+    }
+			.textstyle {
+				color: white;
+				font-size: 24px;
+				font-weight: bold;
+				margin-top: 23px;
+			}
+			.respns{
+				text-align: center; 
+				justify-content: center; 
+				display: flex;
+			}
 			.centeraline{
 				text-align: center; 
 				justify-content: center; 
@@ -364,14 +612,13 @@
 				height: 53px;
 			}
 			.custom_margin{
-				margin-left: 0px!important;
 				margin-right: 0px!important;
 			}
 			.all_center{
 				text-align: center;
 				justify-content: center;
 				display: grid;
-				-padding-left: 7px !important;
+				
 			}
 
 			.circles {
@@ -382,17 +629,15 @@
 				background-color: rgba(48,194,131,0.5019607843137255);
 				border: 5px solid #ffffff;
 				margin-bottom: 32px;
+				display: flex;
+				text-align: center; 
+				justify-content: center;
 
 			}
 			.plus-minus{
 				display: block !important;
 			}
-			.textstyle {
-				color: white;
-				font-size: 34px;
-				font-weight: bold;
-				margin-top: 92px;
-			}
+			
 			.text1{
 				margin-top: 77px !important;
 			}
@@ -415,7 +660,7 @@
 				overflow-x: hidden;
 				overflow-y: auto;
 				height: 693px;
-
+				width: 330px;
 			}
 
 		}
@@ -440,7 +685,7 @@
 		foreach ($v as $k2 => $v2) {
 			if($k == "dress"){
 				$productName = ingredients_price($v2->product);
-				$array =  array('product' => $v2->product, 'product_name' => $productName->cat_pro_name, 'size' =>$v2->size,'serving'=>$v2->serving,'qty'=>$v2->quantity);
+				$array =  array('product' => $v2->product, 'product_name' => $productName->cat_pro_name, 'size' =>'On The Side','serving'=>'','qty'=>$v2->quantity);
 				array_push($dress, $array);
 			} elseif($k == "pre"){
 				$productName = ingredients_price($v2->product);
@@ -460,26 +705,26 @@
 	?>  
 <!-- style="align-items: end!important;" 
 	menu-section-->
-	<div class="container-fluid">
+	<div class="container-fluid" style="overflow-y: hidden; overflow-x:hidden;">
 
 		<div class="row">
 			<div class="col-lg-12 col-xs-12">
 				<center>
 					<span class="center-text"><?=$re_product->product_name;?> <br> 
-						<div style="display: inline;" id="price">$<?php echo $re_product->product_price; ?></div></span>
+						<div style="display: inline;" id="price"><?php echo MONEY_SIGN ?><?php echo $re_product->product_price; ?></div></span>
 				</center>
 			</div>
 		</div>
 
 		<div class="col-lg-12">
 			<div class="row all_center" >
-				<div class="row centeraline">
+				<div class="row centeraline" >
 				<input id="price1" type="hidden" value="<?php echo $re_product->product_price	; ?>">
 				<?php foreach ($categories as $key => $value) { 
 
-					if($value->name == "TOPPINGS"){?>
+					if($value->name == "TOPPINGS"){ ?>
 						<a class="show_items top clicked" style data-id = "<?=$value->cat_id?>">
-							<div class="col-lg-2 col-sm-6" style="text-align: center; justify-content: center;">
+							<div class="col-lg-2 col-sm-6 respns" style="text-align: center; justify-content: center;">
 								<div class="circles hovercircle">
 									<center><div class="textstyle clicked"><?=$value->name?></div>
 
@@ -510,9 +755,9 @@
 						}
 						?>
 						<a  class="show_items  <?php echo $arrayIndex; ?>"  data-id = "<?=$value->cat_id?>">
-							<div class="col-lg-3 col-sm-6 " style="text-align: center; justify-content: center;">
+							<div class="col-lg-3 respns" style="text-align: center; justify-content: center;">
 
-								<div class="circles hovercircle clicked">
+								<div class="circles hovercircle">
 									<center><div class="textstyle "><?=$value->name?></div>
 
 										<p class="items_div" style="color: #fff; text-align: center;">
@@ -536,174 +781,153 @@
 
 
 				<!-- end top -->
-				<div class="row all_center">
-					<div class="card text-center">
-						<h3 class="card-title"></h3>
-						
-							<?php foreach ($categories as $key1 => $value1) { 
+	<div class="row all_center">
+		<div class="card text-center scrollmain">
+			<h3 class="card-title"></h3>
+			
+				<?php foreach ($categories as $key1 => $value1) { 
 
-								if(strtolower($value1->name) == "toppings"){
-									$arrayIndex = "top"; 
-									$searchArray =  $top;
-									?>
-									<input type="hidden" id="countervalue<?=$arrayIndex?>" value="<?php echo count($top); ?>"><?php 
-								}
+					if(strtolower($value1->name) == "toppings"){
+						$arrayIndex = "top"; 
+						$searchArray =  $top;
+						?>
+						<input type="hidden" id="countervalue<?=$arrayIndex?>" value="<?php echo count($top); ?>"><?php 
+					}
 
-								if(strtolower($value1->name) == "premiums"){
-									$searchArray =  $premium;
-									$arrayIndex = "pre";?>
-									<input type="hidden" id="countervalue<?=$arrayIndex?>" value="<?php echo count($premium); ?>"><?php 
-								}
+					if(strtolower($value1->name) == "premiums"){
+						$searchArray =  $premium;
+						$arrayIndex = "pre";?>
+						<input type="hidden" id="countervalue<?=$arrayIndex?>" value="<?php echo count($premium); ?>"><?php 
+					}
 
-								if(strtolower($value1->name) == "bases"){
-									$searchArray =  $base;
-									$arrayIndex = "base";?>
-									<input type="hidden" id="countervalue<?=$arrayIndex?>" value="<?php echo count($base); ?>"><?php 
-								}
+					if(strtolower($value1->name) == "bases"){
+						$searchArray =  $base;
+						$arrayIndex = "base";?>
+						<input type="hidden" id="countervalue<?=$arrayIndex?>" value="<?php echo count($base); ?>"><?php 
+					}
 
-								if(strtolower($value1->name) == "dressings"){
-									$searchArray =  $dress;
-									$arrayIndex = "dress";?>
-									<input type="hidden" id="countervalue<?=$arrayIndex?>" value="<?php echo count($dress); ?>"><?php 
-								}?>
-								<div class="row">
-								<div class=" bg-white animated slideInUp items  hidden <?=$value1->cat_id?>" data-max = "<?=$value1->maxQty?>" data-min = "<?=$value1->minQty?>">
+					if(strtolower($value1->name) == "dressings"){
+						$searchArray =  $dress;
+						$arrayIndex = "dress";?>
+						<input type="hidden" id="countervalue<?=$arrayIndex?>" value="<?php echo count($dress); ?>"><?php 
+					}?>
 
-									<div>
-										<input type="hidden" id="maxQty<?=$arrayIndex?>" value="<?=$value1->maxQty?>">
-										<input type="hidden" id="minQty<?=$arrayIndex?>" value="<?=$value1->minQty?>">
-										<input type="hidden" id="counter<?=$arrayIndex?>" value="<?=$counter?>">
+					<div class="row left_pd5 centerinmobile">
+					<div class=" bg-white animated slideInUp items  hidden <?=$value1->cat_id?>" data-max = "<?=$value1->maxQty?>" data-min = "<?=$value1->minQty?>" >
 
-										<?php 
-										$ingredients = has_ingredeients($value1->cat_id); 
-										foreach ($ingredients as $key2 => $value2) { 
-											if(strtolower($value1->name) == "dressings"){ ?>
-												<?php if($key2 % 6 == 0){?>
-													</div>
-													<div class="row centeraline">
-												<?php } ?>
-												<div class="col-lg-2 col-sm-6 option" style="padding-bottom:25px;">
-													<div class="ci circle  <?php $classChk = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($classChk)?'color':'spin'; ?>" onclick="encirecl(this,<?=$value1->cat_id?>);" data-name="<?php echo $value2->cat_pro_name ?>" data-price = "<?=$value2->cat_pro_price?>" data-id="<?php echo $value2->cat_pro_id ?>" data-index= "<?=$arrayIndex?>">
-														<img class="basemenuimage" src="<?php echo PRODUCT_IMAGE_UPLOAD.$value2->cat_pro_image  ?>">
-														<p class="menu_text">
-															<?php echo $value2->cat_pro_name ?>
-														</p>
-													</div>
-													<div class="inbtn" style="display:<?php $classChk = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($classChk)?'block':'none'; ?>;">
-
-														<button type="button" class="btn-circle <?php foreach ($searchArray as $k => $v) {
-															if($v['product'] ==  $value2->cat_pro_id && $v['size'] == 'S'){
-																echo 'active';
-															}
-														} ?>" data-index= "<?=$arrayIndex?>" onclick="toppingSize(this,<?php echo $value2->cat_pro_id; ?>,'S')">S</button>
-														<button type="button" class="btn-circle <?php foreach ($searchArray as $k => $v) {
-															if($v['product'] ==  $value2->cat_pro_id && $v['size'] == 'M'){
-																echo 'active';
-															}
-														} ?>" data-index= "<?=$arrayIndex?>" onclick="toppingSize(this,<?php echo $value2->cat_pro_id; ?>,'M')">M</button>
-														<button type="button" class="btn-circle <?php foreach ($searchArray as $k => $v) {
-															if($v['product'] ==  $value2->cat_pro_id && $v['size'] == 'L'){
-																echo 'active';
-															}
-														} ?>" data-index= "<?=$arrayIndex?>" onclick="toppingSize(this,<?php echo $value2->cat_pro_id; ?>,'L')">L</button>
-
-														<input type="hidden" id="ingSize<?php echo $value2->cat_pro_id; ?>" value = "<?php foreach ($dress as $k => $v) {echo $v['size'];} ?>">
-													</div>
-
-													<div class="sczrbtn" style="display: <?php $classChk = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($classChk)?'block':'none'; ?>;">
-														<input type="hidden" id="ingServing<?php echo $value2->cat_pro_id; ?>" value = "<?php foreach ($searchArray as $k => $v) {echo $v['serving'];} ?>">
-														<button type="button" class="btn-circle-top <?php foreach ($searchArray as $kx => $vx) {
-															if($vx['product'] ==  $value2->cat_pro_id && $vx['serving'] == 'Side'){
-																echo 'active';
-															}
-														} ?>" data-index= "<?=$arrayIndex?>" onclick="serving(this,<?php echo $value2->cat_pro_id; ?>,'Side')">Side</button>
-														<button type="button" class="btn-circle-top <?php foreach ($searchArray as $kx => $vx) {
-															if($vx['product'] ==  $value2->cat_pro_id && $vx['serving'] == 'Mixed'){
-																echo 'active';
-															}
-														} ?>" data-index= "<?=$arrayIndex?>" onclick="serving(this,<?php echo $value2->cat_pro_id; ?>,'Mixed')">Mixed</button>
-
-													</div>
-
-
-													<div class="qtybtn" style="display: <?php $checkStatus = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($checkStatus)?'block':'none';  ?>;">
-														<button type="button"  data-index= "<?=$arrayIndex?>"	 class="btn-circle" onclick="plus(this,<?=$value2->cat_pro_id?>)"><i class="fa fa-plus"></i></button>
-														<input class="counter" id="<?=$value2->cat_pro_id?>" value="<?php foreach ($searchArray as $k => $v) {
-
-
-															if($v['product'] ==  $value2->cat_pro_id){
-																echo $v['qty'];
-															}
-														} ?>">
-
-														<input type="hidden" id="<?=$value2->cat_pro_id?>Qty" value=''>
-														<button type="button"  data-index= "<?=$arrayIndex?>"	 class="btn-circle" onclick="minus(this,<?=$value2->cat_pro_id?>)"><i class="fa fa-minus"></i></button>
-													</div>
-													
-												</div>
-											<?php }else{ ?>
-
-												<?php if($key2 % 6 == 0){?>
-													</div>
-													<div class="row centeraline" >
-												<?php } ?>
-												<div class="col-lg-2 col-sm-6 " style="padding-bottom:25px;margin-left:30px;">
-													<div class="ci circle <?php $classChk = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($classChk)?'color':'spin'; ?>"" onclick="encirecl(this,<?=$value1->cat_id?>);" data-name="<?php echo $value2->cat_pro_name ?>" data-price = "<?=$value2->cat_pro_price?>" data-id="<?php echo $value2->cat_pro_id ?>" data-index= "<?=$arrayIndex?>">
-														<img class="basemenuimage" src="<?php echo PRODUCT_IMAGE_UPLOAD.$value2->cat_pro_image  ?>">
-														<p class="menu_text">
-															<?php echo $value2->cat_pro_name ?>
-														</p>
-														<!-- <p class="menu_text inc"><?php $classChk = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($classChk)?'Included':''; ?></p> -->
-													</div>
-
-													<div class="qtybtn" style="display:<?php $classChk = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($classChk)?'block':'none'; ?>;">
-														<button type="button"  data-index= "<?=$arrayIndex?>" class="btn-circle" onclick="plus(this,<?=$value2->cat_pro_id?>)"><i class="fa fa-plus"></i></button>
-														<input class="counter" id="<?=$value2->cat_pro_id?>" value="<?php foreach ($searchArray as $k => $v) {
-															if($v['product'] ==  $value2->cat_pro_id){
-																echo $v['qty'];
-															}
-														} ?>">
-
-														<input type="hidden" id="<?=$value2->cat_pro_id?>Qty" value=''>
-														<button type="button"  data-index= "<?=$arrayIndex?>" class="btn-circle" onclick="minus(this,<?=$value2->cat_pro_id?>)"><i class="fa fa-minus"></i></button>
-													</div>
-
-												</div>
-
-											<?php } } ?>
-
-
+						<div>
+							<input type="hidden" id="maxQty<?=$arrayIndex?>" value="<?=$value1->maxQty?>">
+							<input type="hidden" id="minQty<?=$arrayIndex?>" value="<?=$value1->minQty?>">
+							<input type="hidden" id="counter<?=$arrayIndex?>" value="<?=$counter?>">
+							<?php 
+							$ingredients = has_ingredeients($value1->cat_id); 
+							foreach ($ingredients as $key2 => $value2) { 
+								if(strtolower($value1->name) == "dressings"){ ?>
+									
+									<div class="col-lg-2 col-md-12 col-sm-12 custom_col_dressing option custom_col_tab" style="padding-bottom:25px;">
+										<div class="ci circle ci_dressing <?php $classChk = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($classChk)?'color':'spindressing'; ?>" onclick="encirecl(this,<?=$value1->cat_id?>);" data-name="<?php echo $value2->cat_pro_name ?>" data-price = "<?=$value2->cat_pro_price?>" data-id="<?php echo $value2->cat_pro_id ?>" data-index= "<?=$arrayIndex?>">
+											<img class="basemenuimage" src="<?php echo PRODUCT_IMAGE_UPLOAD.$value2->cat_pro_image  ?>">
+											<p class="menu_text">
+												<?php echo $value2->cat_pro_name ?>
+											</p>
 										</div>
+		<div class="extracls inbtn" style="display:<?php $classChk = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($classChk)?'block':'none'; ?>;">
+
+			<button type="button" id="<?= $value2->cat_pro_id?>extra" class="btn-circle otherbtn" data-index= "<?=$arrayIndex?>" onclick="toppingSize(this,<?php echo $value2->cat_pro_id; ?>,'Extra')"><img src="<?php echo base_url(); ?>/assets/dropicon.png" style="width:33px"><br/>Extra</button>
+		</div>
+		<div class="mediumcls inbtn" style="display:<?php $classChk = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($classChk)?'block':'none'; ?>;">	
+			<button type="button" id="<?= $value2->cat_pro_id?>medium" class="btn-circle otherbtn" data-index= "<?=$arrayIndex?>" onclick="toppingSize(this,<?php echo $value2->cat_pro_id; ?>,'Medium')"><img src="<?php echo base_url(); ?>/assets/dropicon.png" style="width:27px"><br/>Medium</button>
+		</div>
+		<div class="largecls inbtn" style="display:<?php $classChk = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($classChk)?'block':'none'; ?>;">
+			<button type="button" id="<?= $value2->cat_pro_id?>light" class="btn-circle otherbtn" data-index= "<?=$arrayIndex?>" onclick="toppingSize(this,<?php echo $value2->cat_pro_id; ?>,'Light')"><img src="<?php echo base_url(); ?>/assets/dropicon.png" style="width:18px"><br/>Light</button>
+		
+			
+			<input type="hidden" id="ingSize<?php echo $value2->cat_pro_id; ?>" value = "<?php foreach ($dress as $k => $v) {echo $v['size'];} ?>">
+		</div>
+
+				<div class="sczrbtn" style="display: <?php $classChk = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($classChk)?'block':'none'; ?>;">
+					<input type="hidden" id="ingServing<?php echo $value2->cat_pro_id; ?>" value = "<?php foreach ($searchArray as $k => $v) {echo "On The Side";} ?>">
+					<button type="button" id="<?= $value2->cat_pro_id?>side" class="btn-circle-top otherbtn active" data-index= "<?=$arrayIndex?>" onclick="toppingSize(this,<?php echo $value2->cat_pro_id; ?>,'On The Side')"><img src="<?php echo base_url(); ?>/assets/bowl.png" style="width:27px"><br/>On The Side</button>
+					<!-- <button type="button" class="btn-circle-top <?php foreach ($searchArray as $kx => $vx) {
+						if($vx['product'] ==  $value2->cat_pro_id && $vx['serving'] == 'Mixed'){
+							echo 'active';
+						}
+					} ?>" data-index= "<?=$arrayIndex?>" onclick="serving(this,<?php echo $value2->cat_pro_id; ?>,'Mixed')">Mixed</button> -->
+
+				</div>
+
+<!-- 
+										<div class="qtybtn" style="display: <?php $checkStatus = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($checkStatus)?'block':'none';  ?>;">
+											<button type="button"  data-index= "<?=$arrayIndex?>"	 class="btn-circle" onclick="plus(this,<?=$value2->cat_pro_id?>)"><i class="fa fa-plus"></i></button>
+											<input class="counter" id="<?=$value2->cat_pro_id?>" value="<?php foreach ($searchArray as $k => $v) {
+
+
+												if($v['product'] ==  $value2->cat_pro_id){
+													echo $v['qty'];
+												}
+											} ?>">
+
+											<input type="hidden" id="<?=$value2->cat_pro_id?>Qty" value=''>
+											<button type="button"  data-index= "<?=$arrayIndex?>"	 class="btn-circle" onclick="minus(this,<?=$value2->cat_pro_id?>)"><i class="fa fa-minus"></i></button>
+										</div> -->
+										
 									</div>
-									</div>
+								<?php }else{ ?>
 
-								<?php } ?>
-							
+									
+<div class="col-lg-2 col-md-12 col-sm-12 custom_col custom_col_tab" style="padding-bottom:25px;">	
+			<div class="ci circle <?php $classChk = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($classChk)?'color':'spin'; ?>" onclick="encirecl(this,<?=$value1->cat_id?>);" data-name="<?php echo $value2->cat_pro_name ?>" data-price = "<?=$value2->cat_pro_price?>" data-id="<?php echo $value2->cat_pro_id ?>" data-index= "<?=$arrayIndex?>">
+				<img class="basemenuimage" src="<?php echo PRODUCT_IMAGE_UPLOAD.$value2->cat_pro_image  ?>">
+				<p class="menu_text">
+					<?php echo $value2->cat_pro_name ?>
+				</p>
+				 <p class="menu_text inc" style="margin-top:-15px"><?php $classChk = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($classChk)?'Included':''; ?></p> 
+			</div>
 
+			<div class="qtybtn" style="display:<?php $classChk = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($classChk)?'block':'none'; ?>;">
+				<button type="button"  data-index= "<?=$arrayIndex?>" class="btn-circle" onclick="plus(this,<?=$value2->cat_pro_id?>)"><i class="fa fa-plus"></i></button>
+				<input class="counter" id="<?=$value2->cat_pro_id?>" value="<?php foreach ($searchArray as $k => $v) {
+					if($v['product'] ==  $value2->cat_pro_id){
+						echo $v['qty'];
+					}
+				} ?>">
+
+				<input type="hidden" id="<?=$value2->cat_pro_id?>Qty" value='1'>
+				<button type="button" onclick="minus(this,<?=$value2->cat_pro_id?>)"  data-name="<?php echo $value2->cat_pro_name ?>" data-price = "<?=$value2->cat_pro_price?>" data-id="<?php echo $value2->cat_pro_id ?>"   data-index= "<?=$arrayIndex?>" data-catid="<?=$value1->cat_id?>" class="btn-circle" ><i class="fa fa-minus"></i></button>
+			</div>
+
+</div>
+
+								<?php } } ?>
+
+
+							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-12">&nbsp;
 						</div>
-					</div>
+						<input type="hidden" id="countervalue<?=@$arrayIndex?>" value="0">
+					<?php } ?>
+				
 
+			</div>
+		</div>
+		</div>
+		</div>
+
+					<div class="col-lg-12">&nbsp;</div>
 					<div class="row">
 						<div class="col-lg-4">
 						</div>
 						<div class="col-lg-4 text-center">
-							<button type="button" class="bottom-button" onclick="order_now()">Looks good</button>
+							<button type="button" class="bottom-button" onclick="order_now()">Looks Good</button>
 						</div>
 						<div class="col-lg-4">
 						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-12">&nbsp;
-					</div>
-				</div>
+				
+				<br/><br/><br/>
 
 				<!-- end slide -->
-			</div>
+			
 
 
 
@@ -893,30 +1117,30 @@
 					</div>
 					<?php } ?> -->
 <script>
-		$(document).ready(function(){
-			$("body").click(function(e){
-				if($(e.target).is(".clicked")){
-					var text = $(e.target).closest('.circles').find(".textstyle").text();
-					var check = $(".card-title").text();
-					$(".card-title").html(text);
+		// $(document).ready(function(){
+		// 	$("body").click(function(e){
+		// 		if($(e.target).is(".clicked")){
+		// 			var text = $(e.target).closest('.circles').find(".textstyle").text();
+		// 			var check = $(".card-title").text();
+		// 			$(".card-title").html(text);
 
-					if(text == check || text == ''){
-						$(".card").toggle();
-						$(".card").removeClass("show");
-						scroll();
-					}
-					else{
-						$(".card").addClass("show");
-						scroll();	
-					}
-				}
-			});
-		});
-		function scroll(){
-			document.querySelector('.card-title').scrollIntoView({ 
-				behavior: 'smooth' 
-			});
-		}
+		// 			if(text == check || text == ''){
+		// 				$(".card").toggle();
+		// 				$(".card").removeClass("show");
+		// 				scroll();
+		// 			}
+		// 			else{
+		// 				$(".card").addClass("show");
+		// 				scroll();	
+		// 			}
+		// 		}
+		// 	});
+		// });
+		// function scroll(){
+		// 	document.querySelector('.card-title').scrollIntoView({ 
+		// 		behavior: 'smooth' 
+		// 	});
+		// }
 	</script>
 
 
@@ -954,18 +1178,31 @@
     });
 
 
-							$(".show_items").click(function(){
+							$(".show_items").click(function(e){
 								var id = $(this).data("id");
+								var text = $(e.target).closest('.circles').find(".textstyle").text();
+								$(".card-title").html(text);
+								
 								if($("."+id).hasClass("hidden")){
+									$(".card").addClass("show");
+									scroll();
+
 									$(".items").addClass("hidden");
 									$("."+id).removeClass("hidden");
 								}else{
 									$("."+id).addClass("hidden");
+									 	$(".card").toggle();
+									 	$(".card").removeClass("show");
+									 	scroll();
 								}
 							});
 						});
 
-
+function scroll(){
+		document.querySelector('.scrollmain').scrollIntoView({ 
+			behavior: 'smooth' 
+		});
+}
 
   function addToArray(name, value) { //add products to array
   	newProducts[name].push(value);
@@ -986,9 +1223,11 @@
   	var minQty = $("#minQty"+abc).val();
     var maxQty = $("#maxQty"+abc).val(); //get max quantity of category
     var totlco = $("#countervalue"+abc).val();
+
+    
     if(count == maxQty || totlco == maxQty){
     	toasterOptions();
-    	toastr.error('You Reached Maximun Limit');
+    	toastr.error('You Reached Maximum Limit');
     	return false;
     }
     $("#countervalue"+abc).val(parseInt($("#countervalue"+abc).val())+parseInt(1));
@@ -1025,7 +1264,7 @@
             	dataType:'json',
             	success:function(res)
             	{
-
+            		
             		var updatedPrice = 0;
             		var currentPrice = $("#price1").val();
 
@@ -1033,10 +1272,9 @@
             			updatedPrice = parseFloat(res.price)+parseFloat(currentPrice);
             		}else{
             			updatedPrice = currentPrice;
-
             		}
       
-            		$("#price").html("$"+updatedPrice);
+            		$("#price").html("<?php echo MONEY_SIGN ?>"+updatedPrice);
             		$("#price1").val(updatedPrice);
 
             	}
@@ -1052,6 +1290,10 @@
         	var minQty = $("#minQty"+abc).val();
         	var count =   $(ele).parents(".qtybtn").find("input").val();
         	if(count<=1){
+        		
+        		var cat_id = $(ele).data("catid");
+        		encirecl(ele,cat_id,true);
+        		$(ele).parent().prev().find(".inc").html('');
         		return false;
         	}else{
         		var updatedCount = parseInt(count)-parseInt(1);
@@ -1104,45 +1346,45 @@
       		}
 
 
-      		$("#price").html("$"+updatedPrice);
+      		$("#price").html("<?php echo MONEY_SIGN ?>"+updatedPrice);
       		$("#price1").val(updatedPrice);
 
       	}
       });   
-
-
-
   }
+
 
 }
 
 
 
-function encirecl(ele,cat_id) 
+function encirecl(ele,cat_id,remove = false) 
 {
 	
 	var maxQty = $("."+cat_id).data("max");
-    var addCounter = parseInt($("#counter").val())+parseInt(1);  //count added
-    var minQty = $("."+cat_id).data("min"); //get min quantity of category
+    var addCounter = parseInt($("#counter").val())+parseInt(1);  // count added
+    var minQty = $("."+cat_id).data("min"); // get min quantity of category
     var abc = $(ele).data("index"); // category index name
     var selectedCount = newProducts[abc].length; //selected items count
     var newCounter = parseInt(selectedCount)+parseInt(addCounter); //new counter set
     var totlco = $("#countervalue"+abc).val();
-
-    if(newCounter>maxQty || totlco==maxQty)  //max quantity reach return false
-    { 
-    	if (!$(ele).hasClass('color')) {
-    		toasterOptions();
-    		toastr.error('You Reached Maximun Limit');
-    		return false;
-    	}
+   
+    if(remove == false){
+	    if(newCounter>maxQty || totlco==maxQty)  //max quantity reach return false
+	    { 
+	    	if (!$(ele).hasClass('color')) {
+	    		toasterOptions();
+	    		toastr.error('You Reached Maximum Limit');
+	    		return false;
+	    	}
+	    }
     }
     
     $(ele).toggleClass(addclass);
 
-    if ($(ele).hasClass('color')) { //if selected
-    	
-    	counter++;
+    if ($(ele).hasClass('color') && remove == false) { //if selected
+      
+      counter++;
       var item = $(ele).data('id'); //product id
       var n = item.toString();
       $("."+abc).find("p").append("<div data-salad-id='" + $(ele).data('id') + "'>" + $(ele).data('name') + "</div>");
@@ -1153,36 +1395,50 @@ function encirecl(ele,cat_id)
       $(ele).parent().find(".sczrbtn").fadeIn();
       $(ele).parent().find(".qtybtn").fadeIn();
       $("#countervalue"+abc).val(parseInt($("#countervalue"+abc).val())+parseInt(1));
-      var prc = $(ele).data('price');
-      $(ele).find(".inc").html("$"+prc);
+      // var prc = $(ele).data('price');
+      // $(ele).find(".inc").html("<?php echo MONEY_SIGN ?>"+prc);
       var currentPrice = $("#price1").val();
       var updatedPrice = 0;
-      if(minQty < totlco){
-
+      
+      if(minQty < 1 || totlco >= 4){
+      	var prc = $(ele).data('price');
+        $(ele).find(".inc").html("<?php echo MONEY_SIGN ?>"+prc);
       	updatedPrice = parseFloat(prc)+parseFloat(currentPrice);
+
       }else{
+        $(ele).find(".inc").html("Included");
       	updatedPrice = parseFloat(currentPrice);
       }
       
-      $("#price").html("$"+updatedPrice);
+      $("#price").html("<?php echo MONEY_SIGN ?>"+updatedPrice);
       $("#price1").val(updatedPrice);
       $("#"+item).val(parseInt(1));
   } else {
-
+  		
       // remove form array
       counter--;
       var prc = $(ele).data('price');
       var currentPrice = $("#price1").val();
       var updatedPrice = 0;
-      if(minQty < 1){
+   //    alert(minQty);
+	  // alert(totlco);    
+      if(minQty < 1 || totlco > 4){
       	updatedPrice = parseFloat(currentPrice)-parseFloat(prc); 
       }else{
       	updatedPrice = currentPrice;
       }
-      $("#price").html("$"+updatedPrice);
+
+      $("#price").html("<?php echo MONEY_SIGN ?>"+updatedPrice);
       $("#price1").val(updatedPrice);
+
       $(ele).addClass(removeclass);
-      var item = $(ele).data('id')
+      var item = $(ele).data('id');
+
+      if(remove == true){
+      	 $(ele).parent().prev().addClass(removeclass);
+      	 $(ele).parent().prev().removeClass(addclass);
+      	 $(ele).parent().css({'display': 'none'});
+  		}
       var n = item.toString();
      $("."+abc).find("p").children("div[data-salad-id='" + $(ele).data('id') + "']").remove(); //remove form list
      $(ele).parent().find(".inbtn").fadeOut();
@@ -1194,7 +1450,7 @@ function encirecl(ele,cat_id)
          newProducts[abc].splice(index, 1); //remove form array
          return false;
      }
-
+     
  });
      $("#countervalue"+abc).val(parseInt($("#countervalue"+abc).val())-parseInt(1));
      
@@ -1203,40 +1459,57 @@ function encirecl(ele,cat_id)
 
  var category_id = <?php echo $category_id; ?>;
 
-
-
-
 }
 
 
     function toppingSize(ele,id,size){ //topping size
 
     	if($(ele).closest("div .inbtn").children().hasClass("active")){
-    		$(ele).closest("div .inbtn").children().removeClass("active");
-    	}
-    	var abc = $(ele).data("index");
-    	$(newProducts[abc]).each(function( index, element ) {
-    		if(element.product == id) {
-    			newProducts[abc].splice(index, 1);
-    			return false;
-    		}
+         $(ele).closest("div .inbtn").children().removeClass("active");
+         return false;
+      }
+     
+      if($("#"+id+"side").hasClass("active")){
+          $("#"+id+"side").removeClass("active");
+      }
+      if($("#"+id+"extra").hasClass("active")){
+        $("#"+id+"extra").removeClass("active");
+      }
+      if($("#"+id+"medium").hasClass("active")){
+         $("#"+id+"medium").removeClass("active");
+      }
 
-    	});
-    	var qunty =  $("#"+id+"Qty").val();
+     if($("#"+id+"light").hasClass("active")){
+        $("#"+id+"light").removeClass("active");
+      }
+      
+      var abc = $(ele).data("index");
 
+      $(newProducts[abc]).each(function( index, element ) {
+        if(element.product == id) {
+          newProducts[abc].splice(index, 1);
+          return false;
+        }
+        
+      });
 
+      var qunty =  $("#"+id+"Qty").val();
 
-    	var serving;
+       $("div[data-salad-id='" + id + "']").children("div[data-size-id='" + id + "']").remove();
 
-    	if(typeof $("#ingServing"+id).val() === "undefined"){
-    		serving = '';
-    	}else{
-    		serving = $("#ingServing"+id).val();
-    	}
-    	$(ele).addClass("active");
-    	var addeddata = {'product':id,'quantity':qunty,'size':size,'serving':serving};
-    	addToArray(abc,addeddata);
-    	$("#ingSize"+id).val(size);
+       $(".items_div").children("div[data-salad-id='" + id + "']").append("<div style='display:inline' data-size-id='" + id + "'> (" + size + ")</div>");
+
+      
+      // var serving;
+      // if(typeof $("#ingServing"+id).val() === "undefined"){
+      //   serving = '';
+      // }else{
+      //   serving = $("#ingServing"+id).val();
+      // }
+      $(ele).addClass("active");
+      var addeddata = {'product':id,'quantity':qunty,'size':size};
+      addToArray(abc,addeddata);
+      $("#ingSize"+id).val(size);
 
     }
 
@@ -1296,8 +1569,10 @@ function order_now() { //order now
 		});
 	});
 
+	var edit = 0;
 	if(JSON.stringify(checkary1) != JSON.stringify(checkary2)) {
-		customtitel = "CUSTOM ";
+		customtitel = "Custom ";
+		edit = 1;
 	}
 
 	var category_id = <?php echo $category_id; ?>;
@@ -1308,7 +1583,7 @@ function order_now() { //order now
 	$.ajax({
 		method:'POST',
 		url:"<?php echo base_url('order/order_now');?>",
-		data:{id:category_id,name:name,selected:newProducts,price:price,slug:slug},
+		data:{id:category_id,name:name,selected:newProducts,price:price,slug:slug,edit:edit},
 		dataType:'json',
 
 		success:function(data)

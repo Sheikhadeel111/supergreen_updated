@@ -1,31 +1,56 @@
 <style type="text/css">
+
+  .option{
+   
+  }
 	.newcircel {
    border-radius: 50%;
    border: #f88f26 2px solid;
  }
  .inbtn{
-  position: fixed;
-
+  
+  
 }
 .counter{
-  width: 10px;
+  width: 15px;
   background: transparent;
   border: none;
 }
-
-.mybtn{
-  background: transparent;
-  border: #f88f26 solid;
-  padding: 4px 7px !important;
+.btn:focus{
+  color: white !important;
+}
+.btn:hover{
+  color: white !important;
 }
 
-.mybtn:hover{
-  background: transparent;
-  border: #f88f26 solid;
-  padding: 4px 7px !important;
-}
+.btn-circle {
+    color:white;
+    background-color: #e5acbc;
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+    border:none;
+    outline: none !important;
+  }
+
 .bottom-button{
-          background-color: #fba7b0;
+   background-color: #e5acbc;
+    border: 1px solid #e5acbc;
+    padding: 12px 30px !important;
+    border-radius: 3px;
+    margin-right: 18px;
+    font-size: 15px!important;
+    font-weight: 400!important;
+    text-transform: capitalize!important;
+    width:156px;
+    margin-top: 83px;
+    margin-bottom: 28px;
+    color:white;
+    outline: none !important;
+        /*  background-color: #e5acbc;
           border: 2px solid white;
           color: white;
           font-size: 29px;
@@ -35,8 +60,11 @@
           padding-top: 5px;
           padding-bottom: 8px;
           font-weight: bold;
-          border-radius: 4px;
-          margin-top: 83px;
+          border-radius: 4px;*/
+        
+    }
+    .bottom-button:hover{
+      background-color: #F292AE;
     }
 
 .d-1{
@@ -53,11 +81,13 @@
   border-radius: 50%;
   border: 5px solid #fff;
   border-style: dotted;
+      height: 140px;
 }
 
 .ib1{
-
-  margin-left: 70px;
+    margin-left: 21px;
+    margin-top: 130px;
+    color:white;
 }
 
 
@@ -75,6 +105,7 @@
   border-radius: 50%;
   border: 5px solid #fff;
   border-style: dotted;
+   height: 140px;
 }
 
 .ib2{
@@ -97,7 +128,7 @@
   border-radius: 50%;
   border: 5px solid #fff;
   border-style: dotted;
-  
+   height: 140px;
 }
 
 .ib3{
@@ -122,7 +153,7 @@
   border-radius: 50%;
   border: 5px solid #fff;
   border-style: dotted;
-  
+   height: 140px;
 }
 .ib4{
   top: 11px;
@@ -143,7 +174,7 @@
   border-radius: 50%;
   border: 5px solid #fff;
   border-style: dotted;
-
+   height: 140px;
 }
 
 
@@ -168,7 +199,7 @@
   border-radius: 50%;
   border: 5px solid #fff;
   border-style: dotted;
-
+   height: 140px;
 }
 
 
@@ -240,17 +271,7 @@
     display: flex;
     margin-top: 119px;
   }
-  @media (min-width:320px) and (max-width:576px){
-    .mt30sm{
-      margin-top: 30px;    
-    }
-    .mh380{
-      min-height: 380px!important;
-    }
-    .mh400{
-      min-height: 400px!important;
-    }
-  }
+  
   @media (min-width:768px) and (max-width:2600px){
     .mt25{
       margin-top: 25px;
@@ -280,6 +301,67 @@
     margin-left: 0px!important;
     margin-right:0px!important;
   }
+  @media (min-width:320px) and (max-width:812px){
+
+    .mt25{
+      margin-top: 0px;
+    }
+    .mt40{
+      margin-top: 0px;
+    }
+    .mt_100{
+      margin-top: 0px;
+    }
+    .mt_60{
+      margin-top: 0px;
+    }
+    .mt100{
+      margin-top: 0px;
+    }
+
+           .bottle_circles{
+              width: 120px !important;
+              height: 120px !important;
+            }
+            .mrt7m{
+              margin-top:-7px;
+            }
+
+          .circled-1{
+            height: 129px;
+          }
+          .circled-2{
+            height: 124px;
+          }
+          .circled-3{
+            height: 130px;
+          }
+          .circled-4{
+            height: 130px;
+          }
+          .circled-5{
+            height: 130px;
+          }
+          .circled-6{
+            height: 130px;
+          }
+              .option{
+              position: relative;
+            }
+            .ib1{
+              margin-top: 0px;
+              position: relative;
+            }
+              .mt30sm{
+                margin-top: 30px;    
+              }
+              .mh380{
+                min-height: 380px!important;
+              }
+              .mh400{
+                min-height: 400px!important;
+              }
+  }
 </style>
 <style type="text/css">
  body { 
@@ -290,6 +372,7 @@
   background-size: cover;
 
   background-color: rgba(48,194,131,0.5019607843137255);
+  
 }
 .bg_bottle{
   background: url('assets/images/bottle1.png') no-repeat center; 
@@ -346,7 +429,6 @@
   overflow: hidden;
   min-height: 440px;
 }
-
 </style>
 <div class="container-fluid">
   <div class="row" style="margin-top:90px;">
@@ -355,11 +437,13 @@
       <div class="bg_bottle">
         <div class="row bottle1">
           <div class="option">
-            <div class="col-lg-2  grow  bottle_circles hovercircle" onclick="encirecl(this);" data-drinks= "1">
-              <center><div class="bottle_text middle_text" style="font-size:16px;">
-                <?=$drink1->name."<br>$".$drink1->price?>
-              </div></center>
-            </div>
+            
+              <div class="col-lg-2  grow  bottle_circles hovercircle" onclick="encirecl(this);" data-drinks= "1">
+                <center><div class="bottle_text middle_text" style="font-size:16px;">
+                  <?=$drink1->name."<br>".MONEY_SIGN."&nbsp;".$drink1->price?>
+                </div></center>
+              </div>
+            
             <div class="inbtn ib1" style="display: none;">
                 <button type="button" class="btn mybtn btn-circle" onclick="plus(this,<?=$drink1->id?>)"><i class="fa fa-plus"></i></button>
                 <input class="counter" id="<?=$drink1->id?>" value="1">
@@ -376,9 +460,9 @@
       <div class="bg_bottle1">
         <div class="row bottle2">
          <div class="option">
-            <div class="col-lg-2  grow  bottle_circles hovercircle" onclick="encirecl(this);" data-drinks= "2">
+            <div class="col-lg-2  grow  bottle_circles hovercircle mrt7m" onclick="encirecl(this);" data-drinks= "2">
               <center><div class="bottle_text middle_text" style="font-size:16px;">
-                <?=$drink2->name."<br>$".$drink2->price?>
+                <?=$drink2->name."<br>".MONEY_SIGN."&nbsp;".$drink2->price?>
               </div></center>
             </div>
             <div class="inbtn ib1" style="display: none;">
@@ -399,7 +483,7 @@
          <div class="option" >
             <div class="col-lg-2 grow  bottle_circles hovercircle" onclick="encirecl(this);" data-drinks= "3">
              <center><div class="bottle_text middle_text" style="font-size:16px;">
-              <?=$drink3->name."<br>$".$drink3->price?>
+              <?=$drink3->name."<br>".MONEY_SIGN."&nbsp;".$drink3->price?>
             </div></center>
           </div>
           <div class="inbtn ib1" style="display: none;">
@@ -420,7 +504,7 @@
       <div class="option" >
             <div class="col-lg-2 grow  bottle_circles hovercircle" onclick="encirecl(this);" data-drinks= "4">
              <center><div class="bottle_text middle_text" style="font-size:16px;">
-              <?=$drink4->name."<br>$".$drink4->price?>
+              <?=$drink4->name."<br>".MONEY_SIGN."&nbsp;".$drink4->price?>
             </div></center>
           </div>
           <div class="inbtn ib1" style="display: none;">
@@ -442,7 +526,7 @@
       <div class="option" >
             <div class="col-lg-2 grow  bottle_circles hovercircle" onclick="encirecl(this);" data-drinks= "5">
              <center><div class="bottle_text middle_text" style="font-size:16px;">
-              <?=$drink5->name."<br>$".$drink5->price?>
+              <?=$drink5->name."<br>".MONEY_SIGN."&nbsp;".$drink5->price?>
             </div></center>
           </div>
           <div class="inbtn ib1" style="display: none;">
@@ -464,7 +548,7 @@
       <div class="option" >
             <div class="col-lg-2 grow  bottle_circles hovercircle" onclick="encirecl(this);" data-drinks= "6">
              <center><div class="bottle_text middle_text" style="font-size:16px;">
-              <?=$drink6->name."<br>$".$drink6->price?>
+              <?=$drink6->name."<br>".MONEY_SIGN."&nbsp;".$drink6->price?>
             </div></center>
           </div>
           <div class="inbtn ib1" style="display: none;">
@@ -479,7 +563,7 @@
 <!-- End -->
 <div class="row mlr0">
   <div class="col-md-12 col-xs-12 text-center mb70">
-    <button class="bottom-button" onclick="order_now();">ORDER NOW</button>
+    <button class="bottom-button" onclick="order_now();">Order Now</button>
   </div>
 </div>
 </div>
@@ -654,7 +738,7 @@
 
   function order_now(){
     console.log(newProducts);
-
+  if(newProducts != ""){
     $.ajax({
       method:'POST',
       url:"<?php echo base_url('order/order_drinks');?>",
@@ -674,6 +758,14 @@
         }
       }
     }); 
+
+    }else{
+          toasterOptions();
+          toastr.error("No drink selected");
+          setTimeout(function(){ 
+                window.location.href = "<?php echo base_url('order/add_more');?>";
+        }, 3000);
+    }
   }
 
 

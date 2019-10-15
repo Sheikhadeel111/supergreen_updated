@@ -3,6 +3,7 @@
 <head>
 
 	<title><?php echo $title; ?></title>
+     <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(); ?>app-assets/images/ico/favicon.ico">
 	<base href="<?php echo base_url();?>">
     <script>
     var base_url = '<?php echo base_url(); ?>';
@@ -17,7 +18,8 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" >
     <link rel="stylesheet" href="assets/css/customcss1.css" >
 	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" rel="stylesheet"/>
 	
 	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
@@ -43,12 +45,44 @@
     <script src="app-assets/plugins/jqueryConfirm/jquery-confirm.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
-
-
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700'
+ rel='stylesheet' type='text/css'>
+ <style type="text/css">
+     .jconfirm.jconfirm-supervan .jconfirm-box .jconfirm-buttons button{
+        background-color: #e5acbc!important;
+        border-radius:4px !important;
+        min-width: 156px !important;
+     }
+     .jconfirm .jconfirm-box .jconfirm-buttons button.btn-default:hover{
+        background-color: #F292AE!important;
+        color:white !important;
+     }
+     .jconfirm.jconfirm-white .jconfirm-box .jconfirm-buttons button, .jconfirm.jconfirm-light .jconfirm-box .jconfirm-buttons button{
+        text-transform:capitalize !important;
+     }
+      .jconfirm.jconfirm-supervan .jconfirm-bg{
+        background-color:#189271 !important;
+        opacity: 0.9 !important;
+    }
+    .jconfirm .jconfirm-box{
+      background-color: #189271 !important;
+    }
+    .jconfirm-title{
+      color: white !important;
+    }
+    .toast-error{
+        background-color: #e5acbc !important;
+     }
+     .toast-container > .toast-error{
+        background-image: none !important;
+     }
+ </style>
 
 
 	<script type="text/javascript">
-        
+     
+
+
       function toasterOptions() {
         toastr.options = {
             "closeButton": true,
@@ -79,5 +113,4 @@
         color: #fff;
     }
 </style>
-<body >
-
+<body style="overflow-x: hidden;">

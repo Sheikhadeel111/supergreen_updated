@@ -20,6 +20,7 @@ class Order extends CI_Controller {
 
 	public function index()
 	{
+		
 		$data['title'] = "Order";
 		$data['class'] = "bg";
 		$where['parent'] = 0;
@@ -63,7 +64,7 @@ class Order extends CI_Controller {
 		$where['cat_id'] = $id;
 		$pricedata = $this->crud->get_data("basePrice","categories",$where,true);
 		
-		$data['price'] = 'Price : $'.$pricedata->basePrice.'';
+		$data['price'] = 'Price : '.MONEY_SIGN.$pricedata->basePrice.'';
 		$this->load->view('public/includes/header',$data);
 		$this->load->view('public/includes/leftsidebar');	
 		$this->load->view('public/includes/left_icons');
@@ -73,9 +74,10 @@ class Order extends CI_Controller {
 	}
 
 
+
 	public function readymade($categorySlug,$id = "")
 	{
-		
+
 		$product = get_product_by_slug($categorySlug);
 		$data['title'] = $product->product_name;
 		$data['category_id'] = $product->product_category;
@@ -254,10 +256,12 @@ class Order extends CI_Controller {
 		$first_order = array();
 		$custom = 1;
 		$productItems =  array();
+		if(!empty($_POST['selected'])){
 		foreach ($_POST['selected'] as $key => $value) {
 			foreach ($value as $key2 => $value2) {
 				array_push($productItems,$value2['product']); //sort the selected items in array
 			}
+		}
 		}
 
 		$subCategories = get_subcategories($category);
@@ -281,16 +285,21 @@ class Order extends CI_Controller {
 		}
 
 		$order_price+=$basePrice; //order price
-		$order_items = json_encode($_POST['selected']); //order items json
-		
+		if(!empty($_POST['selected'])){
+			$order_items = json_encode($_POST['selected']); //order items json
+		}
 		if(isset($_POST['custom']))
 		{
 			$custom = 0;
 		}
+		$edit = 0;
+		if($_POST['edit'] == 1){
+			$edit = 1;
+		}
 		
 	
 		if(!empty($_POST['selected'])){
-			$order = array("slug"=>$_POST['slug'],"order_name"=>$order_name,"order_price"=>$order_price,"order_category"=>$category,"order_items"=>$order_items,"qty"=>1,"custom"=>$custom);
+			$order = array("slug"=>$_POST['slug'],"order_name"=>$order_name,"order_price"=>$order_price,"order_category"=>$category,"order_items"=>$order_items,"qty"=>1,"custom"=>$custom,"edit"=>$edit);
 			array_push($first_order,$order); //create first order session
 
 			if (empty($this->session->userdata("order_cart"))) {
@@ -464,33 +473,35 @@ class Order extends CI_Controller {
 
 			$data['title'] = "Order Type";
 			$data['class'] = "bg";
+
 			$this->load->view('public/includes/header',$data);
-			$this->load->view('public/includes/leftsidebar');	
+			$this->load->view('public/includes/leftsidebar');
+			$this->load->view('public/includes/left_icons');	
 			$this->load->view('public/order/ordertype');
-			$this->load->view('public/includes/left_icons');
+			
 			$this->load->view('public/includes/footer');
 		}
 	}
 
 	public function paymentMethod($orderType)
 	{	
-		$guest = $this->session->userdata("user_session");
-		if($guest->role == "guest"){
+		// $guest = = "guest";//$this->session->userdata("user_session");
+		// if($guest->role == "guest"){
 
-		}else{
-			$id = get_user_id();
-			$where['user_id'] = $id;
-			$where_umeta['user_id'] = $id;
-			$user_data = $this->users->get_where('',$where,false);
-			$user_meta = $this->umeta->get_data('*',"",$where_umeta);
-			$data['user'] = $this->users->format_user_data($user_data,$user_meta);
-		}
+		// }else{
+		// 	$id = get_user_id();
+		// 	$where['user_id'] = $id;
+		// 	$where_umeta['user_id'] = $id;
+		// 	$user_data = $this->users->get_where('',$where,false);
+		// 	$user_meta = $this->umeta->get_data('*',"",$where_umeta);
+		// 	$data['user'] = $this->users->format_user_data($user_data,$user_meta);
+		// }
 		
-		$this->session->set_userdata("order_type",$orderType);
-		if($orderType == 1){
-			$array = array('day'=>$_POST['day'],'time'=>$_POST['time']);
-			$this->session->set_userdata("order_timeday",$array);
-		}
+		//$this->session->set_userdata("order_type",$orderType);
+		//if($orderType == 1){
+		//	$array = array('day'=>$_POST['day'],'time'=>$_POST['time']);
+		//	$this->session->set_userdata("order_timeday",$array);
+		//}
 		$data['title'] = "Payment";
 		$data['class'] = "";
 		$data['countries'] = $this->crud->get_data("*","country");
@@ -506,12 +517,11 @@ class Order extends CI_Controller {
 		$data = $_POST;
 		
 		$array = $this->session->userdata("order_cart");
-
 		foreach ($array as $key => $value) {
 			$_SESSION['order_cart'][$key]['qty'] = $data['qty'][$key];
 		}
 		$this->session->set_userdata("order_price",$_POST['total_price']);
-
+		$this->session->set_userdata("vat_price",$_POST['vat_price']);
 	}
 
 	public function complete()
@@ -578,6 +588,7 @@ class Order extends CI_Controller {
 		$data['class'] = "bg";
 		$where['parent'] = $data['order_category'];
 		$data['order_data'] =  $orders[$key];
+
 		$data['categories'] = $this->category->get_data("*","",$where);
 
 		$this->load->view('public/includes/header',$data);
@@ -595,10 +606,20 @@ class Order extends CI_Controller {
 		$price = $_POST['price'];
 		$orders = $this->session->userdata("order_cart");
 		$slug = $orders[$key]['slug'];
-		$order_name = $orders[$key]['order_name'];
+
+		$name = str_replace("Custom"," ",$orders[$key]['order_name']);
+		if($_POST['customtitel'] != ""){
+			$order_name = $_POST['customtitel'].' '.$name;
+		}else{
+			$order_name = $orders[$key]['order_name'];
+		}
+		$edit = 0;
+		if($_POST['edit'] == 1){
+			$edit = 1;
+		}
 		$order_category = $orders[$key]['order_category'];
 		$order_items =  json_encode($_POST['selected']);
-		$order = array("slug"=>$slug,"order_name"=>$order_name,"order_price"=>$price,"order_category"=>$order_category,"order_items"=>$order_items,"qty"=>1,"custom"=>1);
+		$order = array("slug"=>$slug,"order_name"=>$order_name,"order_price"=>$price,"order_category"=>$order_category,"order_items"=>$order_items,"qty"=>1,"custom"=>1,"edit"=>$edit);
 		$orders[$key] = $order;
 		$this->session->set_userdata("order_cart",$orders);
 		if(!empty($this->session->userdata("order_cart"))){
@@ -631,9 +652,10 @@ class Order extends CI_Controller {
 		$data['class'] = "drinksbg";
 	
 		$this->load->view('public/includes/header',$data);
+		$this->load->view('public/includes/left_icons');
 		$this->load->view('public/includes/leftsidebar');	
 		$this->load->view('public/order/editDrink',$data);
-		$this->load->view('public/includes/left_icons');
+	
 		$this->load->view('public/includes/footer');
 	}
 
@@ -665,6 +687,52 @@ class Order extends CI_Controller {
 			}
 			echo json_encode($response);
 			exit();
+	}
+
+	public function edit_name()
+	{	
+		// echo "<pre>";
+		// print_r($_POST);
+		// die;
+		$key = $_POST['key'];
+		$_SESSION['order_cart'][$key]['order_name'] = $_POST['name'];
+
+		//print_r($this->session->userdata("order_cart")); 
+		$res['status'] = true;
+		echo json_encode($res);
+	}
+
+	public function findcoupon(){
+		$data = $this->input->post();
+		
+		$table = 'coupon';
+		$where['code'] = $data['value'];
+		$find = $this->crud_model->get_data("*",$table,$where,true);
+		if(!empty($find)){
+			if($find->expired_at >= Date("Y-m-d") && $find->limit > $find->used){
+
+				$data['status'] = "true";
+				$data['type'] = $find->type;
+				if($find->type == 1){
+					$data['persentage'] = $find->persentage;
+				}else if($find->type == 2){
+
+					$data['amount'] = $find->amount;
+				}
+				
+				echo json_encode($data);
+				exit();
+			}else{
+				$data['status'] = "Your coupon is expired";
+				echo json_encode($data);
+				exit();
+			}
+			
+		}else{
+			$data['status'] = "Invalid coupon code";
+			echo json_encode($data);
+			exit();
+		}
 	}
 	
 }

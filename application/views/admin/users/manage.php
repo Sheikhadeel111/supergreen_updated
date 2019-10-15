@@ -101,7 +101,7 @@
                     <div class="form-group row">
                       <label class="col-md-3 label-control" for="zip">User Zip</label>
                       <div class="col-md-9">
-                        <input type="text" required  class="form-control" placeholder="User Zip" name="meta[zip]" id="zip" value="<?php if(isset($user) && !empty($user->zip)){ echo $user->zip;} ?>" > </div>
+                        <input type="number" required  class="form-control" placeholder="User Zip" name="meta[zip]" id="zip" value="<?php if(isset($user) && !empty($user->zip)){ echo $user->zip;} ?>" > </div>
                     </div>
 
                   <?php if(isset($user)){?>
@@ -112,7 +112,7 @@
                   </div>
              
                   <div class="form-actions">
-                    <button type="button" class="btn btn-warning mr-1"> <i class="ft-x"></i> Cancel </button>
+                    <a href="<?php echo base_url() ?>admin/users/index" class="btn btn-warning mr-1"> <i class="ft-x"></i> Cancel </a>
                     <button type="submit" class="btn btn-primary"> <i class="fa fa-check-square-o"></i> Save </button>
                   </div>
                 </form>

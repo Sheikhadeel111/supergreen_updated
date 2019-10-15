@@ -26,16 +26,30 @@ class Registration extends CI_Controller {
 	public function manage()
 	{
 		$data = $this->input->post();
+	
 		$meta_data = $data['meta'];
 		unset($data['meta']);		
 		unset($data['password_confirmation']);
-		$user_id = $this->users->add_data($data);
+		$where['email'] = $data['email'];
+		$res = $this->users->get_data('*','users',$where);
+		
+		if(empty($res)){
+			$user_id = $this->users->add_data($data);
+		}else{
+
+			$status = "error";
+			$msg = "This email is already exist";
+			$this->session->set_flashdata($status,$msg);
+			$redirect = base_url()."registration";
+			redirect($redirect);
+		}
+
 		$this->umeta->manage_user_meta($meta_data,$user_id);
+
 		if($user_id)
 		{
 			$status = "success";
 			$msg = "Account Created";
-
 		}
 		else
 		{
@@ -43,7 +57,7 @@ class Registration extends CI_Controller {
 			$msg = "Error Occur";
 		}
 		$this->session->set_flashdata($status,$msg);
-		$redirect = base_url()."login/user";
+		$redirect = base_url()."login/index";
 		redirect($redirect);
 	}
 

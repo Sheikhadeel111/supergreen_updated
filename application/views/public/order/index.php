@@ -1,11 +1,14 @@
 	<style type="text/css">
 		body { 
-			background: url('assets/images/backgroundimgae.png') no-repeat center center fixed; 
+			background: url('assets/images/background2.png') no-repeat center center fixed; 
 			-webkit-background-size: cover;
 			-moz-background-size: cover;
 			-o-background-size: cover;
 			background-size: cover;
-			background-color: rgba(48,194,131,0.5019607843137255);
+			background-color: white !important;
+		  	height: auto;
+		  	width: 100%;
+		  	clear: both;
 		}
 		.margin{
 			height: 60px;
@@ -30,7 +33,7 @@
 			color:white;
 			font-size:24px;
 			font-weight: bold;
-			text-transform: uppercase;
+			text-transform: capitalize!important;
 		}
 		.bottom-button{
 			    background-color: #fba7b0;
@@ -46,7 +49,10 @@
 			    border-radius: 4px;
 			    margin-top: 83px;
 		}
-
+		.crettoppadng{
+  	margin-top:-10px;
+  	font-size:20px;
+  }
 		@media (max-width: 991px) and (min-width: 768px){
 			
 			.bottom-button {
@@ -68,14 +74,23 @@
 		}
 		@media (max-width: 570px) and (min-width: 320px){
 			body{
+
 				overflow: scroll;
-				margin:10px;
+				height: 400px !important;
+
 			}
 			.imgset {
 			    margin-top: -15px !important;
 			    margin-right: 0px !important;
-			    width:50px;
-				height:50px;
+			    width:40px;
+				height:40px;
+			}
+
+			.textcolor{
+				color:white;
+				font-size:13px !important;
+				font-weight: bold;
+				text-transform: capitalize !important;
 			}
 
 			.bottom-button {
@@ -93,12 +108,16 @@
 			    margin-top: 83px;
 
 			}
+			.circles {
+				width: 130px !important;
+				height: 130px !important;
+			}
 			
 		}
 
 		
 	</style>
-
+	
 <?php 
 $count = count($categories);
 if($count==0){
@@ -155,7 +174,9 @@ if($count==0){
 				<div class="custom_row displayflex" style="text-align: center; justify-content: center;">
 		<?php
 		$i = 1;
+		$saladid = 0;
 		 foreach ($categories as $key => $value) { ?>
+		 	<?php if($key == 0) {$saladid = $value->cat_id;} ?>
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 mt20 plr0">
 					<center>
 						<a href="<?php echo base_url('order/subcategory/').$value->cat_id; ?>">
@@ -184,7 +205,26 @@ if($count==0){
 		<!-- end -->
 		
 		<!-- end -->
-</div><!-- 		<div class="container">
+</div>
+<div class="col-lg-12 mt20">
+					<div class="row">
+						<div class="col-lg-4">&nbsp;</div>
+						<div class="col-lg-4">
+							<center>
+								<a href="<?php echo base_url('order/product/'.$saladid) ?>">
+									<div class="col-lg-2 circles hovercircle" style="width: 280px; height: 280px;">
+										<div class="vertical_center">
+									<img src="<?php echo base_url(); ?>assets/new.png" class="imgset">
+									<div class="textcolor">Make Your Own</div>
+									</div>
+									</div>
+								</a>
+							</center>
+						</div>
+					</div>
+				</div>
+
+<!-- 		<div class="container">
 				<div class="col-lg-12">
 						<div class="row" style="text-align: center; justify-content: center;display: flex;">
 							<center>

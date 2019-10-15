@@ -1,3 +1,4 @@
+
 .circles {
 	width: 349px;
 	height: 349px;
@@ -19,21 +20,36 @@
 	transition: transform ease-out 0.1s, background 0.2s;
 }
 .btns{
-	width: 149px;
-	height: 62px;
-	border-radius: 4px;
-	background-color: #30c283;
-	border:none;
-	color:white;
-	font-size: 18px;
+		background-color: #e5acbc;
+		border: 1px solid #e5acbc;
+		padding: 12px 30px !important;
+		border-radius: 3px;
+		margin-right: 18px;
+		font-size: 15px!important;
+		font-weight: 400!important;
+		text-transform: capitalize!important;
+		width:156px !important;
+		color:white;
+		outline: none !important;
 }
 .btnhover:hover{
-	background-color: #33cc8a;
+	background-color: #F292AE !important;
 }
+.postifxd{
+		position: fixed;
+		z-index: 1;
+}
+.hideonsm{
+					display:none;
+				}
+				.hideonlg{
+					display:block;
+				}
 		/*.margin{
 			margin-top:80px;
 			height: 200px;
 			}*/
+
 			.imgset{
 				margin-top:80px;
 				width:80px;
@@ -41,11 +57,39 @@
 			}
 			.textstyle{
 				color:white;
-				font-size:34px;
+				font-size:38px;
 				font-weight: bold;
 			}
 
-			@media (min-width: 320px) and (max-width: 630px){
+			@media (min-width: 800px) and (max-width: 1440px) {
+				.postifxd{
+					z-index: 0!important;
+				}
+			}
+
+			@media (min-width: 320px) and (max-width: 812px){
+				.btns{
+					background-color: #e5acbc;
+					border: 1px solid #e5acbc;
+					padding: 12px 30px !important;
+					border-radius: 3px;
+					
+					font-size: 15px!important;
+					font-weight: 400!important;
+					text-transform: capitalize!important;
+					color:white;
+					width: 44% !important;
+				}
+				.hideonlg{
+					display:none;
+				}
+				.hideonsm{
+					display:block;
+
+				}
+				.postifxd{
+					position: relative;
+				}
 				body{
 					overflow: scroll;
 					margin:10px;
@@ -70,7 +114,7 @@
 				}
 				.textstyle{
 					font-size: 26px;
-					padding-top: 10px;
+					padding-top: 55px;
 				}
 				.pl0sm{
 					padding-left: 0px!important;
@@ -87,7 +131,15 @@
 				}
 			}
 			@media (min-width: 768px) and (max-width: 991px){
-			
+				.postifxd{
+					position: relative;
+				}
+				.hideonlg{
+					display:none;
+				}
+				.hideonsm{
+					display:block;
+				}
 				.custom_row{
 					margin-right: -15px;
 					  margin-left: -15px;

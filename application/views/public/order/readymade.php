@@ -18,7 +18,7 @@
 
   .btn-circle {
     color:white;
-    background-color: #4db68a;
+    background-color: #e5acbc;
     width: 30px;
     height: 30px;
     padding: 6px 0px;
@@ -26,10 +26,48 @@
     font-size: 12px;
     line-height: 1.42857;
     border:none;
+    outline: none !important;
+  }
+  .otherbtn{
+    width: 67px !important;
+    height: 67px !important;
+    border-radius: 100% !important;
+    font-size: 10px !important;
+    outline: none !important;
+  }
+  .otherbtn:hover{
+    background-color: #189271 !important;
+  }
+ 
+  .ci_dressing{
+    width: 220px;
+    height: 220px!important;
+    max-width: 220px!important;
+    background: none;
+    border: 0;
+    box-sizing: border-box;
+    padding: 1em 2em;
+    font-size: inherit;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 50%;
+    box-shadow: none;
+  }
+  .ci_dressing::before, .ci_dressing::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    height: 220px!important;
+    max-width: 220px!important;
+    border-radius: 50%;
+    box-shadow: none;
   }
   .btn-circle-top{
       color:white;
-    background-color: #4db68a;
+    background-color: #e5acbc;
     padding: 0px;
     text-align: center;
     font-size: 12px;
@@ -39,8 +77,8 @@
   }
   .sczrbtn{
     position: absolute;
-    top: -15px;
-    left: 56px;
+    top: 186px;
+   left: 90px;
 
   }
 
@@ -52,13 +90,13 @@
 
   /*newwwwwwwwwwwwww*/
   body { 
-    background: url('assets/images/backgroundimgae.png') no-repeat center center fixed; 
+    background: url('assets/images/background2.png') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     background-color: rgba(48,194,131,0.5019607843137255);
-
+    height: 100%;
   }
   .center-text{
     font-family: Lato-Black, AdobeInvisFont, MyriadPro-Regular;
@@ -70,10 +108,11 @@
     width: 315px;
     height: 315px;
     border-radius: 224px;
-    margin-left: 43px;
+    /*margin-left: 43px;*/
     background-color: rgba(48,194,131,0.5019607843137255);
     border: 5px solid #ffffff;
   }
+
   .textstyle {
     color: white;
     font-size: 34px;
@@ -93,18 +132,33 @@
   }
   
   .bottom-button{
-    background-color: #fba7b0;
-    border: 2px solid #fba7b0;
+  /* background-color: #e5acbc;
+    border:none;
     color: white;
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 28px;
+    margin-right:10px;
     padding-left: 40px;
     padding-right: 40px;
-    padding-top: 5px;
-    padding-bottom: 8px;
-    font-weight: bold;
-    border-radius: 4px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 4px;*/
+    margin-bottom: 28px;
+    background-color: #e5acbc;
+    border: 1px solid #e5acbc;
+    padding: 10px 30px !important;
+    border-radius: 3px;
+    margin-right: 18px;
+    font-size: 15px!important;
+    font-weight: 400!important;
+    text-transform: capitalize!important;
+    width:156px;
+    color:white !important;
+    outline: none !important;
   }
+  .bottom-button:hover{
+      background-color: #F292AE !important;
+    }
   .card{
     margin-left: 53px;
     margin-right: 53px;
@@ -179,56 +233,158 @@
 .centeraline{
   text-align: center; 
   justify-content: center; 
-  display: flex
+  display: flex;
+
 }
-@media (min-width: 768px) and (max-width: 991px) {
+.extracls{
+  position: absolute !important;
+    top: 71px !important;
+    left: 195px !important;
+}
+.mediumcls{
+  position: absolute !important;
+    top: -27px !important;
+    left: 90px  !important;  
+}
+.largecls{
+  position: absolute !important;
+    top: 71px !important;
+    left: -12px !important;
+}
+
+.left_pd{
+  margin-left: 4%;
+}
+
+@media (min-width: 1024px)  {
+.qtybtn {
+    position: absolute !important;
+    top: 178px !important;
+   /* left: 53px  !important;*/
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .left_pd{
+      margin-left: 0% !important;
+display: flex;
+justify-content: center;
+    }
+     .ci_dressing::before, .ci_dressing::after {
+  
+    content: none !important;
+   
+  }
    /*Awais .col-md-3{
       z-index: 999999999;
       justify-content: center;
     display: grid;
     }*/
-    .col-sm-4{
-      z-index: 999999999;
+    .display_flex{
+          display: flex;
       justify-content: center;
-      display: grid;
     }
     .btn-circle {
-      z-index: 9999999999999;
+        z-index: 9999999999999;
+        color:white;
+        background-color: #e5acbc;
+        width: 30px;
+        height: 30px;
+        padding: 6px 0px;
+        text-align: center;
+        font-size: 12px;
+        line-height: 1.42857;
+        border:none;
+        outline: none !important;
     }
     .fa{
       z-index: 9999999999999;
     }
     .price-column {
     background-color: #ececec;
-    height: 28%;
+    height: auto;
     padding-top: 2px;
+    padding-bottom: 20px;
     }
    .qtybtn {
     position: absolute !important;
-    top: 52px !important;
-    left: 177px !important;
+    top: 178px !important;
+   /* left: 42px  !important;*/
     }
 }
-@media (min-width: 360px) and (max-width: 384px) {
-  .qtybtn {
-    position: absolute !important;
-    top: 52px !important;
-    left: 229px !important;
-    }
-    .price-column {
-    background-color: #ececec;
-    height: 28%;
-    padding-top: 2px;
-  }
-  .centeraline{
+
+  @media (min-width: 320px) and (max-width: 812px) {
+    .left_pd{
+      margin-left: 0% !important;
       display: block;
     }
-}
-  @media (min-width: 320px) and (max-width: 590px) {
+    .ci_dressing{
+       width: 220px !important;
+    }
+    .posrelivt{
+      position: relative;
+    }
+    .displayflex {
+         margin-left:auto !important;
+         display: block !important; 
+    }
+    .bottom-button{
+      margin-right: 0px !important;
+    }
+    .ci::before, .ci::after{
+      content: none !important;
+    }
+      .basemenuimage {
+          width: 120px;
+        }
+        .basemenuimagedress{
+          width: 120px;
+          height: 120px;
+        }
+      .sczrbtn{
+        position: absolute;
+        top: 186px;
+        left: 34% !important;
+      }
+      .mediumcls{
+          position: absolute !important;
+          top: -27px !important;
+          left: 34% !important;
+      }
+
+      .extracls{
+        position: absolute !important;
+          top: 71px !important;
+          left: 80% !important;
+      }
+
+      .largecls{
+        position: absolute !important;
+         top: 71px !important;
+         left: -14% !important;
+      }
+
+
+      .ci_dressing::before, .ci_dressing::after {
+        content: none !important;
+      }
+    .mobileseting{
+      justify-content: center!important;
+      display: flex!important;
+      margin-bottom:10% !important;
+     /* margin-left:18% !important;*/
+      max-width: 100% !important;
+    }
+    .qtybtn {
+    position: absolute !important;
+    top: 170px !important;
+    left: auto !important
+    }
     .price-column {
     background-color: #ececec;
-    height: 28%;
+    height: auto;
     padding-top: 2px;
+    padding-bottom: 20px;
+    margin-bottom:30px;
     }
     .card {
 
@@ -257,11 +413,7 @@
     .fa{
       z-index: 9999999999999;
     }
-   .qtybtn {
-    position: absolute !important;
-    top: 163px !important;
-    left: 134px !important;
-    }
+  
     .sczrbtn{
       left:137px;
     }
@@ -269,6 +421,20 @@
       display: block;
     }
   }
+  @media (min-width: 360px) and (max-width: 384px) {
+  .qtybtn {
+    position: absolute !important;
+   /* top: 51px !important;*/
+    /*left: 143px !important;*/
+    }
+    .price-column {
+    background-color: #ececec;
+    padding-top: 2px;
+  }
+  .centeraline{
+      display: block;
+    }
+}
 
 </style>
 
@@ -309,12 +475,12 @@ $namesArray = array_combine($proIds,$names);
 <?php 
 //$price = "<h3>Price : $0 </h3> ";
 ?>
-<div class="container-fluid">
+<div class="container-fluid scrollup">
   <div class="col-lg-1"></div>
   <div class="col-lg-10">
   <div class="row">
     <div class="card text-center">
-      <div class="col-lg-9" style="height: 100%;background-color: white;overflow-y: auto;
+      <div class="col-lg-9 scrolltop" style="height: 100%;background-color: white;overflow-y: auto;
 overflow-x: hidden;">
 
 
@@ -325,12 +491,12 @@ overflow-x: hidden;">
       </div>
 
       <div class="col-lg-3 text-center price-column" style="">
-        <h3 class="card-title">SPEICY THAI SALAD</h3>
+        <h3 class="card-title">Make Your Own</h3>
         <br>
-        <h5>Fill your Bowl</h5>
+        <h5>Fill Your Bowl</h5>
         <h5><b><div id="pricetag"><?php echo $price; ?></div></b></h5><br>
         <h5>
-          <div id="myDIV"></div></h5>
+          <div id="myDIV"> <p class="ptext text-center" style="line-height: 1.5;"></p></div></h5>
       </div>
     </div>
   </div>
@@ -467,6 +633,7 @@ $(document).ready(function() {
       success:function(res)
       {
         $("#products").html(res);
+
       },
 
     });
@@ -496,6 +663,8 @@ function cout(){
       data:{id:category_id,skip:skip,selected:newProducts,flag:flag},
       dataType:'text',
       success:function(data){
+        document.documentElement.scrollTop = 0;
+        $(".scrolltop").animate({ scrollTop: 0 }, "slow");
         $("#products").html(data);
       }
     }); 
@@ -509,7 +678,7 @@ function cout(){
     console.log(newProducts);
   }
   
-  function encirecl(ele) 
+  function encirecl(ele,remove = false) 
   {
     var maxQty = $("#maxQty").val(); //get max quantity of category
     var addCounter = parseInt($("#counter").val())+parseInt(1);  //count added
@@ -519,19 +688,20 @@ function cout(){
     var newCounter = parseInt(selectedCount)+parseInt(addCounter); //new counter set
     var totlco = $("#countervalue"+abc).val();
 
-    if(newCounter > maxQty || totlco == maxQty) //max quantity reach return false
-    { 
-      if (!$(ele).hasClass('color')) {
-        toasterOptions();
-        toastr.error('You Reached Maximun Limit');
-        return false;
+    if(remove == false){
+      if(newCounter > maxQty || totlco == maxQty) //max quantity reach return false
+      { 
+        if (!$(ele).hasClass('color')) {
+          toasterOptions();
+          toastr.error('You Reached Maximum Limit');
+          return false;
+        }
       }
-    }
-
-
+    } 
+    
     $(ele).toggleClass(addclass);
 
-    if ($(ele).hasClass('color')) { //if selected
+    if ($(ele).hasClass('color') && remove == false) { //if selected
       counter++;
       var item = $(ele).data('id'); //product id
       var n = item.toString();
@@ -541,8 +711,11 @@ function cout(){
       addToArray(abc,addeddata);
       $(ele).parent().find(".inbtn").fadeIn();
       $(ele).parent().find(".sczrbtn").fadeIn();
+      
       $(ele).parent().find(".qtybtn").fadeIn();
       var prc = $(ele).data('price');
+
+      
 
       $(ele).find(".inc").html('Included');
       $("#countervalue"+abc).val(parseInt($("#countervalue"+abc).val())+parseInt(1));
@@ -551,14 +724,14 @@ function cout(){
       var updatedPrice = 0;
 
       if(minQty < 1 || totlco >= 4){
-        $(ele).find(".inc").html('$'+prc);
+        $(ele).find(".inc").html('<?php echo MONEY_SIGN; ?>'+prc);
         updatedPrice = parseFloat(prc)+parseFloat(currentPrice);
       }else{
         updatedPrice = parseFloat(<?php echo $info->basePrice ?>);
       }
-      $("#pricetag").html("Price : $"+updatedPrice+"");
+      $("#pricetag").html("Price : <?php echo MONEY_SIGN; ?>"+updatedPrice+"");
       $("#price").val(updatedPrice);
-      
+     
 
     } else {
         // remove form array
@@ -595,9 +768,15 @@ function cout(){
       //       }
       //     }
       //  }
+      if(remove == true){
+         $(ele).parent().prev().addClass(removeclass);
+         $(ele).parent().prev().removeClass(addclass);
+         $(ele).parent().css({'display': 'none'});
+      }
 
-      $("#pricetag").html("Price : $"+updatedPrice+"");
+      $("#pricetag").html("Price : <?php echo MONEY_SIGN; ?>"+updatedPrice+"");
       $("#price").val(updatedPrice);
+     
       $(ele).addClass(removeclass);
       var item = $(ele).data('id');
       var n = item.toString();
@@ -636,7 +815,7 @@ function cout(){
 
     if(count == maxQty || totlco == maxQty){
      toasterOptions();
-     toastr.error('You Reached Maximun Limit');
+     toastr.error('You Reached Maximum Limit');
      return false;
    }
    $("#countervalue"+abc).val(parseInt($("#countervalue"+abc).val())+parseInt(1));
@@ -686,7 +865,7 @@ function cout(){
           }
           
           
-          $("#pricetag").html("Price : $"+updatedPrice+"");
+          $("#pricetag").html("Price : <?php echo MONEY_SIGN; ?>"+updatedPrice+"");
           $("#price").val(updatedPrice);
 
         }
@@ -702,7 +881,9 @@ function cout(){
      var minQty = $("#minQty").val();
      var count =   $(ele).parents(".qtybtn").find("input").val();
      if(count<=1){
-      return false;
+            encirecl(ele,true);
+            $(ele).parent().prev().find(".inc").html('');
+            return false;
     }else{
       var updatedCount = parseInt(count)-parseInt(1);
       $(ele).parents(".qtybtn").find("input").val(updatedCount);
@@ -754,7 +935,7 @@ function cout(){
           }
           
           
-          $("#pricetag").html("Price : $"+updatedPrice+"");
+          $("#pricetag").html("Price : <?php echo MONEY_SIGN; ?>"+updatedPrice+"");
           $("#price").val(updatedPrice);
 
         }
@@ -769,9 +950,26 @@ function cout(){
     function toppingSize(ele,id,size){ //topping size
 
       if($(ele).closest("div .inbtn").children().hasClass("active")){
-        $(ele).closest("div .inbtn").children().removeClass("active");
+         $(ele).closest("div .inbtn").children().removeClass("active");
+         return false;
       }
+     
+      if($("#"+id+"side").hasClass("active")){
+          $("#"+id+"side").removeClass("active");
+      }
+      if($("#"+id+"extra").hasClass("active")){
+        $("#"+id+"extra").removeClass("active");
+      }
+      if($("#"+id+"medium").hasClass("active")){
+         $("#"+id+"medium").removeClass("active");
+      }
+
+     if($("#"+id+"light").hasClass("active")){
+        $("#"+id+"light").removeClass("active");
+      }
+      
       var abc = $(ele).data("index");
+
       $(newProducts[abc]).each(function( index, element ) {
         if(element.product == id) {
           newProducts[abc].splice(index, 1);
@@ -779,18 +977,22 @@ function cout(){
         }
         
       });
+
       var qunty =  $("#"+id+"Qty").val();
 
+      $("div[data-salad-id='" + id + "']").children("div[data-size-id='" + id + "']").remove();
+
+      $(".ptext").children("div[data-salad-id='" + id + "']").append("<div style='display:inline' data-size-id='" + id + "'> (" + size + ")</div>");
 
       
-      var serving;
-      if(typeof $("#ingServing"+id).val() === "undefined"){
-        serving = '';
-      }else{
-        serving = $("#ingServing"+id).val();
-      }
+      // var serving;
+      // if(typeof $("#ingServing"+id).val() === "undefined"){
+      //   serving = '';
+      // }else{
+      //   serving = $("#ingServing"+id).val();
+      // }
       $(ele).addClass("active");
-      var addeddata = {'product':id,'quantity':qunty,'size':size,'serving':serving};
+      var addeddata = {'product':id,'quantity':qunty,'size':size};
       addToArray(abc,addeddata);
       $("#ingSize"+id).val(size);
 
@@ -798,8 +1000,8 @@ function cout(){
 
     function serving(ele,id,serve){ //serving side
 
-      if($(ele).closest("div .sczrbtn").children().hasClass("active")){
-        $(ele).closest("div .sczrbtn").children().removeClass("active");
+      if($(ele).hasClass("active")){
+        $(ele).removeClass("active");
       }
 
 
@@ -836,11 +1038,12 @@ function order_now() { //order now
   var name = "<?php echo $title; ?>";
   var price = $("#price").val(); 
   var slug = 'custom-salad';
-
+  var edit = 1;
+   
   $.ajax({
     method:'POST',
     url:"<?php echo base_url('order/order_now');?>",
-    data:{id:category_id,name:name,selected:newProducts,price:price,slug:slug},
+    data:{id:category_id,name:name,selected:newProducts,price:price,slug:slug,edit:edit},
     dataType:'json',
 
     success:function(data)

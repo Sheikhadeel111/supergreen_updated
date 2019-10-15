@@ -24,7 +24,7 @@ foreach ($subcat as $key => $value) {
   <div class="form-group row">
     <label class="col-md-3 label-control" for="<?php echo $value->name; ?>" id="<?php echo $value->name; ?>"><?php echo $value->name; ?></label>
     <div class="col-md-9">
-      <select name="<?=$arrayIndex?>[]" multiple required class="form-control select2 <?php echo $value->cat_id; ?> <?php echo $value->name; ?>" onchange="getCategoryLimit(<?=$value->cat_id?>);">
+      <select name="<?=$arrayIndex?>[]" multiple required data-validation-required-message="This field is required" class="form-control select2 <?php echo $value->cat_id; ?> <?php echo $value->name; ?>" onchange="getCategoryLimit(<?=$value->cat_id?>);">
              <?php 
 
              if(isset($products) && !empty($products))

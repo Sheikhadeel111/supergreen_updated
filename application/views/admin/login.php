@@ -12,7 +12,7 @@
                         <div class="card border-grey border-lighten-3 px-1 py-1 m-0">
                             <div class="card-header border-0 pb-0">
                                 <div class="card-title text-center">
-                                    <img src="app-assets/images/logo/logo-dark.png" alt="branding logo">
+                                    Supreme Green
                                 </div>
                                
                             </div>

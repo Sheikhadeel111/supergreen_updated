@@ -30,17 +30,20 @@ class Login extends CI_Controller {
 
 	public function authenticate()
 	{
+
 		$data = $this->input->post();
 
-		$result = $this->users->login_user($data);
-		if($result->role == "admin" ){
+		@$result = $this->users->login_user($data);
+		
+		if(@$result->role == "admin" ){
+
 			$this->session->set_userdata("user_session",$result);
 			if(!empty($this->session->userdata("user_session")))
 			{
 				$redirect = base_url()."admin/dashboard/";
 			}
 		}
-		elseif($result->role == "user" ){
+		elseif(@$result->role == "user" ){
 			$this->session->set_userdata("user_session",$result);
 			if(!empty($this->session->userdata("user_session")))
 			{
@@ -50,17 +53,18 @@ class Login extends CI_Controller {
 					$redirect = $this->session->userdata("perv_page");
 				}
 			}
+
 		}
 		else
 		{
 			$status = "error";
 			$msg = "Authentication Fail";
 			$this->session->set_flashdata($status,$msg);
-			$redirect = base_url()."login/".$data['role'];
-			
-			
+			//$redirect = base_url()."login/".$data['role'];
+			$redirect = base_url()."login/";
 			
 		}
+
 		redirect($redirect);	
 	}
 

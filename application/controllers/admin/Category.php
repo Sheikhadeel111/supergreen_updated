@@ -41,17 +41,41 @@ class Category extends SU_Controller {
 	{
 		$this->load->library('image_lib');
 		$data = $this->input->post();
+	
 		
+		if(!empty($_FILES['cat_image']['name'])){
 		$cat_image = $this->crud_model->upload_file($_FILES['cat_image'],'cat_image',PRODUCT_IMAGE_UPLOAD_CETAGORY,'category');
+			unset($data["cat_image_hidden"]);
+		}else{
+			$cat_image = $data["cat_image_hidden"];
+			unset($data["cat_image_hidden"]);
+		}
+
 
 		if(!empty($data['cat_id']))
 		{	
 			$where['cat_id'] = $data['cat_id'];
 			$data['cat_image'] = $cat_image;
 			unset($data['cat_id']);
-			$update = $this->category->update_data($where,$data);
+
+			if(isset($data['parent']) && !empty($data['parent'])){
+				$table = 'categories';
+				$where['cat_id'] = $data['parent'];
+				$parent_category = $this->crud_model->get_data($select = "",$table,$where,true);
+				$slug = create_slug_categories($data['name'],$parent_category->name);
+				$data['categories_slug'] = $slug;
+				
+			}else{
+				$slug = create_slug_categories($data['name']);
+				$data['categories_slug'] = $slug;	
+			}
+			
+			$lowercase =  strtolower($data['name']);
+			$data['name'] = ucfirst($lowercase);
+			$update = $this->crud_model->update_data($where,$data,'categories');
 			if($update)
 			{
+
 				$status = "success";
 				$msg = "Record Updated";
 			}
@@ -70,9 +94,25 @@ class Category extends SU_Controller {
 				$latest = $this->category->latestCategories();
 				$data['disp_odr'] = $latest->disp_odr+1;
 			}
+				
+			if(isset($data['parent']) && !empty($data['parent'])){
+				$table = 'categories';
+				$where['cat_id'] = $data['parent'];
+				$parent_category = $this->crud_model->get_data($select = "",$table,$where,true);
+				$slug = create_slug_categories($data['name'],$parent_category->name);
+				$data['categories_slug'] = $slug;
+				
+			}else{
+				$slug = create_slug_categories($data['name']);
+				$data['categories_slug'] = $slug;	
+			}
+			
+			$lowercase =  strtolower($data['name']);
+			$data['name'] = ucfirst($lowercase);
 			$insert = $this->category->add_data($data);
 			if($insert)
 			{
+
 				$status = "success";
 				$msg = "Record Save";
 					

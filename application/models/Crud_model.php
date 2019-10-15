@@ -133,32 +133,42 @@ public function get_data($select = "",$table="",$where = array(),$single_row = f
 
 
 	public function upload_file($file,$input_name,$path,$resize = ""){
-		$this->load->library('image_lib');
-		if($resize == 'product'){
-			$config['image_library'] = 'gd2';
-			$config['quality'] = '100%';
-			$config['width'] = 260;
-			$config['height'] = 270;
-		}
-		if($resize == 'category'){
-			$config['image_library'] = 'gd2';
-			$config['quality'] = '100%';
-			$config['width'] = 57;
-			$config['height'] = 65;
-		}
 
 		$file['name'] = str_replace(" ", "", $file['name']);
 		if ($file['error'] != 4 ) {
 		$config['upload_path']          = $path;
-		$config['allowed_types']        = '*';
+		$config['allowed_types']        = 'gif|jpg|jpeg|png';
 		$file_name = rand().$file['name'];
 		$config['file_name'] = $file_name;
+		}
+
+		if($resize == 'product'){
+			$config['image_library'] = 'gd2';
+			$config['quality'] = '100%';
+			$config['source_image'] = $path.$file_name;
+			$config['maintain_ratio'] = TRUE;
+			$config['width'] = 300;
+			$config['height'] = 300;
+		}
+		if($resize == 'category'){
+			$config['image_library'] = 'gd2';
+			$config['quality'] = '100%';
+			$config['source_image'] = $path.$file_name;
+			$config['maintain_ratio'] = TRUE;
+			$config['width'] = 100;
+			$config['height'] = 100;
+		} 
 
 		$this->load->library('upload', $config);
-		
 
 		if ( $this->upload->do_upload($input_name))
 		{
+		     $this->load->library('image_lib', $config);
+		     if (!$this->image_lib->resize()) {
+		            echo $this->image_lib->display_errors();
+		     }
+		     $this->image_lib->clear();
+
 			return $file_name;
 		}else{
 
@@ -167,27 +177,19 @@ public function get_data($select = "",$table="",$where = array(),$single_row = f
 		    print_r($error);	
 		}
 
-		}
-
-		                        
-
-		return false;
-
-
 		
-
+		return false;
 	}
-	
 
-
-
-
-
-
-
-
+	public function check_slug_categories($string)
+    {
+        $this->db->select();
+        $this->db->from('categories');
+        $this->db->like('categories_slug',$string,'after',false);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 }
-
 
 
 ?>

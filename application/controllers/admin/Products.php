@@ -63,11 +63,16 @@ class Products extends SU_Controller {
 			$custom = $data['product_custom'];
 			unset($data['product_custom']);
 		}
-
+		if(!empty($_FILES['file_name']['name'])){
 		$cat_image = $this->crud_model->upload_file($_FILES['file_name'],'file_name',PRODUCT_IMAGE_UPLOAD,'product');  
+		unset($data["perv_image"]);
+		}else{
+				$cat_image = $data["perv_image"];
+				unset($data["perv_image"]);
+		}
 
 		//step1 unset all feild except array of ingredients with key
-
+		
 		unset($data['product_name'],$data['product_category'],$data['product_id']);
 		$Category = categoryInfo($category);
 		$basePrice = $Category->basePrice; 
@@ -80,7 +85,7 @@ class Products extends SU_Controller {
 			$items[$key] = array();
 			foreach ($value as $key1 => $value1) {
 				if($key == "dress"){
-					$ingredient = array("product"=>$value1,"quantity"=>1,"size"=>"M",'serving'=>'Side');
+					$ingredient = array("product"=>$value1,"quantity"=>1,"size"=>"On The Side",'serving'=>'Side');
 				}else{
 					$ingredient = array("product"=>$value1,"quantity"=>1,"size"=>"",'serving'=>'');
 				}

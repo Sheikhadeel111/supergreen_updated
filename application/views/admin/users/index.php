@@ -36,6 +36,7 @@
 							</div>
 							<div class="card-content collapse show">
 								<div class="card-body card-dashboard">
+									<div class="table-responsive">
 									<table class="table table-striped table-bordered dataex-html5-export">
 										<thead>
 											<tr>
@@ -73,7 +74,8 @@
 											
 											
 										</tbody>
-									</table>				
+									</table>		
+									</div>		
 								</div>
 							</div>
 						</div>

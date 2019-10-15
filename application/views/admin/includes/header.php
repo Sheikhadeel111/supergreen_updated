@@ -9,6 +9,7 @@
     <title>Dashboard</title>
     <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(); ?>app-assets/images/ico/favicon.ico">
+
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700" rel="stylesheet">
     <script
   src="https://code.jquery.com/jquery-3.3.1.js"
@@ -66,6 +67,8 @@
     <script src="app-assets/vendors/js/vendors.min.js"></script>
     <script src="app-assets/vendors/js/extensions/toastr.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+  
+     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
     <script src="app-assets/js/core/libraries/jquery_ui/jquery-ui.min.js"></script>
     <script src="app-assets/plugins/jqueryConfirm/jquery-confirm.min.js"></script>
         <script src="app-assets/vendors/js/tables/datatable/datatables.min.js"></script>

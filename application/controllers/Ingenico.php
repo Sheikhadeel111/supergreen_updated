@@ -19,11 +19,16 @@ class Ingenico extends CI_Controller {
         $this->load->model("Ingenico_Model");
     }
 
+     function testingenico(){
+         $res = $this->Ingenico_Model->testCreatePayment();
+       //  debug($res);
+     }
+
 
     function methods(){
         
         $data = $this->input->post();
-        $data['merchantOrderId'] = 12345;
+        $data['merchantOrderId'] = "3510";
         $data['merchantReference'] = 'junaid';
 
         $res = $this->Ingenico_Model->paymentMethods($data);

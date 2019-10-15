@@ -24,12 +24,14 @@
   background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
   */
   body { 
-  	background: url('assets/images/backgroundimgae.png') no-repeat center center fixed; 
+  	background: url('assets/images/background2.png') no-repeat center center fixed; 
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
-  	background-color: rgba(48,194,131,0.5019607843137255);
+  	background-color: white !important;
+  	height: 100%;
+  	width: 100%;
   }
   .margin{
   	height: 60px;
@@ -50,19 +52,76 @@
   	
   	background-size: 290px 290px;
   }
+
   .textcolor{
   	color:white;
   	font-size:24px;
   	font-weight: bold;
+  	text-transform: capitalize!important;
+  }
+  .crettoppadng{
+  	margin-top:-10px;
+  	font-size:20px;
+  }
+  .basetextsize{
+  	font-size: 16px;
+  }
+ 
+  @media (max-width: 1024px) and (min-width: 768px){
+  	.plateimage{
+  	width: 225px !important; 
+  	height: 225px !important; 
+  	margin-top:10px; 
+  	border-radius:50%;
+  	
+  	background-size: 290px 290px;
+  }
+  .crettoppadng{
+  			font-size:14px !important;
+	  }
+	  .basetextsize{
+  	font-size: 14px !important;
+  }
+	 
+  }
+   @media (max-width: 1366px) and (min-width: 1024px){
+  	.plateimage{
+  	width: 240px !important; 
+  	height: 250px !important; 
+  	margin-top:10px; 
+  	border-radius:50%;
+  	
+  	background-size: 290px 290px;
+  }
+	 
   }
   @media (max-width: 570px) and (min-width: 320px){
   	body{
   		overflow: scroll;
   		margin:10px;
   	}
-  	
+  	.crettoppadng{
+  			margin-top:-35px;
+  			font-size:12px !important;
+	  }
+	  .basetextsize{
+  	font-size: 12px !important;
   }
 
+	  .plateimage{
+		  	width: 110px !important; 
+		  	height: 110px !important; 
+		  	margin-top:10px; 
+		  	border-radius:50%;
+		  	background-size: 290px 290px;
+  		}
+
+  		 .circles {
+		  	width: 120px !important;
+		  	height: 120px !important;
+		  }
+	 
+  }
 
 
 
@@ -80,7 +139,8 @@ if($count==0){
 					<h4 style="color: #fff; text-align: center;">No Product Available</h4>
 					<hr class="colorgraph">
 					<div class="col-xs-12 col-md-12">
-						<a href="<?php echo base_url('order'); ?>" class="btn btn-success btn-lg">Go Back</a></div>
+						
+						<a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" class="btn btn-success btn-lg">Go Back</a></div>
 					</div>	
 				</div>
 			</div>
@@ -139,22 +199,16 @@ if($count==0){
 </section> -->
 
 <div class="container">
-	<div class="col-lg-12" style="margin-top:-50px;">
+	<div class="col-lg-12" style="margin-top:-100px;">
 		<div class="row">
-			<div class="col-lg-12"><center><div class="textstyle">SALADS</div></center></div>
+			<div class="col-lg-11"><center><div class="textstyle">Salads</div></center></div>
 		</div>
-	</div>
-
-	<div class="col-lg-12">&nbsp;</div>
-	
-	<div class="col-lg-12">
-		<div class="row " >
-			<div class="custom_row displayflex" style="text-align: center; justify-content: center; margin-left:30px;">
+		<div class="row ">
+			<div class="custom_row displayflex" style="text-align: center; justify-content: center; ">
 				<?php 
 				$i = 1;
 				foreach ($products as $key => $value) {
 							//echo $i % 3;
-					
 					if($value->product_status == 1){ 
 						?>
 						
@@ -165,7 +219,7 @@ if($count==0){
 										<div class="plateimage" style="background: url('assets/images/products/<?php echo $value->product_image; ?>') no-repeat center center; background-size: cover;">
 											<div class="vertical_center">
 												<div class="textcolor"><?php echo $value->product_name; ?></div>
-												<div class="textcolor">&#x20AC;<?php echo $value->product_price; ?></div>
+												<div class="textcolor" ><?php echo MONEY_SIGN; ?><?php echo $value->product_price; ?></div>
 											</div>
 										</div>
 									</div>
@@ -174,20 +228,24 @@ if($count==0){
 						</div>
 						<?php if($i % 3 == 0){?>
 						</div>
-						<div class="custom_row displayflex" style="text-align: center; justify-content: center; margin-left:30px;">
+						<div class="custom_row displayflex" style="text-align: center; justify-content: center; ">
 						<?php } ?>
 
 					<?php }else{ ?>
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 mt20 plr0" >
+						<?php if(sizeof($products) == 1){ ?>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 mt20 plr0" >
+						<?php }else{ 	?>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 mt20 plr0" >	
+						<?php } ?>
 							<center>
-								<a <?php if($value->product_custom == 1){ ?> href="<?php echo base_url('order/readymade/').$value->product_slug."/".$value->product_id; ?>" <?php } ?> data-category = "<?php echo $value->product_category; ?>" data-id = "<?php echo $value->product_id; ?>" data-slug ="<?=$value->product_slug?>" data-name="<?php echo $value->product_name; ?>" data-selected = "<?php echo $value->product_items; ?>" data-custom = "<?=$value->product_custom?>"  class="effect-8 customlink <?php if($value->product_custom == 0){ echo 'abc'; } ?>">
+								<a <?php if($value->product_custom == 1){ ?> href="<?php echo base_url('order/readymade/').$value->product_slug."/".$value->product_id; ?>" <?php }  ?> data-category = "<?php echo $value->product_category; ?>" data-id = "<?php echo $value->product_id; ?>" data-slug ="<?=$value->product_slug?>" data-name="<?php echo $value->product_name; ?>" data-selected = '<?php echo $value->product_items; ?>' data-custom = "<?=$value->product_custom?>"  class="effect-8 customlink <?php if($value->product_custom == 0){ echo 'abc'; } ?>">
 
 									<div class="col-lg-2 circles hovercircle pl0sm">
 										<div class="plateimage" style=" background: url('assets/images/products/<?php echo $value->product_image; ?>') no-repeat center center; background-size: cover;">
 											<div class="vertical_center">
 												<div class="textcolor">
 													<?php echo $value->product_name; ?></div>
-													<div class="textcolor">&#x20AC;<?php echo $value->product_price; ?></div>
+													<div class="textcolor"><?php echo MONEY_SIGN; ?><?php echo $value->product_price; ?></div>
 												</div>
 											</div>
 										</div>
@@ -196,7 +254,7 @@ if($count==0){
 							</div>
 							<?php if($i % 3 == 0){?>
 							</div>
-							<div class="custom_row displayflex" style="text-align: center; justify-content: center; margin-left:30px;">
+							<div class="custom_row displayflex" style="text-align: center; justify-content: center;">
 							<?php } ?>
 							
 						<?php } ?>
@@ -213,9 +271,9 @@ if($count==0){
 						<div class="col-lg-4">
 							<center>
 								<a href="<?php echo base_url('order/product/').$category; ?>">
-									<div class="col-lg-2 circles hovercircle" style="width: 250px; height: 250px; margin-left:30px;">
+									<div class="col-lg-2 circles hovercircle" style="width: 270px; height: 270px; ">
 										<div class="vertical_center">
-											<center><div class="textcolor">CREATE YOUR<br/> OWN</div></center>
+								<center><div class="textcolor crettoppadng">Make Your Own<br/><?php echo MONEY_SIGN; ?> 8.25<div class="basetextsize">2 Bases + 4 Toppings + Dressing</div></div></center>
 										</div>
 									</div>
 								</a>
@@ -236,10 +294,13 @@ if($count==0){
 						var product_id = $(this).attr('data-id');
 						var slug = $(this).attr('data-slug');
 						var custom = $(this).attr('data-custom');
+						var selected2 = $(this).attr('data-selected');
+						var selected = JSON.parse(selected2);
+						
 						$.ajax({
 							method:'POST',
 							url:"<?php echo base_url('order/order_now');?>",
-							data:{id:category_id,name:name,flag:1,productid:product_id,slug:slug,custom:custom},
+							data:{selected:selected,id:category_id,name:name,flag:1,productid:product_id,slug:slug,custom:custom},
 							dataType:'json',
 
 							success:function(res)

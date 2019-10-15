@@ -1,11 +1,46 @@
+<style type="text/css">
+	body { 
+      background: url('assets/images/backgroundimgae.png') no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-color: rgba(48,194,131,0.5019607843137255);
 
+    }
+    .margntop{
+    	margin-top:100px;
+    }
+    @media (max-width: 991px) and (min-width: 768px){
+    	.margntop{
+    	margin-top:70px;
+    	}
+    	.textstyle{
+    		font-size:25px;
+    	}
+    	.text-white{
+    		font-size:24px;
+    	}
+    }
+
+    @media (min-width: 320px) and (max-width: 484px) {
+    	.margntop{
+    	margin-top:30px;
+    	}
+    	.textstyle{
+    		font-size:16px;
+    	}
+    	.text-white{
+    		font-size:18px;
+    	}
+    }
+
+</style>
 <div class="row pt-4 mt70 margin0">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
 		<h2 class="text-white">SELECT YOUR ORDER TYPE</h2> </div>
-	</div>
-	<section class=" ">
-		<div class=" col-lg-8 col-sm-8 col-xs-8 col-md-8 container">
-			<div class="row	center-row">
+	</div><br/><br/>
+			<!-- <div class="row">
 				<a href="<?php echo base_url('order/paymentMethod/0'); ?>" class="bigcircles effect-8 customlink mr50">
 					<div class="col-lg-offset-4"> <span class="fa-icons"><i class="fas fa-utensils"></i></span>
 						<p class="content"> Dine In</p>
@@ -17,8 +52,19 @@
 						<p class="content">Take Away</p>
 					</div>
 				</a>
-			</div>
+			</div> -->
+<div class="container">
+		<div class="col-lg-12">
+			<div class="row">
+				<div class="col-lg-2"></div>
+				<center><a href="<?php echo base_url('order/paymentMethod/0'); ?>"><div class="col-lg-2 circles hovercircle"><center><span class="fa-icons" ><i class="fas fa-utensils margntop"></i></span><div class="textstyle" >Dine In</div></center></div></a>
 
+				<a class="customlink mr50" data-toggle="modal" data-target="#myModal"><div class="col-lg-2 circles hovercircle"><center><span class="fa-icons"><i class="fas fa-shopping-bag margntop"></i></span><div class="textstyle">Take Away</div></center></div></a>
+			</center>
+			<div class="col-lg-4"></div>
+		</div>
+	</div>
+</div>
 
 			<!-- Modal -->
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -55,11 +101,6 @@
 					</div>
 				</div>
 			</div>
-
-
-		</div>
-	</section>
-
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$(".select2").select2({ width: '100%',height:"auto", });

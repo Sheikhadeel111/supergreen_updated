@@ -1,12 +1,14 @@
 
 	<style type="text/css">
 		body { 
-			background: url('assets/images/backgroundimgae.png') no-repeat center center fixed; 
+			background: url('assets/images/background2.png') no-repeat center center fixed; 
 			-webkit-background-size: cover;
 			-moz-background-size: cover;
 			-o-background-size: cover;
 			background-size: cover;
 			background-color: rgba(48,194,131,0.5019607843137255);
+			width: 100%;
+			height: 100%;
 		}
 		.margin{
 			height: 60px;
@@ -31,28 +33,42 @@
 			color:white;
 			font-size:24px;
 			font-weight: bold;
+			text-transform: capitalize!important;
 		}
 		.bottom-button{
-			    background-color: #fba7b0;
-			    border: 2px solid white;
+		    background-color: #e5acbc;
+		    border: 1px solid #e5acbc;
+		    padding: 10px 30px !important;
+		    border-radius: 3px;
+		    font-size: 15px!important;
+		    font-weight: 400!important;
+		    text-transform: capitalize!important;
+		    width:156px;
+		    color:white !important;
+		    margin-top: 83px;
+		    outline: none !important;
+			    /*background-color: #e5acbc;
+			    border: none;
 			    color: white;
-			    font-size: 29px;
+			    font-size: 25px;
 			    margin-bottom: 28px;
-			    padding-left: 15px;
-			    padding-right: 15px;
-			    padding-top: 5px;
-			    padding-bottom: 8px;
+			    padding-left: 25px;
+			    padding-right: 25px;
+			    padding-top: 15px;
+			    padding-bottom: 15px;
 			    font-weight: bold;
 			    border-radius: 4px;
-			    margin-top: 83px;
+			    margin-top: 83px;*/
 		}
+		.bottom-button:hover{
+   		   background-color: #F292AE !important;
+   		 }
 
 		@media (max-width: 991px) and (min-width: 768px){
 			
 			.bottom-button {
 
-			    background-color: #fba7b0;
-			    border: 2px solid white;
+			    background-color: #e5acbc;
 			    color: white;
 			    font-size: 24px;
 			    margin-bottom: 28px;
@@ -66,29 +82,46 @@
 
 }
 		}
-		@media (max-width: 570px) and (min-width: 320px){
+		@media (max-width: 650px) and (min-width: 320px){
+			.mobileleft{
+				margin-left: 30px !important;	
+			}
 			body{
 				overflow: scroll;
 				margin:10px;
 			}
+			.textstyle{
+				font-size:18px !important;
+			}
+			.circles {
+			width: 120px !important;
+  			height: 120px !important;
+			}
 			.imgset {
 			    margin-top: -15px !important;
 			    margin-right: 0px !important;
-			    width:50px;
-				height:50px;
+			    width:40px;
+				height:40px;
+			}
+			.textcolor{
+				color:white;
+				font-size:13px !important;
+				font-weight: bold;
+				text-transform: capitalize!important;
 			}
 
+
 			.bottom-button {
-			    background-color: #fba7b0;
-			    border: 2px solid white;
+			    background-color: #e5acbc;
 			    color: white;
 			    font-size: 16px;
 			    margin-bottom: 28px;
 			    padding-left: 15px;
-			    padding-right: 15px;
+			    padding-right: 10px;
 			    padding-top: 5px;
 			    padding-bottom: 8px;
 			    font-weight: bold;
+			    margin-right: 0px !important;
 			    border-radius: 4px;
 			    margin-top: 83px;
 
@@ -102,7 +135,7 @@
 <div class="container">
 		<div class="col-lg-12" style="margin-top:-50px;">
 			<div class="row">
-				<div class="col-lg-12"><center><div class="textstyle">WOULD YOU LIKE TO ADD ANYTHING?</div></center></div>
+				<div class="col-lg-12"><center><div class="textstyle">Would you like to add anything else?</div></center></div>
 			</div>
 		</div>
 
@@ -118,12 +151,14 @@
 			    $categories[$count] = $addToArray;
 			    $newcount = count($categories);
 			    $i = 1;	
+			    $saladid = 0;
 			foreach ($categories as $key => $value) { 
+				 if($key == 0) {$saladid = $value->cat_id;}
 			if(!empty($value->cat_id)){ ?> 
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 mt20 plr0">
 					<center>
 						<a href="<?php echo base_url('order/subcategory/').$value->cat_id; ?>">
-							<div class="col-lg-2 circles hovercircle pl0sm">
+							<div class="col-lg-2 circles hovercircle pl0sm" style="float: none !important;">
 								<div class="plateimage">
 									<div class="vertical_center">
 									<img src="<?php echo PRODUCT_IMAGE_UPLOAD_CETAGORY.$value->cat_image;  ?>" class="imgset">
@@ -135,25 +170,13 @@
 					</center>
 				</div>
 				
-				<?php if($i % 3 == 0){?>
+				<?php if($i % 2 == 0){?>
 					</div>
-					<div class="custom_row displayflex" style="text-align: center; justify-content: center;  margin-left:50px;">
+					<div class="custom_row displayflex" style="text-align: center; justify-content: center;  ">
 				<?php } ?>
 			<?php $i++; } }?>
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 mt20 plr0">
-					<center>
-						<a href="<?php echo base_url('order/drinks/'); ?>">
-							<div class="col-lg-2 circles hovercircle pl0sm">
-								<div class="plateimage">
-									<div class="vertical_center">
-									<img src="<?php echo base_url('assets/images/'); ?>bottles.png" class="imgset">
-									<div class="textcolor">Drinks</div>
-									</div>
-								</div>
-							</div>
-						</a>
-					</center>
-			</div>
+			
+			
 					
 			
 			
@@ -164,17 +187,49 @@
 		
 		<!-- end -->
 </div>
+	<div class="col-lg-12 mt20">
+		<div class="row">
+					<div class="custom_row displayflex" style="text-align: center; justify-content: center; ">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 mt20 plr0">
+								<center>
+									<a href="<?php echo base_url('order/drinks/'); ?>">
+										<div class="col-lg-2 circles hovercircle pl0sm" style="float: none !important;">
+											<div class="plateimage">
+												<div class="vertical_center">
+												<img src="<?php echo base_url('assets/images/'); ?>bottles.png" class="imgset">
+												<div class="textcolor">Drinks</div>
+												</div>
+											</div>
+										</div>
+									</a>
+								</center>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 mt20 plr0">
+							<center>
+								<a href="<?php echo base_url('order/product/'.$saladid) ?>">
+									<div class="col-lg-2 circles hovercircle" style="float: none !important;">
+										<div class="vertical_center">
+									<img src="<?php echo base_url(); ?>assets/new.png" class="imgset">
+									<div class="textcolor">Make Your Own</div>
+									</div>
+									</div>
+								</a>
+							</center>
+						</div>
+					</div>
+		    </div>
+	</div>
+</div>
 <div class="col-lg-12">
-	<div class="row">
-			
+
 				
 				<center>
-					<a href="<?php echo base_url('order/view_cart'); ?>"><button type="button" class="bottom-button" style="">NO THANKS</button>
+					<a href="<?php echo base_url('order/view_cart'); ?>"><button type="button" class="bottom-button" style="">No Thanks</button>
 					</a>
 				</center>
 				
 			
-</div>
+
 </div>
 <!-- <div class="container">
 	<div class="row">

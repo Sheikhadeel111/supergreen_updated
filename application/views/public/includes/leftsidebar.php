@@ -1,15 +1,39 @@
-	<div id="mySidenav" class="sidenav leftsidecontentmiddle">
-		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<style>
+   .btnswidth{
+    /*width: 136px;
+    font-size: 15px !important;
+    color:white !important;
+    height: 40px !important;
+    padding-left: 16px!important;
+    padding-top: 10px!important;
+    */
+    background-color: #e5acbc;
+    border: 1px solid #e5acbc;
+    padding: 10px 0px !important;
+    border-radius: 3px;
+    margin-right: 18px;
+    font-size: 15px!important;
+    font-weight: 400!important;
+    text-transform: capitalize!important;
+    width:156px;
+    color:white !important;
+   } 
+   .btnswidth:hover{
+    background-color: #F292AE !important;
+   }
+  </style>
+  <div id="mySidenav" class="sidenav leftsidecontentmiddle" style="z-index: 9999">
+		<a href="javascript:void(0)" class="closebtn" style="color: white !important;" onclick="closeNav()">&times;</a>
 		<div class=" ">
-			<h2 style="color: #fff;     text-align: center;">CANCEL YOUR ENTIRE ORDER</h2>
+			<h2 style="color: #fff;     text-align: center;">Cancel Your Order</h2>
 			<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
         <div class="content leftsidecontentmiddle">
-			<a href="javascript:;" class="btn btn-default btn-block cancelOrder btn-w"><i class="fas fa-times"></i> CANCEL ORDER</a>
-			<a href="<?php echo base_url('order'); ?>" class="btn btn-default btn-block btn-w"><i class="fas fa-long-arrow-alt-left"></i>
-			RETURN TO ORDER</a>
-	
-			<a href="<?php echo base_url(); ?>" class="btn btn-default btn-block btn-w"><i class="fas fa-long-arrow-alt-left"></i>
-			RETURN TO Home</a>
+			<!-- <a href="javascript:;" class="btn btn-default btn-block cancelOrder btn-w"><i class="fas fa-times"></i> CANCEL ORDER</a> -->
+			<a href="javascript:;" class="btnswidth btn-block cancelOrder">
+			Start Over</a>
+	  
+			<a href="<?php echo base_url(); ?>/new" class="btn-block btnswidth">
+			Return To Home</a>
 		</div>
   </div>
 		</div>

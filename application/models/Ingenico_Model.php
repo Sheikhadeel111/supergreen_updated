@@ -53,12 +53,12 @@ class Ingenico_Model extends Crud_model {
         $this->merchant = "1123";
     }
 
-    protected function getCommunicatorConfiguration()
+    public function getCommunicatorConfiguration()
     {
         $this->communicatorConfiguration = new CommunicatorConfiguration(
          "488b06f428402623",
          "dKYkfiN5W4Iozuifl70xi8UY3FkOCW0vOUt/QiFFS9U=",
-         "https://eu.sandbox.api-ingenico.com",
+         "http://localhost/supremegreen/",
          'bitsclan'
      );
         return $this->communicatorConfiguration;
@@ -75,8 +75,10 @@ class Ingenico_Model extends Crud_model {
         return $this->client;
     }
 
+
     function paymentMethods($data)
-    {
+    {   
+
         $client = $this->getClient();
         $hostedCheckoutSpecificInput = new HostedCheckoutSpecificInput();
         $hostedCheckoutSpecificInput->locale = "en_GB";
@@ -90,10 +92,10 @@ class Ingenico_Model extends Crud_model {
 
         $customer = new Customer();
         $customer->billingAddress = $billingAddress;
-        $customer->merchantCustomerId = "1234";
+        $customer->merchantCustomerId = "1123";
 
         $order_array = $this->session->userdata("order_cart"); 
-        // debug($order_array,true);
+         debug($order_array,true);
 
 
         $sum = 0;
@@ -139,32 +141,55 @@ class Ingenico_Model extends Crud_model {
 
         $shippingAddress = new AddressPersonal();
         $shippingName = new PersonalName();
-        $shippingName->firstName = $data['firstName'];
+        // $shippingName->firstName = $data['firstName'];
+        // $shippingAddress->name = $shippingName;
+        // $shippingAddress->street = $data['street'];
+        // $shippingAddress->houseNumber = $data['houseNumber'];
+        // $shippingAddress->zip = $data['zip'];
+        // $shippingAddress->city = $data['city'];
+        // $shippingAddress->state = $data['state'];
+        // $shippingAddress->countryCode = $data['countryCode'];
+        $shippingName->title = "Miss";
+        $shippingName->firstName = "Road";
+        $shippingName->surname = "Runner";
         $shippingAddress->name = $shippingName;
-        $shippingAddress->street = $data['street'];
-        $shippingAddress->houseNumber = $data['houseNumber'];
-        $shippingAddress->zip = $data['zip'];
-        $shippingAddress->city = $data['city'];
-        $shippingAddress->state = $data['state'];
-        $shippingAddress->countryCode = $data['countryCode'];
+
+        $shippingAddress->street = "Desertroad";
+        $shippingAddress->houseNumber = "1";
+        $shippingAddress->additionalInfo = "Suite II";
+        $shippingAddress->zip = "84536";
+        $shippingAddress->city = "Monument Valley";
+        $shippingAddress->state = "Utah";
+        $shippingAddress->countryCode = "US";
         $customer->shippingAddress = $shippingAddress;
 
 
         $billingAddress = new Address();
-        $billingAddress->street = $data['state'];
-        $billingAddress->houseNumber = $data['houseNumber'];
-        $billingAddress->zip = $data['zip'];
-        $billingAddress->city = $data['city'];
-        $billingAddress->state = $data['state'];
-        $billingAddress->countryCode = $data['countryCode'];
+        // $billingAddress->street = $data['state'];
+        // $billingAddress->houseNumber = $data['houseNumber'];
+        // $billingAddress->zip = $data['zip'];
+        // $billingAddress->city = $data['city'];
+        // $billingAddress->state = $data['state'];
+        // $billingAddress->countryCode = $data['countryCode'];
+        $billingAddress->street = "Desertroad";
+        $billingAddress->houseNumber = "13";
+        $billingAddress->additionalInfo = "b";
+        $billingAddress->zip = "84536";
+        $billingAddress->city = "Monument Valley";
+        $billingAddress->state = "Utah";
+        $billingAddress->countryCode = "US";
         $customer->billingAddress = $billingAddress;
 
 
         $contactDetails = new ContactDetails();
-        $contactDetails->emailAddress = $data['email'];
+        // $contactDetails->emailAddress = $data['email'];
+        // $contactDetails->emailMessageType = "html";
+        // $contactDetails->phoneNumber = "+".$data['phone'];
+        // $contactDetails->faxNumber = "+".$data['phone'];
+        $contactDetails->emailAddress = "wile.e.coyote@acmelabs.com";
         $contactDetails->emailMessageType = "html";
-        $contactDetails->phoneNumber = "+".$data['phone'];
-        $contactDetails->faxNumber = "+".$data['phone'];
+        $contactDetails->phoneNumber = "+1234567890";
+        $contactDetails->faxNumber = "+1234567891";
         $customer->contactDetails = $contactDetails;
 
 
@@ -173,11 +198,11 @@ class Ingenico_Model extends Crud_model {
         if(empty($this->session->userdata('order_price')))
             { 
                  $amountOfMoney->amount = $sum*100; 
-            }
+            } 
             else
             { 
                  $amountOfMoney->amount = ($this->session->userdata('order_price')*100); 
-            }
+            } 
         $amountOfMoney->currencyCode = "USD";
 
 
@@ -202,13 +227,57 @@ class Ingenico_Model extends Crud_model {
 
         $body = new CreateHostedCheckoutRequest;
 
+
         $body->hostedCheckoutSpecificInput = $hostedCheckoutSpecificInput;
         $body->order = $order;
+        //debug($body);
         $response = $client->merchant($this->merchant)->hostedcheckouts()->create($body);
 
 
         return $response;
-    
+    }
+    public function testCreatePayment()
+    {
+        $client = $this->getClient();
+        $merchantId = '1123';
+        $createHostedCheckoutRequest = new CreateHostedCheckoutRequest();
+        $order = new Order();
+
+        $amountOfMoney = new AmountOfMoney();
+        $amountOfMoney->currencyCode = "USD";
+        $amountOfMoney->amount = 2345;
+        $order->amountOfMoney = $amountOfMoney;
+
+        $customer = new Customer();
+        $customer->merchantCustomerId = "123456789";
+
+        $billingAddress = new Address();
+        $billingAddress->countryCode = "US";
+        $customer->billingAddress = $billingAddress;
+
+        $order->customer = $customer;
+
+        $createHostedCheckoutRequest->order = $order;
+
+        $hostedCheckoutSpecificInput = new HostedCheckoutSpecificInput();
+        $hostedCheckoutSpecificInput->locale = "en_GB";
+        $hostedCheckoutSpecificInput->variant = "100";
+        $hostedCheckoutSpecificInput->paymentProductFilters = new PaymentProductFiltersHostedCheckout();
+        $hostedCheckoutSpecificInput->paymentProductFilters->exclude = new PaymentProductFilter();
+        $hostedCheckoutSpecificInput->paymentProductFilters->exclude->products = array(120);
+        $createHostedCheckoutRequest->hostedCheckoutSpecificInput = $hostedCheckoutSpecificInput;
+
+        /** @var CreateHostedCheckoutResponse $createHostedCheckoutResponse */
+        $createHostedCheckoutResponse =
+            $client->merchant($merchantId)->hostedcheckouts()->create($createHostedCheckoutRequest);
+         $createHostedCheckoutResponse->hostedCheckoutId;
+
+        $client = $this->getClient();
+        $merchantId = '1123';
+        /** @var GetHostedCheckoutResponse $getHostedCheckoutResponse */
+        $getHostedCheckoutResponse = $client->merchant($merchantId)->hostedcheckouts()->get($createHostedCheckoutResponse->hostedCheckoutId
+            );
+        return $getHostedCheckoutResponse->status;
     }
 
     // public function testCreatePayment()

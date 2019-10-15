@@ -25,6 +25,7 @@
 			background-color: #30c283;
 			border:none;
 			color:white;
+			
 		}
 		.btnhover:hover{
 			background-color: #33cc8a;
@@ -41,7 +42,7 @@
 			font-size:34px;
 			font-weight: bold;
 		}
-			@media (min-width: 320px) and (max-width: 630px){
+			@media (min-width: 320px) and (max-width: 750px){
 			body{
 				overflow: scroll;
 				margin:10px;

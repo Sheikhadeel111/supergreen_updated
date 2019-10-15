@@ -1,30 +1,71 @@
 <style type="text/css">
-	.newcircel {
-	border-radius: 50%;
-	border: #f88f26 2px solid;
-}
-.inbtn{
-    position: fixed;
 
+  .option{
+   
+  }
+  .newcircel {
+   border-radius: 50%;
+   border: #f88f26 2px solid;
+ }
+ .inbtn{
+  
+  
 }
 .counter{
-  width: 10px;
+  width: 15px;
   background: transparent;
   border: none;
 }
-
-.mybtn{
-    background: transparent;
-    border: #f88f26 solid;
-    padding: 4px 7px !important;
+.btn:focus{
+  color: white !important;
+}
+.btn:hover{
+  color: white !important;
 }
 
-.mybtn:hover{
-  background: transparent;
-    border: #f88f26 solid;
-    padding: 4px 7px !important;
-}
+.btn-circle {
+    color:white;
+    background-color: #e5acbc;
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+    border:none;
+    outline: none !important;
+  }
 
+.bottom-button{
+   background-color: #e5acbc;
+    border: 1px solid #e5acbc;
+    padding: 12px 30px !important;
+    border-radius: 3px;
+    margin-right: 18px;
+    font-size: 15px!important;
+    font-weight: 400!important;
+    text-transform: capitalize!important;
+    width:156px;
+    margin-top: 83px;
+    margin-bottom: 28px;
+    color:white;
+    outline: none !important;
+        /*  background-color: #e5acbc;
+          border: 2px solid white;
+          color: white;
+          font-size: 29px;
+          margin-bottom: 28px;
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-top: 5px;
+          padding-bottom: 8px;
+          font-weight: bold;
+          border-radius: 4px;*/
+        
+    }
+    .bottom-button:hover{
+      background-color: #F292AE;
+    }
 
 .d-1{
   position: fixed;
@@ -36,22 +77,17 @@
 }
 
 .circled-1 {  
-  position: fixed;
-  top: 116px;
-  left: 103px;
-  line-height: 150px;
-  height: 170px !important;
-  width: 170px !important;
   background-color: transparent;
   border-radius: 50%;
-  display: inline-block;
   border: 5px solid #fff;
   border-style: dotted;
+      height: 140px;
 }
 
 .ib1{
-  top: 10px;
-  margin-left: 30px;
+    margin-left: 21px;
+    margin-top: 130px;
+    color:white;
 }
 
 
@@ -65,22 +101,15 @@
 }
 
 .circled-2 {  
- position: fixed;
- top: 70px;
- left: 309px;
- line-height: 150px;
- height: 195px;
- width: 195px;
  background-color: transparent;
- border-radius: 50%;
- display: inline-block;
- border: 5px solid #fff;
- border-style: dotted;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  border-style: dotted;
+   height: 140px;
 }
 
 .ib2{
-     top: -33px;
-    margin-left: 46px;
+ margin-left: 70px;
 }
 
 
@@ -95,23 +124,16 @@
 
 
 .circled-3 {  
-  position: fixed;
-  top: 203px;
-  left: 534px;
-  line-height: 150px;
-  height: 170px !important;
-  width: 170px !important;
   background-color: transparent;
   border-radius: 50%;
-  display: inline-block;
   border: 5px solid #fff;
-   border-style: dotted;
-  
+  border-style: dotted;
+   height: 140px;
 }
 
 .ib3{
-      top: 93px;
-    margin-left: 32px;
+  top: 93px;
+  margin-left: 32px;
 }
 
 
@@ -127,22 +149,15 @@
 
 
 .circled-4 {  
-  position: fixed;
-  top: -2px;
-  left: 806px;
-  line-height: 150px;
-  height: 170px !important;
-  width: 170px !important;
   background-color: transparent;
   border-radius: 50%;
-  display: inline-block;
   border: 5px solid #fff;
-   border-style: dotted;
-  
+  border-style: dotted;
+   height: 140px;
 }
 .ib4{
   top: 11px;
-    margin-left: 172px;
+  margin-left: 172px;
 }
 
 .d-5{
@@ -155,24 +170,17 @@
 }
 
 .circled-5 {  
- position: fixed;
- top: 107px;
- left: 1078px;
- line-height: 150px;
- height: 170px !important;
- width: 170px !important;
  background-color: transparent;
- border-radius: 50%;
- display: inline-block;
- border: 5px solid #fff;
+  border-radius: 50%;
+  border: 5px solid #fff;
   border-style: dotted;
-
+   height: 140px;
 }
 
 
 .ib5{
-     top: 4px;
-    margin-left: 30px;
+ top: 4px;
+ margin-left: 30px;
 }
 
 
@@ -187,18 +195,11 @@
 
 
 .circled-6{  
- position: fixed;
- top: 187px;
- left: 1318px;
- line-height: 150px;
- height: 170px !important;
- width: 170px !important;
  background-color: transparent;
- border-radius: 50%;
- display: inline-block;
- border: 5px solid #fff;
-border-style: dotted;
-
+  border-radius: 50%;
+  border: 5px solid #fff;
+  border-style: dotted;
+   height: 140px;
 }
 
 
@@ -232,7 +233,7 @@ border-style: dotted;
 .order{  
  position: fixed;
  top: 520px;
-left: 680px;
+ left: 680px;
  line-height: 220px;
  height: 220px !important;
  width: 220px !important;
@@ -240,7 +241,194 @@ left: 680px;
  border-radius: 50%;
  display: inline-block;
  border: 5px solid #fff;
-border-style: dotted;
+ border-style: dotted;
+</style>
+<style>
+  /* bottle */
+  .bottle_circles{
+    width: 125px;
+    height: 125px;
+    border-radius: 224px;
+    background-color: rgba(48,194,131,0.7);
+    border: 2px solid #ffffff;
+
+  }
+  .middle_text{
+    margin-top: 47%;
+  }
+  .bottle_text{
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  .bottle1{
+    justify-content: center;
+    display: flex;
+    margin-top: 110px;
+  }
+  .bottle2{
+    justify-content: center;
+    display: flex;
+    margin-top: 119px;
+  }
+  
+  @media (min-width:768px) and (max-width:2600px){
+    .mt25{
+      margin-top: 25px;
+    }
+    .mt40{
+      margin-top: 40px;
+    }
+    .mt_100{
+      margin-top: -100px;
+    }
+    .mt_60{
+      margin-top: -60px;
+    }
+    .mt100{
+      margin-top: 100px;
+    }
+  }
+  .light_pink_btn{
+    border-width: 3px;
+    border-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-radius: 4px;
+    background-color: rgb(251, 167, 176);
+    color: #ffffff;
+  }
+  .mlr0{
+    margin-left: 0px!important;
+    margin-right:0px!important;
+  }
+  @media (min-width:320px) and (max-width:812px){
+
+    .mt25{
+      margin-top: 0px;
+    }
+    .mt40{
+      margin-top: 0px;
+    }
+    .mt_100{
+      margin-top: 0px;
+    }
+    .mt_60{
+      margin-top: 0px;
+    }
+    .mt100{
+      margin-top: 0px;
+    }
+
+           .bottle_circles{
+              width: 120px !important;
+              height: 120px !important;
+            }
+            .mrt7m{
+              margin-top:-7px;
+            }
+
+          .circled-1{
+            height: 129px;
+          }
+          .circled-2{
+            height: 124px;
+          }
+          .circled-3{
+            height: 130px;
+          }
+          .circled-4{
+            height: 130px;
+          }
+          .circled-5{
+            height: 130px;
+          }
+          .circled-6{
+            height: 130px;
+          }
+              .option{
+              position: relative;
+            }
+            .ib1{
+              margin-top: 0px;
+              position: relative;
+            }
+              .mt30sm{
+                margin-top: 30px;    
+              }
+              .mh380{
+                min-height: 380px!important;
+              }
+              .mh400{
+                min-height: 400px!important;
+              }
+  }
+</style>
+<style type="text/css">
+ body { 
+  background: url('assets/images/backgroundbottles.png') no-repeat center top fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  background-color: rgba(48,194,131,0.5019607843137255);
+  
+}
+.bg_bottle{
+  background: url('assets/images/bottle1.png') no-repeat center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: contain;
+  overflow: hidden;
+  min-height: 440px;
+
+}
+.bg_bottle1{
+  background: url('assets/images/bottle2.png') no-repeat center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: contain;
+  overflow: hidden;
+  min-height: 440px;
+}
+.bg_bottle2{
+  background: url('assets/images/botlle3.png') no-repeat center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: contain;
+  overflow: hidden;
+  min-height: 380px;
+}
+.bg_bottle3{
+  background: url('assets/images/bottol.png') no-repeat center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: contain;
+  overflow: hidden;
+  min-height: 537px;  
+}
+.bg_bottle4{
+  background: url('assets/images/bottle5.png') no-repeat center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: contain;
+  overflow: hidden;
+  min-height: 440px;
+}
+.bg_bottle5{
+  background: url('assets/images/bottle4.png') no-repeat center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: contain;
+  overflow: hidden;
+  min-height: 440px;
+}
 </style>
 
 <?php
@@ -251,7 +439,145 @@ $drinkobj = arrayToObj($drinkarr);
 $newobj = json_encode($drinkobj);
 ?>
 
-<section class="menu-section pt50" >
+
+<div class="container-fluid">
+  <div class="row" style="margin-top:90px;">
+    <!-- First Bottle -->
+    <div class="col-lg-2 col-xs-6">
+      <div class="bg_bottle">
+        <div class="row bottle1">
+          <div class="option <?php if($selectedItem == $drink1->name){ echo "circled-1"; }else{ echo ""; } ?>">
+            <div class="col-lg-2  bottle_circles hovercircle <?php if($selectedItem == $drink1->name){ echo "selected"; }else{ echo "grow"; } ?>"  onclick="encirecl(this);" data-drinks= "1">
+              <center><div class="bottle_text middle_text" style="font-size:16px;">
+                <?=$drink1->name."<br>".MONEY_SIGN."&nbsp;".$drink1->price?>
+              </div></center>
+            </div>
+            <div class="inbtn ib1" style="display: <?php if($selectedItem == $drink1->name){ echo "block"; }else{ echo "none"; } ?>;">
+                <button type="button" class="btn mybtn btn-circle" onclick="plus(this,<?=$drink1->id?>)"><i class="fa fa-plus"></i></button>
+                <input class="counter" id="<?=$drink1->id?>" value="1">
+                <button type="button" class="btn mybtn btn-circle" onclick="minus(this,<?=$drink1->id?>)"><i class="fa fa-minus"></i></button>
+              </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+    <!-- End -->
+
+    <!-- Second Bottle -->
+    <div class="col-lg-2 col-xs-6 mtbottle5 mt100">
+      <div class="bg_bottle1">
+        <div class="row bottle2">
+         <div class="option <?php if($selectedItem == $drink2->name){ echo "circled-2"; }else{ echo ""; } ?>">
+            <div class="col-lg-2  bottle_circles hovercircle <?php if($selectedItem == $drink2->name){ echo "selected"; }else{ echo "grow"; } ?>" onclick="encirecl(this);" data-drinks= "2">
+              <center><div class="bottle_text middle_text" style="font-size:16px;">
+                <?=$drink2->name."<br>".MONEY_SIGN."&nbsp;".$drink2->price?>
+              </div></center>
+            </div>
+            <div class="inbtn ib1" style="display: <?php if($selectedItem == $drink2->name){ echo "block"; }else{ echo "none"; } ?>;">
+                <button type="button" class="btn mybtn btn-circle" onclick="plus(this,<?=$drink2->id?>)"><i class="fa fa-plus"></i></button>
+                <input class="counter" id="<?=$drink1->id?>" value="1">
+                <button type="button" class="btn mybtn btn-circle" onclick="minus(this,<?=$drink2->id?>)"><i class="fa fa-minus"></i></button>
+              </div>
+          </div>
+      </div>
+    </div>  
+  </div>
+  <!-- End -->
+
+  <!-- third Bottle -->
+  <div class="col-lg-2 col-xs-6 mtbottle4 mt_60">
+    <div class="bg_bottle2 mt30sm">
+      <div class="row bottle1">
+         <div class="option <?php if($selectedItem == $drink3->name){ echo "circled-3"; }else{ echo ""; } ?>">
+            <div class="col-lg-2  bottle_circles hovercircle <?php if($selectedItem == $drink3->name){ echo "selected"; }else{ echo "grow"; } ?>" onclick="encirecl(this);" data-drinks= "3">
+             <center><div class="bottle_text middle_text" style="font-size:16px;">
+              <?=$drink3->name."<br>".MONEY_SIGN."&nbsp;".$drink3->price?>
+            </div></center>
+          </div>
+          <div class="inbtn ib1" style="display: <?php if($selectedItem == $drink3->name){ echo "block"; }else{ echo "none"; } ?>;">
+            <button type="button" class="btn mybtn btn-circle" onclick="plus(this,<?=$drink3->id?>)"><i class="fa fa-plus"></i></button>
+            <input class="counter" id="<?=$drink2->id?>" value="1">
+            <button type="button" class="btn mybtn btn-circle" onclick="minus(this,<?=$drink3->id?>)"><i class="fa fa-minus"></i></button>
+          </div>
+      </div>
+    </div>
+  </div>  
+</div>
+<!-- End -->
+
+<!-- fourth Bottle -->
+<div class="col-lg-2 col-xs-6 mtbottle3 mt_100">
+  <div class="bg_bottle3 mt30sm mh380">
+    <div class="row bottle1">
+      <div class="option <?php if($selectedItem == $drink4->name){ echo "circled-4"; }else{ echo ""; } ?>">
+            <div class="col-lg-2  bottle_circles hovercircle <?php if($selectedItem == $drink4->name){ echo "selected"; }else{ echo "grow"; } ?>" onclick="encirecl(this);" data-drinks= "4">
+             <center><div class="bottle_text middle_text" style="font-size:16px;">
+              <?=$drink4->name."<br>".MONEY_SIGN."&nbsp;".$drink4->price?>
+            </div></center>
+          </div>
+          <div class="inbtn ib1" style="display: <?php if($selectedItem == $drink4->name){ echo "block"; }else{ echo "none"; } ?>;">
+            <button type="button" class="btn mybtn btn-circle" onclick="plus(this,<?=$drink4->id?>)"><i class="fa fa-plus"></i></button>
+            <input class="counter" id="<?=$drink2->id?>" value="1">
+            <button type="button" class="btn mybtn btn-circle" onclick="minus(this,<?=$drink4->id?>)"><i class="fa fa-minus"></i></button>
+          </div>
+      </div>
+  </div>
+</div>  
+</div>
+<!-- End -->
+
+
+<!-- fifth Bottle -->
+<div class="col-lg-2 col-xs-6 mtbottle2">
+  <div class="bg_bottle4 mt30sm">
+    <div class="row bottle1">
+      <div class="option <?php if($selectedItem == $drink5->name){ echo "circled-5"; }else{ echo ""; } ?>">
+            <div class="col-lg-2  bottle_circles hovercircle <?php if($selectedItem == $drink5->name){ echo "selected"; }else{ echo "grow"; } ?>" onclick="encirecl(this);" data-drinks= "5">
+             <center><div class="bottle_text middle_text" style="font-size:16px;">
+              <?=$drink5->name."<br>".MONEY_SIGN."&nbsp;".$drink5->price?>
+            </div></center>
+          </div>
+          <div class="inbtn ib1" style="display: <?php if($selectedItem == $drink5->name){ echo "block"; }else{ echo "none"; } ?>;">
+            <button type="button" class="btn mybtn btn-circle" onclick="plus(this,<?=$drink5->id?>)"><i class="fa fa-plus"></i></button>
+            <input class="counter" id="<?=$drink2->id?>" value="1">
+            <button type="button" class="btn mybtn btn-circle" onclick="minus(this,<?=$drink5->id?>)"><i class="fa fa-minus"></i></button>
+          </div>
+      </div>
+  </div>
+</div>  
+</div>
+<!-- End -->
+
+
+<!-- sixth Bottle -->
+<div class="col-lg-2 col-xs-6 mtbottle1">
+  <div class="bg_bottle5 mt30sm mh400">
+    <div class="row bottle1">
+      <div class="option <?php if($selectedItem == $drink6->name){ echo "circled-6"; }else{ echo ""; } ?>">
+            <div class="col-lg-2 bottle_circles hovercircle <?php if($selectedItem == $drink6->name){ echo "selected"; }else{ echo "grow"; } ?>"  onclick="encirecl(this);" data-drinks= "6">
+             <center><div class="bottle_text middle_text" style="font-size:16px;">
+              <?=$drink6->name."<br>".MONEY_SIGN."&nbsp;".$drink6->price?>
+            </div></center>
+          </div>
+          <div class="inbtn ib1" style="display: <?php if($selectedItem == $drink6->name){ echo "block"; }else{ echo "none"; } ?>;">
+            <button type="button" class="btn mybtn btn-circle" onclick="plus(this,<?=$drink6->id?>)"><i class="fa fa-plus"></i></button>
+            <input class="counter" id="<?=$drink2->id?>" value="1">
+            <button type="button" class="btn mybtn btn-circle" onclick="minus(this,<?=$drink6->id?>)"><i class="fa fa-minus"></i></button>
+          </div>
+      </div>
+    </div>
+  </div>  
+</div>
+<!-- End -->
+<div class="row mlr0">
+  <div class="col-md-12 col-xs-12 text-center mb70">
+    <button class="bottom-button" onclick="order_now();">Order Now</button>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- <section class="menu-section pt50" >
   <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 " > 
     <div class="" > 
       <div class="row center-div">
@@ -335,7 +661,7 @@ $newobj = json_encode($drinkobj);
       </div>
     </div>
   </div>
-</section>  
+</section>   -->
 
 
 
@@ -366,10 +692,10 @@ $newobj = json_encode($drinkobj);
       $(ele).removeClass(addclass);
       $(newProducts).each(function( index, element ) {
       if(element.drink == drink){
-       newProducts.splice(index, 1);
-       return false;
-     }
-   });
+         newProducts.splice(index, 1);
+         return false;
+         }
+      });
       console.log(newProducts);
       c--;
  
@@ -416,27 +742,26 @@ function plus(ele,id){
 
 
   function order_now(){
-    console.log(newProducts);
-
-    $.ajax({
-    method:'POST',
-    url:"<?php echo base_url('order/order_drinks_order');?>",
-    data:{drinks:newProducts,key:<?php echo $skey; ?>},
-    dataType:'json',
-    success:function(data)
-    {
-      if(data.status){
-        var url = "<?php echo base_url("order/add_more"); ?>";
-       window.location = url;
+    if(newProducts == ""){
+          toasterOptions();
+            toastr.error("No drink selected");
+            setTimeout(function(){ 
+          }, 1000);
       }
-      else
-      {
-        toasterOptions();
-        toastr.error(data.msg);
-
-      }
-    }
-  }); 
+                $.ajax({
+                method:'POST',
+                url:"<?php echo base_url('order/order_drinks_order');?>",
+                data:{drinks:newProducts,key:<?php echo $skey; ?>},
+                dataType:'json',
+                success:function(data)
+                {
+                 
+                    var url = "<?php echo base_url("order/add_more"); ?>";
+                    window.location = url;
+                  
+                }
+              }); 
+        
   }
 
 

@@ -1,23 +1,54 @@
 <style type="text/css">
 	body { 
-		background: url('assets/images/backgroundimgae.png') no-repeat center center fixed; 
+		background: url('assets/images/background2.png') no-repeat center center fixed; 
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
 		background-size: cover;
 		background-color: rgba(48,194,131,0.5019607843137255);
-
+		height: 100%;
+	}
+	.addmore{
+		padding: 9px 18px!important;
+		margin-top:10px!important; 
+		margin-right: 0px!important;
+	}
+	.checkoutbtn{
+		padding: 9px 18px!important;
+		
 	}
 	p{
 		color:white !important;
 
 	}
+	.cartpedng{
+		padding-left: 60px;
+	}
+	.couponinput{
+		background-color: transparent;
+		border: 1px solid white;
+		width: 75%;
+		height: 38px !important;
+		padding: 5px; 
+	}
+	.counponbtn{
+		display: inline;
+		width:23%;
+		height: 38.5px;
+		border: none; 
+		outline: none;
+		background-color: #e5acbc;
+		border-radius: 3px;
+	}
+	.counponbtn:hover{
+		background-color: #F292AE;
+	}
 
 	.center-text{
-		font-family: Lato-Black, AdobeInvisFont, MyriadPro-Regular;
 		color: white;
 		font-size: 42px;
-		font-weight: bold;			
+		font-weight: bold;	
+		padding-bottom: 40px;		
 	}
 	.float-right{
 		float: right !important;
@@ -31,23 +62,32 @@
 	}
 	.salad-sub{
 		font-weight: 100;
+		text-transform: capitalize!important;
 	}
 	.salad{
 		font-weight: bold;
+		text-transform: capitalize!important;
 	}
 	.ed-button{
-		background-color: #30c283;
-		border: 1px solid #30c283;
-		padding: 9px 30px;
+		background-color: #e5acbc;
+		border: 1px solid #e5acbc;
+		padding: 10px 30px !important;
 		border-radius: 3px;
 		margin-right: 18px;
-		font-weight: bold;
-		font-size: 16px;
-
+		font-size: 15px!important;
+		font-weight: 400!important;
+		text-transform: capitalize!important;
+		width:136px;
+		outline: none !important;
+	}
+	
+	.ed-button:hover{
+		background-color: #F292AE;
+		border: 1px solid #F292AE;
 	}
 	.glyphicon-plus{
-		background-color: #4db68a;
-		padding: 7px 8px 8px 9px;
+		background-color: #e5acbc;
+		padding: 10px 13px 10px 13px;
 		color: white;
 		font-weight: bold;
 		border-radius: 3px;
@@ -56,8 +96,8 @@
 	}
 
 	.glyphicon-minus{
-		background-color: #4db68a;
-		padding: 7px 8px 8px 9px;
+		background-color: #e5acbc;
+		padding: 10px 13px 10px 13px;
 		color: white;
 		font-weight: bold;
 		border-radius: 3px;
@@ -73,18 +113,25 @@
 	}
 	.salad-box{
 		border-right: 1px solid white;
-		padding: 0px 29px 26px;
+		padding: 15px 29px 46px;
+		min-height: 245px;
 	}
 	.total-column{
-		height: 258px;
-		padding: 28px 19px 22px 18px;
+		height: 100%;
+		padding: 5px 19px 22px 18px;
 		border: 1px solid white;
 	}
 	.last-column{
-		padding: 3px 30px;
+		padding: 0px 30px;
 	}
 	.p-price{
 		margin-top: 10px;
+	}
+	.topqtypd{
+		padding-top: 75%;
+	}
+	.bottomqtypd{
+		padding-top: 30%;
 	}
 
 	@media (min-width: 768px) and (max-width: 991px) {
@@ -142,8 +189,8 @@
 
 		.p-plus{
 			display: inline;
-			margin-right: 7px;
-			margin-left: -18px;
+			margin-right: 0px;
+			margin-left: 0px;
 		}
 		.p-minus{
 			display: inline;
@@ -169,13 +216,17 @@
 			border-right:none; 
 		}
 		.ed-button {
-			background-color: #30c283;
-			border: 1px solid #30c283;
+			background-color: #e5acbc;
+			border: 1px solid #e5acbc;
 			padding: 7px 23px;
 			border-radius: 3px;
 			margin-right: 8px;
-			font-weight: bold;
+			font-weight: 400;
 			font-size: 15px;
+		}
+		.eidtanddel{
+			padding-left:30px !important;
+			padding-right:30px !important;
 		}
 		.side-bar-content{
 			border-top: 1px solid white;
@@ -183,8 +234,35 @@
 		}
 
 	}
+	@media (min-width: 1200px) and (max-width: 1664px) {
+		.btnchk{
+			width: 100%;
+		}
+		.martp{
+			margin-top:-10px;
+		}
+	}
+	@media (min-width: 320px) and (max-width: 650px) {
+		.topqtypd{
+			padding-top: 20% !important;
+		}
+		.bottomqtypd{
+			padding-top: 0%;
+		}
 
-	@media (min-width: 320px) and (max-width: 590px) {
+		.addmore{
+			margin-right: 7px !important;
+			padding-left: 22px !important;
+			padding-right: 22px !important;
+		}
+		.cartpedng{
+			padding-left: 0px!important;
+		}
+		.center-text{
+			color: white;
+			font-size: 35px;
+			font-weight: bold;			
+		}
 		.full-card {
 			background-color: #03030dba;
 			padding: 13px 24px 16px 25px;
@@ -239,8 +317,8 @@
 
 		.p-plus{
 			display: inline;
-			margin-right: 7px;
-			margin-left: -18px;
+			margin-right: 0px !important;
+			margin-left: 0px !important;
 		}
 		.p-minus{
 			display: inline;
@@ -266,8 +344,8 @@
 			border-right:none; 
 		}
 		.ed-button {
-			background-color: #30c283;
-			border: 1px solid #30c283;
+			background-color: #e5acbc;
+			border: 1px solid #e5acbc;
 			padding: 7px 23px;
 			border-radius: 3px;
 			margin-right: 8px;
@@ -288,6 +366,12 @@
 	.mt20{
 		margin-top: 20px!important;
 	}
+	.jconfirm .jconfirm-box .jconfirm-buttons button.btn-blue{
+		background-color: #e5acbc !important;
+		color:white !important;
+		font-weight: 400 !important;
+
+	}
 
 </style>
 
@@ -297,42 +381,50 @@
 		color: white;
 	}
 </style>
-<div class="container-fluid">
-
-	<div class="row">
-		<div class="col-lg-12 col-xs-12" style="margin-top:-50px;">
-			<center>
-				<span class="center-text" >YOUR ORDER</span>
-			</center>
+<div class="container-fluid" >
+	<form id="order-data">
+		<div class="row">
+			<div class="col-lg-12 col-xs-12">
+				<center>
+					<span class="center-text" >Your Order</span>
+				</center>
+			</div>
 		</div>
-	</div>
-	<br><br>
-	<div>
-			<div class="col-lg-1">&nbsp;</div>
-		<div class="col-lg-10">
-		<div class="full-card">
-			<div class="row">
-				
-				<div class="col-lg-9">
-					<?php 
 
-					$order_price = 0;
+		<div>
+			<div class="col-lg-1">&nbsp;</div>
+			<div class="col-lg-10 cartpedng">
+				<div class="full-card" >
+					<div class="row">
+
+						<div class="col-lg-9">
+							<?php 
+
+							$order_price = 0;
 
 					$orders = $this->session->userdata("order_cart"); //get orders session array
-					//print_r($orders);
+				
 					foreach ($orders as $key => $value) { ?>
 
 						<div class="row first-border" style="">
 							<div class="col-lg-10 salad-box" style="">
-								<h2 class="salad"><?php if($value['order_category'] == "drinks"){ echo $value['order_category']; }else { echo category_parent($value['order_category']); } ?> <span class="salad-sub">(<?php echo $value['order_name']; ?>) </span></h2>
+								<h2 class="salad">
+									<?php if($value['order_category'] == "drinks"){ echo $value['order_category']; }else { echo category_parent($value['order_category']); } ?> 
+									<span class="salad-sub">(<div  id="eidtname<?= $key ?>" style="display: inline"><?php echo $value['order_name']; ?></div>) </span>
+									<?php if($value['edit'] == 1){ ?>
+									<i class="fa fa-pen" onclick="openeditmodel('<?= $key ?>')" style="font-size:22px;" ></i>
+									<?php } ?>
+								</h2>
 								<?php
 								$qty = $value['qty'];
 								if($value['order_category'] == "drinks"){
-									echo $value['order_items']."<br/>";
+									echo $value['order_items']."<br/><br/><br/><br/>";
 
 								}else{
 									$decode = json_decode($value['order_items']);
-
+									// echo "<pre>";
+					 				// 	print_r($decode );
+					 				// 	die;
 
 									foreach ($decode as $key1 => $value1) {
 										if($key1 == "top"){
@@ -356,19 +448,19 @@
 											$product = ingredients_price($v->product);
 											if($key1 == "dress"){
 
-												$serving = !empty($v->serving)?$v->serving:'Side';
+												// $serving = !empty($v->serving)?$v->serving:'Side';
 												$quant = !empty($v->quantity)?$v->quantity:'1';
-												$size = !empty($v->size)?$v->size:'M';
+												$size = !empty($v->size)?$v->size:'On The Side';
 
-												echo $product->cat_pro_name." (".$size.")" . "(Serving: ".$serving.")";
+												echo $product->cat_pro_name." (".$size.") ";
 												if($quant > 1){
-													echo "(Qty: ".$quant.")";
+													echo " (Qty: ".$quant.")";
 												}		 			
 
 											}else{
 												echo $product->cat_pro_name;
 												if($v->quantity > 1){
-													echo "(Qty: ".$v->quantity.")";
+													echo " (Qty: ".$v->quantity.")";
 												}
 											}
 
@@ -393,31 +485,43 @@
 									<?php if($value['custom'] == 0){ echo "This Product Is Non Editable."; } ?>
 								</span>
 								<br/>
-									<?php if($value['custom'] == 1){ ?>
-										<?php if($value['order_category'] == "drinks"){ ?>
-											<a  href="<?php echo base_url('order/edit_drink/').$value['slug']."/".$key; ?>" style="color:white;"><button type="button" class="ed-button">Edit</button></a>
-										<?php } else { ?> 
-											<a  href="<?php echo base_url('order/edit/').$value['slug']."/".$key; ?>" style="color:white; "><button type="button" class="ed-button">Edit</button></a>
-										<?php } ?>
-									<?php } ?>
-									<a  href="<?php echo base_url('order/deleteItem/').$key; ?>" style="color:white;"><button type="button" class="ed-button">Delete</button></a>
-									
-								</div>
 
-								<div class="col-lg-2 text-center side-bar-content">
+								<?php if($value['custom'] == 1){ ?>
+									<?php if($value['order_category'] == "drinks"){ ?>
+										<a  href="<?php echo base_url('order/edit_drink/').$value['slug']."/".$key; ?>" style="color:white;"><button type="button" class="ed-button eidtanddel pding">Edit</button></a>
+									<?php } else { ?> 
+										<a  href="<?php echo base_url('order/edit/').$value['slug']."/".$key; ?>" style="color:white; "><button type="button" class="ed-button">Edit</button></a>
+									<?php } ?>
+								<?php } ?>
+								<a  href="<?php echo base_url('order/deleteItem/').$key; ?>" style="color:white;"><button type="button" class="ed-button addmore">Delete</button></a>
+
+							</div>
+
+							<div class="col-lg-2 text-center side-bar-content">
+
+								<div class="plus-minus" style="border: none; text-align: center;justify-content: center; display: grid;">
+									<div class="topqtypd"></div>
+									<input type="hidden" id="qty<?php echo $key; ?>" name="qty[]" value = "<?=$qty?>">
 									
-									<div class="plus-minus" style="border: none; text-align: center;justify-content: center; display: grid;">
-										<br>
-										<input type="hidden" id="qty<?php echo $key; ?>" name="qty[]" value = "<?=$qty?>">
-										<p class="p-plus">
-										<button class="glyp-ico" data-price = "<?php echo $odr_pr; ?>" data-class= "<?php echo $key; ?>" onclick="minus(this,<?php echo $key; ?>);" > <span class="glyphicon glyphicon-minus"></span></button>
-										</p>
-										<p class="p-numbers">
-										<input type="text" style="width:50px; height:10px; padding-left:10px;background-color: transparent;border:none" readonly id="<?php echo $key; ?>" value="<?=$qty?>" min="1"/>
-										</p>
-										<p class="p-plus">
-										<button class="glyp-ico" data-price = "<?php echo $odr_pr; ?>" data-class= "<?php echo $key; ?>"  onclick="plus(this,<?php echo $key; ?>);"> <span class="glyphicon glyphicon-plus"></span></button>
-										</p>
+									<?php $qty = 1; ?>
+									
+									<p class="p-numbers">
+										
+											<button class="glyp-ico" style="outline: none;" data-price = "<?php echo $odr_pr; ?>" data-class= "<?php echo $key; ?>" onclick="minus(this,<?php echo $key; ?>);" > <span class="glyphicon glyphicon-minus"></span></button>
+										
+										
+										<input type="text" style="width:50px; height:15px; outline: none; padding-left:18px;background-color: transparent;border:none" readonly id="<?php echo $key; ?>" value="<?=$qty?>" min="1" max="5"/>
+
+										
+										<button class="glyp-ico" style="outline: none;" data-price = "<?php echo $odr_pr; ?>" data-class= "<?php echo $key; ?>"  onclick="plus(this,<?php echo $key; ?>);"> <span class="glyphicon glyphicon-plus"></span></button>
+										
+									</p>
+									
+									<div class="bottomqtypd"></div>
+									
+
+
+
 <!-- 
 										<p class="p-plus">
 											<span class="glyphicon glyphicon-plus"></span>
@@ -428,9 +532,10 @@
 										<p class="p-minus">
 											<span class="glyphicon glyphicon-minus"></span>
 										</p> -->	
+										<?php $value1 = str_replace(MONEY_SIGN, "", $value['order_price']); ?>
 										<p class="p-price">
-											$ <?php echo $value['order_price']; ?>
-											<input type="hidden" class="order-price price<?php echo $key; ?>"  value="$ <?php echo $value['order_price']; ?>">
+											<div style="display: inline"><?php echo MONEY_SIGN; ?>&nbsp;<div style="display: inline" id="unitprc<?php echo $key; ?>"><?php echo $value1; ?></div></div>
+											<input type="hidden" class="order-price price<?php echo $key; ?>"  value="<?php echo MONEY_SIGN; ?> <?php echo $value1; ?>">
 										</p>							    	
 									</div>
 
@@ -438,45 +543,97 @@
 							</div>
 
 							<?php 
-
+							$value1 =  str_replace(MONEY_SIGN, "", $value['order_price']); 
 							if($value['order_category'] == "drinks"){
 								
-								$order_price += $value['order_price'];	
+								$order_price += (double)$value1;	
+								$vat = ($order_price * 6) / 100;
+								$ordertotal = $order_price - $vat;
+								$vat =  round($vat, 2);
+								$ordertotal = round($ordertotal, 2);
 							}else{
 
-								$order_price += $value['order_price'];	
+								$order_price += (double)$value1;	
+								$vat = ($order_price * 6) / 100;
+								$ordertotal = $order_price - $vat;
+
+								$vat =  round($vat, 2);
+								$ordertotal = round($ordertotal, 2);
 							}
 
 						}	
 
 						?>	
+
 					</div>
 					<div class="col-lg-3 text-center last-column" style="">
 						<div class="row last-row" style="">
 							<div class="col-lg-12 total-column" style="">
+								<br/>
 								<p>
-									<span class="subtotal-text" style="float: left;font-weight: bold;">Subtotal:</span><span class="subtotal-number" style="float: right;font-weight: bold;">
-										$ <input type="text" style="width:50px; height:15px; ;background-color: transparent;border:none" readonly class="order-price total-amount" value="<?php echo $order_price; ?>"></span>
+									<span class="subtotal-text" style="float: left;">Subtotal:</span>
+									<span class="subtotal-number" style="float: right;font-weight: bold;">
+										<?php echo MONEY_SIGN; ?> <input type="text" style="width:75px; height:15px; ;background-color: transparent;border:none;font-weight: 400;" readonly class="order-price ordertotal " value="<?php echo $ordertotal; ?>">
+									</span>
 								</p>
 								<br><br>
 								<p>
-									
-									<span class="total-text" style="float: left;font-weight: bold;">Total:</span><span class="to-tal-number" style="float: right;font-weight: bold;">$ <input type="text" style="width:50px; height:15px;background-color: transparent;border:none" name="total_price" readonly class="order-price total-amount" value="<?php echo $order_price; ?>"></span>
+									<span class="subtotal-text" style="float: left;">VAT:</span>
+									<span class="subtotal-number" style="float: right;font-weight: bold;">
+										<?php echo MONEY_SIGN; ?> 
+										<input type="text" style="width:75px; height:15px; ;background-color: transparent;border:none;font-weight: 400;" readonly name="vat_price" class="vat-price" value="<?php echo $vat; ?>">
+									</span>
 								</p>
-								<br><br><br>
-								<a style="color:white" href="<?php echo base_url('order/checkout'); ?>"><button type="button" class="ed-button" style="font-size: 13px;font-weight: 600;padding: 9px 18px; text-transform: uppercase;">Check Out</button></a>
-								<a style="color:white" href="<?php echo base_url('order/'); ?>"><button type="button" class="ed-button" style="font-size: 13px;font-weight: 600;padding: 9px 18px;margin-right: 0px; text-transform: uppercase;">Add More</button></a>
+								<div id="discountdiv" style="display:none">
+								<br><br>
+								<p>
+									<span class="subtotal-text" style="float: left;">Discount:</span>
+									<span class="subtotal-number" style="float: right;font-weight: bold;">
+										<span style="width:75px; height:15px; margin-right: 52px;background-color: transparent;border:none;font-weight: 400;" readonly name="discount_input" class="dicsount_input"></span>
+									</span>
+									<input type="hidden" value="" name="dicsount_type" class="dicsount_type">
+
+								</p>
+								</div>
+								<br><br>
+								<p>
+									
+									<span class="total-text" style="float: left;font-weight: bold; font-size: 20px;">Total:</span><span class="to-tal-number" style="float: right;font-weight: bold;"><?php echo MONEY_SIGN; ?> <input type="hidden" style="width:75px; height:18px;background-color: transparent;font-size:20px;border:none" name="total_price" readonly class="order-price total-amount" value="<?php echo $order_price; ?>">
+										<input type="text" style="width:75px; height:18px;background-color: transparent;font-size:20px;border:none" name="total_price" readonly class="order-price discountdamt" value="<?php echo $order_price; ?>">
+									</span>
+								
+								</p>
+								<br><br>
+								
+								<p>
+									<span class="subtotal-text" id="haveacop" style="float: left;margin-bottom: 5px; width: 100%; text-decoration: underline;cursor: pointer;">Have a Coupon?</span>
+									<span class="total-text " style="display: none; width: 100%;" id="inputcop" style="">
+										<input type="text" name="" 
+										value="" placeholder="Enter Code Here..." id="couponval" class="couponinput">
+										<button type="button" onclick="searchcoupon()" class="counponbtn ">Submit</button>
+									<div id="copalert" style="margin-left: 0px;margin-top: 0px;color: #e5acbc;"></div>	<br/>
+									</span>
+								</p>
+								
+								
+
+								<a style="color:white" href="<?php echo base_url('order/paymentMethod/0'); ?>"><button type="button" class="ed-button btnchk martp checkoutbtn">Check Out</button></a>
+								<a style="color:white" href="<?php echo base_url('order/add_more'); ?>"><button type="button" class="ed-button btnchk addmore">Add More</button></a>
 							</div>
 						</div>
 					</div>
 
 				</div>
-				</div>
 			</div>
-			<br><br>
 		</div>
-
+		<br><br>
 	</div>
+</form>
+
+</div>
+
+
+
 	<!-- <div class="container-fluid pt-5">
 		<form id="order-data">
 			<div class="row">
@@ -632,17 +789,63 @@
 	</div> -->
 	<script type="text/javascript">
 
+
 		function plus(ele,id){
 
 			var count =   $(ele).parents(".row").find("#"+id).val();
+			if(count >= 99){
+				toasterOptions();
+				toastr.error("You Reached Maximum Limit");
+				return false;
+			}
 			var updatedCount = parseInt(count)+parseInt(1);
 			$(ele).parents(".row").find("#"+id).val(updatedCount);
 			$("#qty"+id).val(updatedCount);
+
 			var price = $(ele).attr('data-price')*updatedCount;
-			$(".price"+id).val("$"+price);
+			$(".price"+id).val("<?php echo MONEY_SIGN; ?>"+price);
 			var totalamount = $(".total-amount").val();
+
 			var totalprice = parseFloat(totalamount)+parseFloat($(ele).attr('data-price'));
-			$(".total-amount").val(totalprice);
+			$(".total-amount").val(totalprice.toFixed(2));
+
+
+			var totalunitprice = (parseFloat(count) + parseFloat(1))*parseFloat($(ele).attr('data-price'));
+			$("#unitprc"+id).html(totalunitprice.toFixed(2));
+
+			var totalvat = (parseFloat(totalprice) * parseFloat(6)) / parseFloat(100);
+			$(".vat-price").val(totalvat.toFixed(2));
+
+			var totalorder =  parseFloat(totalprice) - parseFloat(totalvat);
+			$(".ordertotal").val(totalorder.toFixed(2));
+
+
+
+			var dis = $(".dicsount_input").html().replace(/[^0-9]/gi, '');
+			var type = $(".dicsount_type").val();
+
+			var minesval = 0;
+			if(dis != "" && type == "1"){
+				
+				var disper = (parseFloat(dis) / parseInt(100));
+				disper =  parseFloat(disper) * parseFloat(totalprice);
+				
+		        minesval = parseFloat(totalprice) - disper;
+		        if(minesval <= 0){
+					minesval = 0;
+				}
+		        $(".discountdamt").val(minesval.toFixed(2));
+			}else if(dis != "" && type == "2"){
+				minesval = parseFloat(totalprice) - parseFloat(dis);
+				if(minesval <= 0){
+					minesval = 0;
+				}
+				$(".discountdamt").val(minesval.toFixed(2));
+			}else{
+				$(".discountdamt").val(totalprice.toFixed(2));
+			}
+
+
 
 		}
 
@@ -655,11 +858,147 @@
 				var updatedCount = parseInt(count)-parseInt(1);
 				$(ele).parents(".row").find("#"+id).val(updatedCount);
 				var price = $(ele).attr('data-price')*updatedCount;
-				$(".price"+id).val("$"+price);
+				$(".price"+id).val("<?php echo MONEY_SIGN; ?>"+price);
+
 				var totalamount = $(".total-amount").val();
-				var totalprice = parseFloat(totalamount)-parseFloat($(ele).attr('data-price'));
-				$(".total-amount").val(totalprice);
+				var totalprice = parseFloat(totalamount) - parseFloat($(ele).attr('data-price'));
+				$(".total-amount").val(totalprice.toFixed(2));
+				var totalamount = $(".total-amount").val();
+
+				var totalunitprice = (parseFloat($("#unitprc"+id).text())) - parseFloat($(ele).attr('data-price'));
+				$("#unitprc"+id).html(totalunitprice.toFixed(2));
+
+				var totalvat = (parseFloat(totalprice) * parseFloat(6)) / parseFloat(100);
+				$(".vat-price").val(totalvat.toFixed(2));
+
+				var totalorder = parseFloat(totalprice) - parseFloat(totalvat);
+				$(".ordertotal").val(totalorder.toFixed(2));
+
+
+				var dis = $(".dicsount_input").html().replace(/[^0-9]/gi, '');
+				var type = $(".dicsount_type").val();
+
+				var minesval = 0;
+				if(dis != "" && type == "1"){
+					
+					var disper = (parseFloat(dis) / parseInt(100));
+					disper =  parseFloat(disper) * parseFloat(totalprice);
+			        minesval = parseFloat(totalprice) - disper;
+			        if(minesval <= 0){
+			        	
+						minesval = 0;
+					}
+			        $(".discountdamt").val(minesval.toFixed(2));
+				}else if(dis != "" && type == "2"){
+					minesval = parseFloat(totalprice) - parseFloat(dis);
+					if(minesval <= 0){
+						minesval = 0;
+					}
+					$(".discountdamt").val(minesval.toFixed(2));
+				}else{
+					$(".discountdamt").val(totalprice.toFixed(2));
+				}
+
+		
 			}
+
+		}
+
+		function searchcoupon(){
+				var value = document.getElementById("couponval").value;
+			if(value != ""){
+					$.ajax({
+						  type:"post",
+						  url: base_url+"order/findcoupon",
+			              data:{value:value},
+			              dataType:'json',
+			              success:function(res){
+			              
+			              	if(res.status == "true"){
+			              		$(".couponinput").slideUp();
+			              		$("#haveacop").slideUp();
+			              		$(".counponbtn").slideUp();
+			              		var totalamount = $(".total-amount").val();
+			              		if(res.type == "1"){
+			              			$(".dicsount_type").val('1');
+			              			$(".dicsount_input").html(res.persentage+" %");
+			              			var disper = (parseFloat(res.persentage) / parseFloat(100)) * parseFloat(totalamount);
+			              			var minsval = parseFloat(totalamount) - parseFloat(disper);
+			              			
+			              			$(".discountdamt").val(minsval);
+			              		}else if(res.type == "2"){
+			              			$(".dicsount_type").val('2');
+			              			$(".dicsount_input").html("<?php echo MONEY_SIGN; ?> "+res.amount);
+			              			var discounttotal = parseFloat(totalamount) - parseFloat(res.amount);
+			              			if(discounttotal <= 0){
+										discounttotal = 0;
+									}
+			              			$(".discountdamt").val(discounttotal);
+			              		}
+			              		$("#copalert").html("Your discount is successfully added");
+			              		$("#discountdiv").slideDown();
+			              	}else{
+			              		$("#copalert").html(res.status);
+			              		$("#discountdiv").slideUp();
+			              	}
+			              
+			            }
+		        	});
+			}else{
+				$("#copalert").html("Enter coupon code");
+			}
+
+		}
+
+		function openeditmodel(key){
+			var nameold = $("#eidtname"+key).html();
+			$.confirm({
+					title: 'Edit Your Salad Name',
+					content: '' +
+					'<form action="" class="formName">' +
+					'<div class="form-group">' +
+					'<input type="text" placeholder="Enter Your Name" style="text-transform: capitalize!important;" maxlength="50" class="name form-control" required />' +
+					'</div>' +
+					'</form>',
+					buttons: {
+						cancel: function () {
+			        },
+						formSubmit: {
+							text: 'Submit',
+							btnClass: 'btn-blue',
+							action: function () {
+								var name = this.$content.find('.name').val();
+								if(!name){
+									$.alert('Provide a name!');
+									return false;
+								}
+								$("#eidtname"+key).html(name);
+									$.ajax({
+							              type:"post",
+							              url: base_url+"order/edit_name",
+							              data:{key:key, name:name},
+							              dataType:'json',
+							              success:function(res){
+							              {
+
+							              }
+							            }
+							        });
+
+								//$.alert('Your name is ' + name);
+							}
+						},
+			    },
+			    onContentReady: function () {
+			        // bind to events
+			        var jc = this;
+			        this.$content.find('form').on('submit', function (e) {
+			            // if the user submits the form by pressing enter in the field.
+			            e.preventDefault();
+			            jc.$$formSubmit.trigger('click'); // reference the button and click it
+			        });
+			  	  }
+				});
 
 		}
 
@@ -674,21 +1013,25 @@
 					url:'<?php echo base_url('order/combine_data');?>',
 					data:new FormData(this),
 					dataType:'json',
-        contentType: false,       // The content type used when sending data to the server.
-        cache: false,             // To unable request pages to be cached
-        processData:false,
-        success:function(data)
-        {
+			        contentType: false,       // The content type used when sending data to the server.
+			        cache: false,             // To unable request pages to be cached
+			        processData:false,
+			        success:function(data)
+			        {
+			        	alert();
+
+			        },
 
 
-        },
-
-
-    });
+			    });
 
 			});
 
-
-
+			  $("#haveacop").click(function(){
+			    $("#inputcop").toggle();
+			  });
 		});
+
+
+		
 	</script>

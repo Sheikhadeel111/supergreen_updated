@@ -51,12 +51,10 @@ function closeNav() {
     document.getElementById("main").style.marginLeft= "0";
 }
 function goBack() {
-    window.history.go(-1);
+   window.history.go(-1);
 }
 
-
-
-
+  
 </script>
 </body>
 </html>

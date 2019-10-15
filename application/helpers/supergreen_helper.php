@@ -981,6 +981,46 @@ function getDrinkWhere($where)
 	}
 
 
+	function create_slug_categories($string,$parent = "")
+   	{
+       $slug = slugify($string);
+       $CI =& get_instance();
+       $CI->load->model('crud_model');
+       $slug_array= $CI->crud_model->check_slug_categories($slug);
+       if(count($slug_array) > 0)
+       {
+           $_array = array();
+           foreach ($slug_array as $_slug)
+           {
+               $_array[] = $_slug['categories_slug'];
+           }
+           if(in_array($slug, $_array))
+           {
+               $apend = 0;
+               while(in_array(($slug.'-'.++$apend), $_array));
+               if(!empty($parent)){
+               	$parent = slugify($parent);
+               	$slug = $parent.'-'.$slug.'-'.$apend;
+               }else{
+               	$slug = $slug.'-'.$apend;
+               }
+               
+              
+           }
+           return $slug;
+       }
+       else
+       {
+       	 if(!empty($parent)){
+               	$parent = slugify($parent);
+               	$slug = $parent.'-'.$slug;
+               }else{
+               	$slug = $slug;
+               }
+           return $slug;
+       }
+   	}
+
 
 
 

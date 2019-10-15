@@ -21,6 +21,23 @@ class Users extends SU_Controller {
 		$this->load->view('admin/users/index',$data);
 	}
 
+	public function delete()
+	{	
+
+		$where['user_id'] = $_POST['id'];
+		$delete = $this->users->delete_data($where);
+		if($delete){
+			$response['status'] = true;
+			$response['msg'] = 'User Delete';
+		}else{
+			$response['status'] = false;
+		}
+		echo json_encode($response);
+		exit();
+		
+	}
+
+
 
 	public function manage_view($id="")
 	{

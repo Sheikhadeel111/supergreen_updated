@@ -11,6 +11,11 @@
   background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
 
 }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 .error{
     color: red;
 }
@@ -94,7 +99,7 @@
       </div>
       <div class="col-xs-12 col-sm-6 col-md-6">
        <div class="form-group">
-        <input type="text" name="meta[zip]"  id="zip" class="form-control input-lg" placeholder="Zip Code" tabindex="6">
+        <input type="number" name="meta[zip]"  id="zip" class="form-control input-lg" placeholder="Zip Code" tabindex="6">
       </div>
     </div>
   </div>
@@ -104,7 +109,7 @@
       <div class="row">
         <div class="col-xs-12 col-md-12"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
         <div class="col-xs-12 col-md-12">
-          Already have account? <a href="<?php echo base_url('login/user'); ?>">Sign In</a>
+          Already have account? <a href="<?php echo base_url('login/index'); ?>">Sign In</a>
         </div>
     </div>
 </form>
@@ -118,16 +123,24 @@
         rules: {
             name: "required",
             email: "required",
-            password: "required",
-            password_confirmation: {required:true, equalTo: "#password"},
+            password: {
+		      required: true,
+		      minlength: 4
+		    },
+            password_confirmation: {required:true, equalTo: "#password",minlength: 3},
             country:"required",
-            zip:"required",
+            zip: {
+            required: true,
+            number: true
+            },
             house:"required",
             street:"required",
             state:"required",
             city:"required",
-            phone:"required",
-
+            phone: {
+            required: true,
+            number: true
+            },
         },
 
 

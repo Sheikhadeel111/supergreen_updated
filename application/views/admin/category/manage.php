@@ -1,4 +1,9 @@
+<style>
+  .errors {
+      color: red;
+   }
 
+</style>
 <div class="app-content content">
   <div class="content-wrapper">
     <!-- Breadcrum -->
@@ -37,24 +42,26 @@
                 <div class="card-text">
                   <p></p>
                 </div>
-                <form class="form-horizontal form-bordered"  enctype="multipart/form-data" novalidate action="<?php echo base_url('admin/category/manage'); ?>" method="POST" >
+                <form class="form-horizontal form-bordered"  enctype="multipart/form-data" action="<?php echo base_url('admin/category/manage'); ?>" id="formcategory" method="POST" >
                   <div class="form-body">
                     <div class="form-group row">
                       <label class="col-md-3 label-control" for="name">Category Name</label>
                       <div class="col-md-9">
-                        <input type="text" id="name" class="form-control" placeholder="Category Name" name="name" value="<?php if(isset($category)){ echo $category->name;} ?>" required data-validation-required-message="This field is required"> </div>
+                        <input type="text" id="name" class="form-control" placeholder="Category Name" name="name" value="<?php if(isset($category)){ echo $category->name;} ?>" required> </div>
                     </div>
                     <div class="form-group row">
-                      <label class="col-md-3 label-control" for="name">Category Image</label>
+                      <label class="col-md-3 label-control" for="name">Category Image<div style="color:red;">(Max upload Image size 100 x 100)</div></label>
                       <div class="col-md-9">
-                        <input type="file" class="form-control" name="cat_image"> 
+                        <input type="file" class="form-control" name="cat_image" 
+                        <?php if(@$category->cat_image == ""){ ?> required <?php } ?> > 
+                        <input type="hidden" class="form-control" name="cat_image_hidden" value="<?php echo @$category->cat_image?>"/>
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label class="col-md-3 label-control" for="parent">Parent Category</label>
                       <div class="col-md-9">
-                        <select id="parent" name="parent" class="form-control select2" required data-validation-required-message="This field is required" >
+                        <select id="parent" name="parent" class="form-control select2" required>
                           <option value="none" selected="" disabled="">Parent Category</option>
                           <?php
                             foreach ($categories as $key => $value) { ?>
@@ -71,7 +78,7 @@
                       <div class="form-group row">
                       <label class="col-md-3 label-control" for="basePrice">Base Price</label>
                       <div class="col-md-9">
-                        <input type="text" id="basePrice" class="form-control" placeholder="Category Base Price" name="basePrice" value="<?php if(isset($category)){ echo $category->basePrice;} ?>"> </div>
+                        <input type="number" min="1" id="basePrice" class="form-control" placeholder="Category Base Price" name="basePrice" value="<?php if(isset($category)){ echo $category->basePrice;} ?>"> </div>
                     </div>
                      <div class="form-group row skin skin-flat">
                       <label class="col-md-3 label-control" for="custom_made">Create Your Own</label>
@@ -86,13 +93,13 @@
                       <div class="form-group row">
                       <label class="col-md-3 label-control" for="minQty">Minimun Quantity</label>
                       <div class="col-md-9">
-                        <input type="number" id="minQty" class="form-control" placeholder="Minimun Quantity" name="minQty" value="<?php if(isset($category)){ echo $category->minQty;} ?>"> </div>
+                        <input type="number" min="0" id="minQty" class="form-control input-number" placeholder="Minimun Quantity" name="minQty" min="1" value="<?php if(isset($category)){ echo $category->minQty;} ?>"> </div>
                     </div>
 
                       <div class="form-group row">
                       <label class="col-md-3 label-control" for="maxQty">Maximum Quantity</label>
                       <div class="col-md-9">
-                        <input type="number" id="maxQty" class="form-control" placeholder="Maximum Quantity" name="maxQty" value="<?php if(isset($category)){ echo $category->maxQty;} ?>"> </div>
+                        <input type="number" min="0" id="maxQty" class="form-control input-number" placeholder="Maximum Quantity" name="maxQty" min="1" value="<?php if(isset($category)){ echo $category->maxQty;} ?>"> </div>
                     </div>
                     </div>
 
@@ -103,7 +110,7 @@
                   <input type="hidden" name="cat_id" value="<?php echo $category->cat_id; ?>">
                   <?php } ?>
                   <div class="form-actions">
-                    <button type="button" class="btn btn-warning mr-1"> <i class="ft-x"></i> Cancel </button>
+                    <a href="<?php echo base_url(); ?>admin/category"><button type="button" class="btn btn-warning mr-1"> <i class="ft-x"></i> Cancel </button></a>
                     <button type="submit" class="btn btn-primary" data-toggle="tooltip" title="Save"> <i class="fa fa-check-square-o"></i> Save </button>
                   </div>
                 </form>
@@ -116,9 +123,31 @@
   </div>
 </div>
 
-
 <script type="text/javascript">
   $(document).ready(function() {
+
+    $('#formcategory').validate({ // initialize the plugin
+        errorClass: 'errors',
+        rules: {
+            maxQty: {
+                required: true,
+                minlength: 0,
+                maxlength: 4
+            },
+             minQty: {
+                required: true,
+                minlength: 0,
+                maxlength: 4
+            },
+            basePrice: {
+                required: true,
+                minlength: 0,
+                maxlength: 4
+            }
+        }
+        
+    });
+
 
     $(".maxMin").hide();
 

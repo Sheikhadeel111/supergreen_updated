@@ -89,3 +89,4 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 
 defined('PRODUCT_IMAGE_UPLOAD')      OR define('PRODUCT_IMAGE_UPLOAD', 'assets/images/products/'); 
 defined('PRODUCT_IMAGE_UPLOAD_CETAGORY')      OR define('PRODUCT_IMAGE_UPLOAD_CETAGORY', 'assets/images/category/');
+defined('MONEY_SIGN')      OR define('MONEY_SIGN', '€'); 

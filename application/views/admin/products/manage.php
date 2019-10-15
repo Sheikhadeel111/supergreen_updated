@@ -1,4 +1,9 @@
+<style>
+  .errors {
+      color: red;
+   }
 
+</style>
 <div class="app-content content">
   <div class="content-wrapper">
     <!-- Breadcrum -->
@@ -37,26 +42,26 @@
                 <div class="card-text">
                   <p></p>
                 </div>
-                <form class="form form-horizontal form-bordered" novalidate enctype="multipart/form-data" action="<?php echo base_url('admin/products/manage'); ?>" method="POST" >
+                <form class="form-horizontal form-bordered" enctype="multipart/form-data" action="<?php echo base_url('admin/products/manage'); ?>" id="formvali" method="POST">
                   <div class="form-body"> 
                     <div class="form-group row">
-                      <label class="col-md-3 label-control" for="product_name">Product Name</label>
+                      <label class="col-md-3 label-control" for="product_name1">Product Name</label>
                       <div class="col-md-9">
-                        <input type="text" required  class="form-control" placeholder="Product Name" name="product_name" id="product_name" value="<?php if(isset($product)){ echo $product->product_name;} ?>" > </div>
+                        <input type="text" required  class="form-control" placeholder="Product Name" name="product_name" id="product_name" value="<?php if(isset($product)){ echo $product->product_name;} ?>"> </div>
                     </div>
-                    <div class="form-group row">
-                      <label class="col-md-3 label-control" for="file_name">Product Image</label>
+                     <div class="form-group row">
+                      <label class="col-md-3 label-control" for="file_name">Product Image<div style="color:red;">(Max upload Image size 300 x 300)</div></label>
                       <div class="col-md-9">
-                         <input type="file" name="file_name" class="form-control"/>
+                         <input type="file" name="file_name" class="form-control" <?php if(@$product->product_name == "") {echo "required";} ?>>
                       </div>
                     </div>
 
  
                     <div class="form-group row">
-                      <label class="col-md-3 label-control" for="product_category">Product Category</label>
+                      <label class="col-md-3 label-control" for="product_category1">Product Category</label>
                       <div class="col-md-9">
                         <select name="product_category" id="product_category" class="form-control select2" required>
-                          <option value="none" selected="" disabled="">Product Category</option>
+                          <option value="" >Product Category</option>
                          <?php
                             foreach ($categories as $key => $value) { ?>
 
@@ -75,9 +80,11 @@
 
                       <input type="hidden" name="product_id" value="<?php echo $product->product_id; ?>">
                       <input type="hidden" name="product_slug" value="<?php echo $product->product_slug; ?>">
-
+                      <input type="hidden" name="perv_image" value="<?php echo $product->product_image ?>">
                     <?php } ?>
+                     <a href="<?php echo base_url(); ?>admin/products">
                     <button type="button" class="btn btn-warning mr-1"> <i class="ft-x"></i> Cancel </button>
+                    </a>
                     <button type="submit" class="btn btn-primary"> <i class="fa fa-check-square-o"></i> Save </button>
                   </div>
                 </form>
@@ -92,6 +99,19 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
+
+    $('#formvali').validate({ // initialize the plugin
+        errorClass: 'errors',
+        rules: {
+            product_name: {
+                required: true,
+                minlength: 0,
+                maxlength: 35
+            }
+        }
+    });
+   
+
      var category = $("[name='product_category']").val();
       $("[name='product_category']").on("change",function(){
         var category = $("[name='product_category']").val();

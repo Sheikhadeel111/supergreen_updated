@@ -37,7 +37,7 @@
                 <div class="card-text">
                   <p></p>
                 </div>
-                <form class="form-horizontal form-bordered" novalidate enctype="multipart/form-data" action="<?php echo base_url('admin/ingredients/manage'); ?>" method="POST" >
+                <form class="form-horizontal form-bordered" enctype="multipart/form-data" action="<?php echo base_url('admin/ingredients/manage'); ?>" method="POST" >
                   <div class="form-body">
                     <div class="form-group row">
                       <label class="col-md-3 label-control" for="cat_pro_name">Ingredients Name</label>
@@ -55,7 +55,7 @@
                       <label class="col-md-3 label-control" for="cat_pro_category">Ingredients Category</label>
                       <div class="col-md-9">
                         <select name="cat_pro_category" id="cat_pro_category" required class="form-control select2">
-                          <option value="none" selected="" disabled="">Ingredients Category</option>
+                          <option value="">Ingredients Category</option>
                          <?php
                             foreach ($categories as $key => $value) { ?>
 
@@ -71,8 +71,8 @@
                       <label class="col-md-3 label-control" for="cat_pro_image">Ingredients Image</label>
                       <div class="col-md-9">
                         <div class="custom-file">
-                          <input type="file" class="custom-file-input" <?php if(!isset($product)){ echo "required" ;} ?> name="cat_pro_image" id="cat_pro_image">
-                          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                          <input type="file" class="form-control" <?php if(!isset($product)){ echo "required" ;} ?> name="cat_pro_image" id="cat_pro_image">
+                         
                         </div>
                       </div>
                     </div>
@@ -83,7 +83,8 @@
                       <input type="hidden" name="perv_image" value="<?php echo $product->cat_pro_image ?>">
                    <?php } ?>
                   <div class="form-actions">
-                    <button type="button" class="btn btn-warning mr-1"> <i class="ft-x"></i> Cancel </button>
+                    <a href="<?php echo base_url(); ?>admin/ingredients">
+                    <button type="button" class="btn btn-warning mr-1"> <i class="ft-x"></i> Cancel </button></a>
                     <button type="submit" class="btn btn-primary"> <i class="fa fa-check-square-o"></i> Save </button>
                   </div>
                 </form>
