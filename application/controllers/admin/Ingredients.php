@@ -33,7 +33,7 @@ class Ingredients extends SU_Controller {
 			$data['product'] = $this->cat_product->get_data("*","",$where,true);
 		}
 		
-		$where = "parent != 0";
+		$where = "parent = 0";
 		$data['categories'] = $this->category->get_data("*","",$where);
 		$this->load->view('admin/ingredients/manage',$data);
 	}
@@ -41,8 +41,7 @@ class Ingredients extends SU_Controller {
 	public function manage()
 	{
 		$data = $this->input->post();
-
-
+		
 		$profile_image = $this->cat_product->upload_file($_FILES['cat_pro_image'],'cat_pro_image',PRODUCT_IMAGE_UPLOAD);
 
 		if ($profile_image) 
@@ -162,6 +161,16 @@ class Ingredients extends SU_Controller {
 			}
 		}
 		echo json_encode($response);
+		exit();
+	}
+
+	public function show_ingredients()
+	{
+		$where['parent'] = $_POST['cat_id'];
+		$table = "categories";
+		$data['ingdata'] = $this->crud_model->get_data($select = "",$table,$where);
+		$viewload = $this->load->view('admin/ingredients/selectingr',$data, true);
+		echo json_encode($viewload);
 		exit();
 	}
 

@@ -58,7 +58,7 @@ class Ingenico_Model extends Crud_model {
         $this->communicatorConfiguration = new CommunicatorConfiguration(
          "488b06f428402623",
          "dKYkfiN5W4Iozuifl70xi8UY3FkOCW0vOUt/QiFFS9U=",
-         "http://localhost/supremegreen/",
+         "http://supergreen.bitsclan.com",
          'bitsclan'
      );
         return $this->communicatorConfiguration;
@@ -66,12 +66,15 @@ class Ingenico_Model extends Crud_model {
 
     protected function getClient()
     {
+
         if (is_null($this->client)) {
+
             $connection = new DefaultConnection();
             $communicatorConfiguration = $this->getCommunicatorConfiguration();
             $communicator = new Communicator($connection, $communicatorConfiguration);
             $this->client = new Client($communicator);
         }
+        
         return $this->client;
     }
 
@@ -80,6 +83,7 @@ class Ingenico_Model extends Crud_model {
     {   
 
         $client = $this->getClient();
+
         $hostedCheckoutSpecificInput = new HostedCheckoutSpecificInput();
         $hostedCheckoutSpecificInput->locale = "en_GB";
         $hostedCheckoutSpecificInput->variant = "testVariant";
@@ -95,7 +99,7 @@ class Ingenico_Model extends Crud_model {
         $customer->merchantCustomerId = "1123";
 
         $order_array = $this->session->userdata("order_cart"); 
-         debug($order_array,true);
+         
 
 
         $sum = 0;
@@ -239,7 +243,9 @@ class Ingenico_Model extends Crud_model {
     public function testCreatePayment()
     {
         $client = $this->getClient();
-        $merchantId = '1123';
+        
+        
+        $merchantId = '3510';
         $createHostedCheckoutRequest = new CreateHostedCheckoutRequest();
         $order = new Order();
 
@@ -266,17 +272,19 @@ class Ingenico_Model extends Crud_model {
         $hostedCheckoutSpecificInput->paymentProductFilters->exclude = new PaymentProductFilter();
         $hostedCheckoutSpecificInput->paymentProductFilters->exclude->products = array(120);
         $createHostedCheckoutRequest->hostedCheckoutSpecificInput = $hostedCheckoutSpecificInput;
-
+        //debug($hostedCheckoutSpecificInput ,true);
         /** @var CreateHostedCheckoutResponse $createHostedCheckoutResponse */
+       
         $createHostedCheckoutResponse =
             $client->merchant($merchantId)->hostedcheckouts()->create($createHostedCheckoutRequest);
          $createHostedCheckoutResponse->hostedCheckoutId;
-
-        $client = $this->getClient();
-        $merchantId = '1123';
+          debug($createHostedCheckoutResponse,true);
+       
         /** @var GetHostedCheckoutResponse $getHostedCheckoutResponse */
+
         $getHostedCheckoutResponse = $client->merchant($merchantId)->hostedcheckouts()->get($createHostedCheckoutResponse->hostedCheckoutId
             );
+        
         return $getHostedCheckoutResponse->status;
     }
 

@@ -201,7 +201,8 @@ if($count==0){
 <div class="container">
 	<div class="col-lg-12" style="margin-top:-100px;">
 		<div class="row">
-			<div class="col-lg-11"><center><div class="textstyle">Salads</div></center></div>
+			<?php $nameofcat = categoryInfo($category);?>
+			<div class="col-lg-11"><center><div class="textstyle"><?php echo ucfirst($nameofcat->name); ?></div></center></div>
 		</div>
 		<div class="row ">
 			<div class="custom_row displayflex" style="text-align: center; justify-content: center; ">

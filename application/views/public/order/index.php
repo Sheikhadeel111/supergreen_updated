@@ -222,7 +222,8 @@ if($count==0){
 							</center>
 						</div>
 					</div>
-				</div>
+</div>
+<br/>
 
 <!-- 		<div class="container">
 				<div class="col-lg-12">

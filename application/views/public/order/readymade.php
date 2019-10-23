@@ -6,6 +6,15 @@
     display: flex;
   }
 
+   .downicon{
+    bottom: 0;
+    right: 0;
+    float: right;
+    position: sticky;
+    z-index: 9999;
+    cursor: pointer;
+  }
+
   .btn-circle.btn-xl {
 
     width: 70px;
@@ -263,7 +272,61 @@
    /* left: 53px  !important;*/
     }
 }
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .downicon{
+    display: none !important;
+  }
+  .left_pd{
+      margin-left: 0% !important;
+display: flex;
+justify-content: center;
+    }
+     .ci_dressing::before, .ci_dressing::after {
+  
+    content: none !important;
+   
+  }
+   /*Awais .col-md-3{
+      z-index: 999999999;
+      justify-content: center;
+    display: grid;
+    }*/
+    .display_flex{
+          display: flex;
+      justify-content: center;
+    }
+    .btn-circle {
+        z-index: 9999999999999;
+        color:white;
+        background-color: #e5acbc;
+        width: 30px;
+        height: 30px;
+        padding: 6px 0px;
+        text-align: center;
+        font-size: 12px;
+        line-height: 1.42857;
+        border:none;
+        outline: none !important;
+    }
+    .fa{
+      z-index: 9999999999999;
+    }
+    .price-column {
+    background-color: #ececec;
+    height: auto;
+    padding-top: 2px;
+    padding-bottom: 20px;
+    }
+   .qtybtn {
+    position: absolute !important;
+    top: 178px !important;
+   /* left: 42px  !important;*/
+    }
+}
 @media (min-width: 768px) and (max-width: 1024px) {
+  .downicon{
+    display: none !important;
+  }
   .left_pd{
       margin-left: 0% !important;
 display: flex;
@@ -313,6 +376,9 @@ justify-content: center;
 }
 
   @media (min-width: 320px) and (max-width: 812px) {
+    .downicon{
+    display: none !important;
+  }
     .left_pd{
       margin-left: 0% !important;
       display: block;
@@ -422,6 +488,9 @@ justify-content: center;
     }
   }
   @media (min-width: 360px) and (max-width: 384px) {
+    .downicon{
+    display: none !important;
+  }
   .qtybtn {
     position: absolute !important;
    /* top: 51px !important;*/
@@ -487,7 +556,7 @@ overflow-x: hidden;">
         <div class="row">
           <div id="products" style="height: 963px;"></div>
         </div>
-
+         <img class="downicon" onclick="downscroll()" src="<?php echo base_url(); ?>assets/downerror.png" width="50"/>
       </div>
 
       <div class="col-lg-3 text-center price-column" style="">
@@ -582,7 +651,7 @@ $price = 0;
 $info = categoryInfo($category);
 ?>
 
-<input type="hidden" id="price" value="<?=$price?>">
+<input type="hidden" id="price" value="<?= $info->basePrice ?>">
 
 </body>
 
@@ -632,6 +701,7 @@ $(document).ready(function() {
 
       success:function(res)
       {
+        $('.downicon').hide();
         $("#products").html(res);
 
       },
@@ -665,6 +735,13 @@ function cout(){
       success:function(data){
         document.documentElement.scrollTop = 0;
         $(".scrolltop").animate({ scrollTop: 0 }, "slow");
+      
+        if(skip == 0){
+          $('.downicon').hide();
+        }else{
+          $('.downicon').show();
+        }
+
         $("#products").html(data);
       }
     }); 
@@ -672,7 +749,12 @@ function cout(){
   }
 
 
+function downscroll(){
+  // $(".scrolltop").animate({ scrollTop: scrollval }, "slow");
+  // scrollval = scrollval + scrollval;
+  $(".scrolltop").animate({scrollTop:$(document).height()}, 'slow');
 
+}
   function addToArray(name, value) { //add products to array
     newProducts[name].push(value);
     console.log(newProducts);
@@ -870,11 +952,7 @@ function cout(){
 
         }
       }); 
-
-
-
-
-    }
+}
 
     function minus(ele,id){
      var abc = $(ele).data("index");

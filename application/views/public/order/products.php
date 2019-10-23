@@ -192,7 +192,7 @@ if(isset($selected)){
 								</div>
 							</div>
 						</div>  -->
-					 <div class="col-lg-3 col-md-12 col-xs-12 option mobileseting" style="padding-left:0px !important; padding-right:0px !important;  z-index: 999;">
+					 <div class="col-lg-3 col-xl-3 col-md-3 col-sm-3 col-xs-12 option mobileseting" style="padding-left:0px !important; padding-right:0px !important;  z-index: 999;">
 						<div class="ci circle <?php if (in_array($value->cat_pro_id, $productItems)) { echo "color"; }else{ echo "spin"; }?> " onclick="encirecl(this);" data-name="<?php echo $value->cat_pro_name ?>" data-price = "<?=$value->cat_pro_price?>" data-id="<?php echo $value->cat_pro_id ?>" data-index= "<?=$arrayIndex?>">
 							<img class="basemenuimage" src="<?php echo PRODUCT_IMAGE_UPLOAD.$value->cat_pro_image  ?>">
 							<p class="menu_text">

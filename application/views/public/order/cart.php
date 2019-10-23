@@ -114,7 +114,7 @@
 	.salad-box{
 		border-right: 1px solid white;
 		padding: 15px 29px 46px;
-		min-height: 245px;
+		min-height: 290px;
 	}
 	.total-column{
 		height: 100%;
@@ -132,6 +132,126 @@
 	}
 	.bottomqtypd{
 		padding-top: 30%;
+	}
+	@media (min-width: 1200px) and (max-width: 1900px) {
+		.salad-box {
+			padding: 15px 29px 83px;
+		}
+		.plus-minus{
+			margin-left:10% !important;
+		}
+		.btnchk{
+			width: 100%;
+		}
+		.martp{
+			margin-top:-10px;
+		}
+		
+	}
+	@media (min-width: 991px) and (max-width: 1200px) {
+		.full-card {
+			background-color: #03030dba;
+			padding: 13px 24px 16px 25px;
+			color: white;
+			border: none;-
+		}
+
+		.btns{
+			width: 130px;
+
+			height: 53px;
+		}
+		
+		.all_center{
+			text-align: center;
+			justify-content: center;
+			display: grid;
+		}
+
+		.circles {
+			width: 269px;
+			height: 269px;
+			border-radius: 224px;
+			margin-left: 0px !important;
+			background-color: rgba(48,194,131,0.5019607843137255);
+			border: 5px solid #ffffff;
+			margin-bottom: 32px;
+
+		}
+		.textstyle {
+			color: white;
+			font-size: 34px;
+			font-weight: bold;
+			margin-top: 92px;
+		}
+		.text1{
+			margin-top: 77px !important;
+		}
+		.text2{
+			margin-top: 76px !important;
+		}
+		.last-column {
+			padding: 0px 15px;
+			margin-top: 26px;
+		}
+		.last-row{
+			border: none;
+		}
+
+		.p-plus{
+			display: inline;
+			margin-right: 0px;
+			margin-left: 0px;
+		}
+		.p-minus{
+			display: inline;
+			margin-right: 50px;
+		}
+		.p-price{
+			display: inline;
+			margin-top: 0px;
+		}
+		.p-numbers{
+			display: inline;
+			margin-right: 7px;
+		}
+		.full-card {
+			background-color: #03030dba;
+			padding: 13px 24px 32px 25px;
+			color: white;
+			border: none;
+
+		}
+		.salad-box {
+			padding: 0px 16px 26px;
+			border-right:none; 
+		}
+		.ed-button {
+			background-color: #e5acbc;
+			border: 1px solid #e5acbc;
+			padding: 7px 23px;
+			border-radius: 3px;
+			margin-right: 8px;
+			font-weight: 400;
+			font-size: 15px;
+		}
+		.eidtanddel{
+			padding-left:30px !important;
+			padding-right:30px !important;
+		}
+		.side-bar-content{
+			border-top: 1px solid white;
+			padding-bottom: 20px;
+		}
+		.topqtypd{
+			padding-top: 20% !important;
+		}
+		.bottomqtypd{
+			padding-top: 0px !important;
+		}
+		.cartpedng{
+			padding-left: 20px !important;
+		}
 	}
 
 	@media (min-width: 768px) and (max-width: 991px) {
@@ -233,14 +353,7 @@
 			padding-bottom: 20px;
 		}
 
-	}
-	@media (min-width: 1200px) and (max-width: 1664px) {
-		.btnchk{
-			width: 100%;
-		}
-		.martp{
-			margin-top:-10px;
-		}
+
 	}
 	@media (min-width: 320px) and (max-width: 650px) {
 		.topqtypd{

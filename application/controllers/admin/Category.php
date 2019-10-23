@@ -57,7 +57,8 @@ class Category extends SU_Controller {
 			$where['cat_id'] = $data['cat_id'];
 			$data['cat_image'] = $cat_image;
 			unset($data['cat_id']);
-
+			unset($data['parent']);
+			
 			if(isset($data['parent']) && !empty($data['parent'])){
 				$table = 'categories';
 				$where['cat_id'] = $data['parent'];

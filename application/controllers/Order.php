@@ -299,7 +299,7 @@ class Order extends CI_Controller {
 		
 	
 		if(!empty($_POST['selected'])){
-			$order = array("slug"=>$_POST['slug'],"order_name"=>$order_name,"order_price"=>$order_price,"order_category"=>$category,"order_items"=>$order_items,"qty"=>1,"custom"=>$custom,"edit"=>$edit);
+			$order = array("slug"=>$_POST['slug'],"order_name"=>$order_name,"order_price"=>$_POST['price'],"order_category"=>$category,"order_items"=>$order_items,"qty"=>1,"custom"=>$custom,"edit"=>$edit);
 			array_push($first_order,$order); //create first order session
 
 			if (empty($this->session->userdata("order_cart"))) {

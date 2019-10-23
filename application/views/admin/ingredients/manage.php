@@ -52,19 +52,21 @@
                     </div>
 
                     <div class="form-group row">
-                      <label class="col-md-3 label-control" for="cat_pro_category">Ingredients Category</label>
+                      <label class="col-md-3 label-control" for="parent_pro_category">Parent Category</label>
                       <div class="col-md-9">
-                        <select name="cat_pro_category" id="cat_pro_category" required class="form-control select2">
-                          <option value="">Ingredients Category</option>
-                         <?php
-                            foreach ($categories as $key => $value) { ?>
+                        <select onchange="show_child_cat(this.value);" required class="form-control select2">
+                          <option value="">Parent Ingredients Category</option>
+                         <?php foreach ($categories as $key => $value) { ?>
 
-                              <option value="<?php echo $value->cat_id; ?>" <?php if(isset($product)){ echo ($value->cat_id == $product->cat_pro_category)?"selected":"" ;} ?>><?php echo $value->name; ?></option>
+                              <option value="<?php echo $value->cat_id; ?>" <?php if(isset($product)){ echo ($value->cat_id == $product->cat_pro_category)?"selected":"" ;} ?>><?php echo $value->name; ?>
+                              </option>
                               
                           <?php } ?>                           
                         </select>
                       </div>
                     </div>
+
+                    <div id="ingredient_data"></div>
 
                     
                     <div class="form-group row">
@@ -96,5 +98,19 @@
     </section>
   </div>
 </div>
+<script type="text/javascript">
+    function show_child_cat(id){
+       $.ajax({
+          method:'post',
+          url:'<?php echo base_url('admin/ingredients/show_ingredients');?>',
+          data:{cat_id:id},
+          dataType: "json",
+          success:function(res)
+          {
+            $("#ingredient_data").html(res);
+          }
+       });
 
+    }
+</script>
 

@@ -1,4 +1,13 @@
 <style type="text/css">
+	.downicon{
+    bottom: 0;
+    right: 0;
+    float: right;
+    position: sticky;
+    z-index: 9999;
+    cursor: pointer;
+  }
+
 	.qtybtn{
 		position: absolute;
 		top: 178px;
@@ -361,6 +370,17 @@
 			}
 		
 }
+@media (min-width: 1025px) and (max-width: 1200px){
+	.downicon{
+		display: none !important;
+	}
+	.custom_col{
+	     width: 18.66666667% !important; 
+	}
+	.custom_col_dressing{
+		width: 20.66666667% !important; 
+	}
+}
 @media (min-width: 1200px) and (max-width: 1440px){
 	.custom_col{
 	     width: 18.66666667% !important; 
@@ -371,9 +391,12 @@
 }
 
 @media (min-width: 800px) and (max-width: 1280px) {
+	.downicon{
+		display: none !important;
+	}
 				.qtybtn{
 					    top: 178px;
-    					left: 57px;
+    					left: 70px;
 				}
 					.circles {
 				    width: 115px;
@@ -461,6 +484,9 @@
 }
 
 		@media (min-width: 768px) and (max-width: 1024px) {
+			.downicon{
+		display: none !important;
+	}
 			.custom_col_tab{
 				float: none !important;
 			}
@@ -565,6 +591,9 @@
 		}
 
 		@media (min-width: 320px) and (max-width: 812px) {
+			.downicon{
+				display: none !important;
+			}
 			.left_pd5{
 				padding-left:0% !important;
 			}
@@ -906,7 +935,7 @@
 						</div>
 						<input type="hidden" id="countervalue<?=@$arrayIndex?>" value="0">
 					<?php } ?>
-				
+				<img class="downicon" onclick="downscroll()" src="<?php echo base_url(); ?>assets/downerror.png" width="50"/>
 
 			</div>
 		</div>
@@ -1181,6 +1210,11 @@
 							$(".show_items").click(function(e){
 								var id = $(this).data("id");
 								var text = $(e.target).closest('.circles').find(".textstyle").text();
+								if(text == "Bases"){
+									$('.downicon').hide();
+								}else{
+									$('.downicon').show();
+								}
 								$(".card-title").html(text);
 								
 								if($("."+id).hasClass("hidden")){
@@ -1202,6 +1236,13 @@ function scroll(){
 		document.querySelector('.scrollmain').scrollIntoView({ 
 			behavior: 'smooth' 
 		});
+}
+
+function downscroll(){
+  // $(".scrolltop").animate({ scrollTop: scrollval }, "slow");
+  // scrollval = scrollval + scrollval;
+  $(".scrollmain").animate({scrollTop:$(document).height()}, 'slow');
+
 }
 
   function addToArray(name, value) { //add products to array
