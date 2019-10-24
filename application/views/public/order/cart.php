@@ -540,6 +540,7 @@
 					 				// 	die;
 
 									foreach ($decode as $key1 => $value1) {
+										
 										if($key1 == "top"){
 											$INDEX = "TOPPINGS";
 										}
@@ -557,15 +558,16 @@
 										}
 										echo '<span class="box-text" style="color: #269f6c;font-size: 16px;font-weight: 600;">'.$INDEX.': </span>';
 										$count = count($value1); 
+
 										foreach ($value1 as $k => $v) {
 											$product = ingredients_price($v->product);
 											if($key1 == "dress"){
-
-												// $serving = !empty($v->serving)?$v->serving:'Side';
+												//echo $v->serving;	
+												$serving = !empty($v->serving)?"(".$v->serving.")":'';
 												$quant = !empty($v->quantity)?$v->quantity:'1';
-												$size = !empty($v->size)?$v->size:'On The Side';
+												$size = !empty($v->size)?"(".$v->size.")":'';
 
-												echo $product->cat_pro_name." (".$size.") ";
+												echo $product->cat_pro_name." ".$size."".$serving;
 												if($quant > 1){
 													echo " (Qty: ".$quant.")";
 												}		 			

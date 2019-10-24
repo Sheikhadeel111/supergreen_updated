@@ -1025,56 +1025,140 @@ function downscroll(){
 
 
 
-    function toppingSize(ele,id,size){ //topping size
+    // function toppingSize(ele,id,size){ //topping size
 
+    //   if($(ele).closest("div .inbtn").children().hasClass("active")){
+    //      $(ele).closest("div .inbtn").children().removeClass("active");
+    //      return false;
+    //   }
+     
+    //   if($("#"+id+"side").hasClass("active")){
+    //       $("#"+id+"side").removeClass("active");
+    //   }
+    //   if($("#"+id+"extra").hasClass("active")){
+    //     $("#"+id+"extra").removeClass("active");
+    //   }
+    //   if($("#"+id+"medium").hasClass("active")){
+    //      $("#"+id+"medium").removeClass("active");
+    //   }
+
+    //  if($("#"+id+"light").hasClass("active")){
+    //     $("#"+id+"light").removeClass("active");
+    //   }
+      
+    //   var abc = $(ele).data("index");
+
+    //   $(newProducts[abc]).each(function( index, element ) {
+    //     if(element.product == id) {
+    //       newProducts[abc].splice(index, 1);
+    //       return false;
+    //     }
+        
+    //   });
+
+    //   var qunty =  $("#"+id+"Qty").val();
+
+    //   $("div[data-salad-id='" + id + "']").children("div[data-size-id='" + id + "']").remove();
+
+    //   $(".ptext").children("div[data-salad-id='" + id + "']").append("<div style='display:inline' data-size-id='" + id + "'> (" + size + ")</div>");
+
+      
+    //   // var serving;
+    //   // if(typeof $("#ingServing"+id).val() === "undefined"){
+    //   //   serving = '';
+    //   // }else{
+    //   //   serving = $("#ingServing"+id).val();
+    //   // }
+    //   $(ele).addClass("active");
+    //   var addeddata = {'product':id,'quantity':qunty,'size':size};
+    //   addToArray(abc,addeddata);
+    //   $("#ingSize"+id).val(size);
+
+    // }
+
+    var sizeother = "";
+    var sizeonsize = "";
+    function toppingSize(ele,id,size){ //topping size
+      
+      var remove = false;
       if($(ele).closest("div .inbtn").children().hasClass("active")){
          $(ele).closest("div .inbtn").children().removeClass("active");
-         return false;
+         $("div[data-salad-id='" + id + "']").children("div[data-size2-id='" + id + "']").remove();
+         sizeother = '';
+         remove = true;
       }
      
-      if($("#"+id+"side").hasClass("active")){
-          $("#"+id+"side").removeClass("active");
-      }
-      if($("#"+id+"extra").hasClass("active")){
-        $("#"+id+"extra").removeClass("active");
-      }
-      if($("#"+id+"medium").hasClass("active")){
-         $("#"+id+"medium").removeClass("active");
-      }
-
-     if($("#"+id+"light").hasClass("active")){
-        $("#"+id+"light").removeClass("active");
-      }
+      //if($("#"+id+"side").hasClass("active")){
+            //$("#"+id+"side").removeClass("active");
+           // $(ele).toggleClass("active");
+      //}
+      // alert(size);
       
-      var abc = $(ele).data("index");
+      if(size == "On The Side"){
+          $(ele).toggleClass("active");
 
-      $(newProducts[abc]).each(function( index, element ) {
-        if(element.product == id) {
-          newProducts[abc].splice(index, 1);
-          return false;
-        }
+          if($("#"+id+"side").hasClass("active")){
+          $(".ptext").children("div[data-salad-id='" + id + "']").append("<div style='display:inline' data-size-id='" + id + "'> (" + size + ")</div>");
+          sizeonsize = size;
+          }else{
+            $("div[data-salad-id='" + id + "']").children("div[data-size-id='" + id + "']").remove();
+            sizeonsize = '';
+          }
+
+      }
+
+      if(size != "On The Side" && remove == false){
+          sizeother = size;
+          if($("#"+id+"extra").hasClass("active")){
+            $("#"+id+"extra").removeClass("active");
+          }
+
+          if($("#"+id+"medium").hasClass("active")){
+             $("#"+id+"medium").removeClass("active");
+          }
+
+         if($("#"+id+"light").hasClass("active")){
+            $("#"+id+"light").removeClass("active");
+          }
+         
+          var qunty =  $("#"+id+"Qty").val();
+
+           $("div[data-salad-id='" + id + "']").children("div[data-size2-id='" + id + "']").remove();
+
+           $(".ptext").children("div[data-salad-id='" + id + "']").append("<div style='display:inline' data-size2-id='" + id + "'> (" + size + ")</div>");
+           $(ele).addClass("active");
+       }else{
+        remove = true;
+       }
+
+          var abc = $(ele).data("index");
+
+          $(newProducts[abc]).each(function( index, element ) {
+            if(element.product == id) {
+              newProducts[abc].splice(index, 1);
+              return false;
+            }
+            
+          });
         
-      });
-
-      var qunty =  $("#"+id+"Qty").val();
-
-      $("div[data-salad-id='" + id + "']").children("div[data-size-id='" + id + "']").remove();
-
-      $(".ptext").children("div[data-salad-id='" + id + "']").append("<div style='display:inline' data-size-id='" + id + "'> (" + size + ")</div>");
-
-      
       // var serving;
       // if(typeof $("#ingServing"+id).val() === "undefined"){
       //   serving = '';
       // }else{
       //   serving = $("#ingServing"+id).val();
       // }
-      $(ele).addClass("active");
-      var addeddata = {'product':id,'quantity':qunty,'size':size};
+      // alert(sizeonsize);
+      // alert(sizeother);
+      var sizepass =  sizeother;
+      //alert(sizepass);
+      var addeddata = {'product':id,'quantity':qunty,'size':sizepass,'serving':sizeonsize};
+      //console.log(addeddata);
       addToArray(abc,addeddata);
-      $("#ingSize"+id).val(size);
-
+      $("#ingSize"+id).val(sizepass);
+      sizepass = '';
     }
+
+
 
     function serving(ele,id,serve){ //serving side
 

@@ -724,11 +724,12 @@ $pre_name = [];
 $base_name = [];
 $dress_name = [];
 if(isset($items)){
+
 $itemsArray =  json_decode($items);
 foreach ($itemsArray as $k => $v) {
 	foreach ($v as $k2 => $v2) {
 		if($k == "dress"){
-			$array =  array('product' => $v2->product, 'size' =>$v2->size);
+			$array =  array('product' => $v2->product, 'size' =>@$v2->size, 'serving' =>@$v2->serving);
 			array_push($productSize,$array);
 			array_push($dress, $v2->product);
 		}
@@ -749,6 +750,8 @@ foreach ($itemsArray as $k => $v) {
 	}
 }
 }
+
+
 foreach ($top as $k3 => $v3) {
 $product = ingredients_price($v3);
 array_push($top_name, $product->cat_pro_name);
@@ -775,6 +778,7 @@ $premium = array_combine($premium, $pre_name);
 $dress = array_combine($dress, $dress_name);
 $basees = array_combine($basees, $base_name);
 $arrayIndex = "";
+
 
 ?> 
 
@@ -953,7 +957,7 @@ $arrayIndex = "dress";
 			<input type="hidden" id="counter" value="<?=$counter?>">
 			<?php 
 			$ingredients = has_ingredeients($value1->cat_id); 
-						 
+				 
 
 			foreach ($ingredients as $key2 => $value2) { 
 
@@ -966,11 +970,12 @@ $arrayIndex = "dress";
 							<p class="menu_text">
 								<?php echo $value2->cat_pro_name ?>
 							</p>
-						</div>
+					</div>
+					
 	<div class="extracls inbtn" style="display: <?php if(isset($productItems)){ if (in_array($value2->cat_pro_id, $productItems)){ echo 'block '; }else{echo "none";  } }?>;">
 
 		<button type="button" id="<?= $value2->cat_pro_id?>extra" class="btn-circle otherbtn <?php foreach ($productSize as $k => $v) {
-			if($v['product'] ==  $value2->cat_pro_id && $v['size'] == 'S'){
+			if($v['product'] ==  $value2->cat_pro_id && $v['size'] == 'Extra'){
 				echo 'active';
 			}
 		} ?>" data-index= "<?=@$arrayIndex?>" onclick="toppingSize(this,<?php echo $value2->cat_pro_id; ?>,'Extra')"><img src="<?php echo base_url(); ?>/assets/dropicon.png" style="width:33px"><br/>Extra</button>
@@ -978,14 +983,14 @@ $arrayIndex = "dress";
 	<div class="mediumcls inbtn"  style="display: <?php if(isset($productItems)){ if (in_array($value2->cat_pro_id, $productItems)){ echo 'block '; }else{echo "none";  } }?>;">
 
 		<button type="button" id="<?= $value2->cat_pro_id?>medium" class="btn-circle otherbtn <?php foreach ($productSize as $k => $v) {
-			if($v['product'] ==  $value2->cat_pro_id && $v['size'] == 'M'){
+			if($v['product'] ==  $value2->cat_pro_id && $v['size'] == 'Medium'){
 				echo 'active';
 			}
 		} ?>" data-index= "<?=@$arrayIndex?>" onclick="toppingSize(this,<?php echo $value2->cat_pro_id; ?>,'Medium')"><img src="<?php echo base_url(); ?>/assets/dropicon.png" style="width:27px"><br/>Medium</button>
 	</div>
 	<div class="largecls inbtn" style="display: <?php if(isset($productItems)){ if (in_array($value2->cat_pro_id, $productItems)){ echo 'block '; }else{echo "none";  } }?>;">
 		<button type="button" id="<?= $value2->cat_pro_id?>light" class="btn-circle otherbtn <?php foreach ($productSize as $k => $v) {
-			if($v['product'] ==  $value2->cat_pro_id && $v['size'] == 'L'){
+			if($v['product'] ==  $value2->cat_pro_id && $v['size'] == 'Light'){
 				echo 'active';
 			}
 		} ?>" data-index= "<?=@$arrayIndex?>" onclick="toppingSize(this,<?php echo $value2->cat_pro_id; ?>,'Light')"><img src="<?php echo base_url(); ?>/assets/dropicon.png" style="width:18px"><br/>Light</button>
@@ -996,15 +1001,16 @@ $arrayIndex = "dress";
 							<input type="hidden" id="ingSize<?php echo $value2->cat_pro_id; ?>" value = "<?php echo isset($v['size'])?$v['size']:'';  ?>">
 
 							<button type="button" id="<?= $value2->cat_pro_id?>side" class="btn-circle-top otherbtn <?php foreach ($productSize as $kx => $vx) {
-								if($vx['product'] ==  $value2->cat_pro_id){
+								if($vx['product'] ==  $value2->cat_pro_id && $v['serving'] == 'On The Side'){
 									echo 'active';
 								}
 							} ?>" data-index= "<?=@$arrayIndex?>" onclick="toppingSize(this,<?php echo $value2->cat_pro_id; ?>,'On The Side')"><img src="<?php echo base_url(); ?>/assets/bowl.png" style="width:27px"><br/>On The Side</button>
-							<!-- <button type="button" class="btn-circle-top <?php foreach ($productSize as $kx => $vx) {
+
+							 <!-- <button type="button" class="btn-circle-top <?php foreach ($productSize as $kx => $vx) {
 								if($vx['product'] ==  $value2->cat_pro_id && $vx['serving'] == 'Mixed'){
 									echo 'active';
 								}
-							} ?>" data-index= "<?=@$arrayIndex?>" onclick="serving(this,<?php echo $value2->cat_pro_id; ?>,'Mixed')">Mixed</button> -->
+							} ?>" data-index= "<?=@$arrayIndex?>" onclick="serving(this,<?php echo $value2->cat_pro_id; ?>,'Mixed')">Mixed</button>  -->
 
 						</div>
 
@@ -1417,58 +1423,86 @@ function encirecl(ele,cat_id,remove = false)
 		}
 
 
-function toppingSize(ele,id,size){ //topping size
-
-
+	var sizeother = newProducts['dress'][0]['side'];
+	var sizeonsize = newProducts['dress'][0]['serving'];
+    function toppingSize(ele,id,size){ //topping size
+    	var remove = false;
     	if($(ele).closest("div .inbtn").children().hasClass("active")){
          $(ele).closest("div .inbtn").children().removeClass("active");
-         return false;
+         $("div[data-salad-id='" + id + "']").children("div[data-size2-id='" + id + "']").remove();
+         sizeother = '';
+         remove = true;
       }
      
-      if($("#"+id+"side").hasClass("active")){
-          $("#"+id+"side").removeClass("active");
-      }
-      if($("#"+id+"extra").hasClass("active")){
-        $("#"+id+"extra").removeClass("active");
-      }
-      if($("#"+id+"medium").hasClass("active")){
-         $("#"+id+"medium").removeClass("active");
-      }
-
-     if($("#"+id+"light").hasClass("active")){
-        $("#"+id+"light").removeClass("active");
-      }
+      //if($("#"+id+"side").hasClass("active")){
+    	      //$("#"+id+"side").removeClass("active");
+    	     // $(ele).toggleClass("active");
+      //}
+      // alert(size);
       
-      var abc = $(ele).data("index");
+      if(size == "On The Side"){
+      		$(ele).toggleClass("active");
 
-      $(newProducts[abc]).each(function( index, element ) {
-        if(element.product == id) {
-          newProducts[abc].splice(index, 1);
-          return false;
-        }
-        
-      });
+	      	if($("#"+id+"side").hasClass("active")){
+	      	$(".items_div").children("div[data-salad-id='" + id + "']").append("<div style='display:inline' data-size-id='" + id + "'> (" + size + ")</div>");
+	      	sizeonsize = size;
+	      	}else{
+	      		sizeonsize = '';
+	      		$("div[data-salad-id='" + id + "']").children("div[data-size-id='" + id + "']").remove();
+	      	}
+      }
 
-      var qunty =  $("#"+id+"Qty").val();
+      if(size != "On The Side" && remove == false){
+      		sizeother = size;
+		      if($("#"+id+"extra").hasClass("active")){
+		        $("#"+id+"extra").removeClass("active");
+		      }
 
-      $("div[data-salad-id='" + id + "']").children("div[data-size-id='" + id + "']").remove();
+		      if($("#"+id+"medium").hasClass("active")){
+		         $("#"+id+"medium").removeClass("active");
+		      }
 
-       $(".items_div").children("div[data-salad-id='" + id + "']").append("<div style='display:inline' data-size-id='" + id + "'> (" + size + ")</div>");
+		     if($("#"+id+"light").hasClass("active")){
+		        $("#"+id+"light").removeClass("active");
+		      }
+		     
+		      var qunty =  $("#"+id+"Qty").val();
 
+		       $("div[data-salad-id='" + id + "']").children("div[data-size2-id='" + id + "']").remove();
 
-      
+		       $(".items_div").children("div[data-salad-id='" + id + "']").append("<div style='display:inline' data-size2-id='" + id + "'> (" + size + ")</div>");
+		       $(ele).addClass("active");
+
+       }else{
+       	remove = true;
+       }
+
+        	  var abc = $(ele).data("index");
+		      $(newProducts[abc]).each(function( index, element ) {
+		        if(element.product == id) {
+		          newProducts[abc].splice(index, 1);
+		          return false;
+		        }
+		        
+		      });
+      	
       // var serving;
       // if(typeof $("#ingServing"+id).val() === "undefined"){
       //   serving = '';
       // }else{
       //   serving = $("#ingServing"+id).val();
       // }
-      $(ele).addClass("active");
-      var addeddata = {'product':id,'quantity':qunty,'size':size};
-      addToArray(abc,addeddata);
-      $("#ingSize"+id).val(size);
+      var sizepass =  sizeother;
+      //alert(sizepass);
 
-}
+      var addeddata = {'product':id,'quantity':qunty,'size':sizepass,'serving':sizeonsize};
+     
+      
+      //console.log(addeddata);
+      addToArray(abc,addeddata);
+      $("#ingSize"+id).val(sizepass);
+      sizepass = '';
+    }
 
 function serving(ele,id,serve){ //serving side
 

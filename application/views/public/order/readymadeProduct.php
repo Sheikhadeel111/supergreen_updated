@@ -714,7 +714,7 @@
 		foreach ($v as $k2 => $v2) {
 			if($k == "dress"){
 				$productName = ingredients_price($v2->product);
-				$array =  array('product' => $v2->product, 'product_name' => $productName->cat_pro_name, 'size' =>'On The Side','serving'=>'','qty'=>$v2->quantity);
+				$array =  array('product' => $v2->product, 'product_name' => $productName->cat_pro_name, 'size' =>'Medium','serving'=>'On The Side','qty'=>$v2->quantity);
 				array_push($dress, $array);
 			} elseif($k == "pre"){
 				$productName = ingredients_price($v2->product);
@@ -876,7 +876,7 @@
 
 				<div class="sczrbtn" style="display: <?php $classChk = searchForValue($value2->cat_pro_id,$searchArray,$searchValue); echo !empty($classChk)?'block':'none'; ?>;">
 					<input type="hidden" id="ingServing<?php echo $value2->cat_pro_id; ?>" value = "<?php foreach ($searchArray as $k => $v) {echo "On The Side";} ?>">
-					<button type="button" id="<?= $value2->cat_pro_id?>side" class="btn-circle-top otherbtn active" data-index= "<?=$arrayIndex?>" onclick="toppingSize(this,<?php echo $value2->cat_pro_id; ?>,'On The Side')"><img src="<?php echo base_url(); ?>/assets/bowl.png" style="width:27px"><br/>On The Side</button>
+					<button type="button" id="<?= $value2->cat_pro_id?>side" class="btn-circle-top otherbtn " data-index= "<?=$arrayIndex?>" onclick="toppingSize(this,<?php echo $value2->cat_pro_id; ?>,'On The Side')"><img src="<?php echo base_url(); ?>/assets/bowl.png" style="width:27px"><br/>On The Side</button>
 					<!-- <button type="button" class="btn-circle-top <?php foreach ($searchArray as $kx => $vx) {
 						if($vx['product'] ==  $value2->cat_pro_id && $vx['serving'] == 'Mixed'){
 							echo 'active';
@@ -1502,56 +1502,85 @@ function encirecl(ele,cat_id,remove = false)
 
 }
 
-
+	var sizeother = "";
+	var sizeonsize = "";
     function toppingSize(ele,id,size){ //topping size
-
+      
+    	var remove = false;
     	if($(ele).closest("div .inbtn").children().hasClass("active")){
          $(ele).closest("div .inbtn").children().removeClass("active");
-         return false;
+         $("div[data-salad-id='" + id + "']").children("div[data-size2-id='" + id + "']").remove();
+         sizeother = '';
+         remove = true;
       }
      
-      if($("#"+id+"side").hasClass("active")){
-          $("#"+id+"side").removeClass("active");
-      }
-      if($("#"+id+"extra").hasClass("active")){
-        $("#"+id+"extra").removeClass("active");
-      }
-      if($("#"+id+"medium").hasClass("active")){
-         $("#"+id+"medium").removeClass("active");
-      }
-
-     if($("#"+id+"light").hasClass("active")){
-        $("#"+id+"light").removeClass("active");
-      }
+      //if($("#"+id+"side").hasClass("active")){
+    	      //$("#"+id+"side").removeClass("active");
+    	     // $(ele).toggleClass("active");
+      //}
+      // alert(size);
       
-      var abc = $(ele).data("index");
+      if(size == "On The Side"){
+      		$(ele).toggleClass("active");
 
-      $(newProducts[abc]).each(function( index, element ) {
-        if(element.product == id) {
-          newProducts[abc].splice(index, 1);
-          return false;
-        }
-        
-      });
+	      	if($("#"+id+"side").hasClass("active")){
+	      	$(".items_div").children("div[data-salad-id='" + id + "']").append("<div style='display:inline' data-size-id='" + id + "'> (" + size + ")</div>");
+	      	sizeonsize = size;
+	      	}else{
+	      		$("div[data-salad-id='" + id + "']").children("div[data-size-id='" + id + "']").remove();
+	      		sizeonsize = '';
+	      	}
+      }
 
-      var qunty =  $("#"+id+"Qty").val();
+      if(size != "On The Side" && remove == false){
+      		sizeother = size;
+		      if($("#"+id+"extra").hasClass("active")){
+		        $("#"+id+"extra").removeClass("active");
+		      }
 
-       $("div[data-salad-id='" + id + "']").children("div[data-size-id='" + id + "']").remove();
+		      if($("#"+id+"medium").hasClass("active")){
+		         $("#"+id+"medium").removeClass("active");
+		      }
 
-       $(".items_div").children("div[data-salad-id='" + id + "']").append("<div style='display:inline' data-size-id='" + id + "'> (" + size + ")</div>");
+		     if($("#"+id+"light").hasClass("active")){
+		        $("#"+id+"light").removeClass("active");
+		      }
+		     
+		      var qunty =  $("#"+id+"Qty").val();
 
-      
+		       $("div[data-salad-id='" + id + "']").children("div[data-size2-id='" + id + "']").remove();
+
+		       $(".items_div").children("div[data-salad-id='" + id + "']").append("<div style='display:inline' data-size2-id='" + id + "'> (" + size + ")</div>");
+		       $(ele).addClass("active");
+       }else{
+       	remove = true;
+       }
+
+        	var abc = $(ele).data("index");
+
+		      $(newProducts[abc]).each(function( index, element ) {
+		        if(element.product == id) {
+		          newProducts[abc].splice(index, 1);
+		          return false;
+		        }
+		        
+		      });
+      	
       // var serving;
       // if(typeof $("#ingServing"+id).val() === "undefined"){
       //   serving = '';
       // }else{
       //   serving = $("#ingServing"+id).val();
       // }
-      $(ele).addClass("active");
-      var addeddata = {'product':id,'quantity':qunty,'size':size};
+     	// alert(sizeonsize);
+     	// alert(sizeother);
+      var sizepass =  sizeother;
+      //alert(sizepass);
+      var addeddata = {'product':id,'quantity':qunty,'size':sizepass,'serving':sizeonsize};
+      //console.log(addeddata);
       addToArray(abc,addeddata);
-      $("#ingSize"+id).val(size);
-
+      $("#ingSize"+id).val(sizepass);
+      sizepass = '';
     }
 
     function serving(ele,id,serve){ //serving side
@@ -1597,6 +1626,7 @@ function order_now() { //order now
 	var checkary2 = [];
 	var i = 0;
 	var j = 0;
+
 	$.each( newProducts, function( index, value ){
 		$.each( value, function( index2,  value2 ){
 			checkary1[i] = value2.product;

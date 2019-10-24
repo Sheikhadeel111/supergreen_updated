@@ -582,6 +582,9 @@ class Order extends CI_Controller {
 		$data['title'] = $slug;
 		$data["skey"] = $key;
 		$orders = $this->session->userdata("order_cart");
+		// echo "<pre>";
+		// print_r($orders);
+		// die;
 		$data['items'] = $orders[$key]['order_items'];
 		$data['price'] = $orders[$key]['order_price'];
 		$data['order_category'] = $orders[$key]['order_category'];

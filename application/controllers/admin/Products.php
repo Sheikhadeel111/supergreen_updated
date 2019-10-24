@@ -85,7 +85,7 @@ class Products extends SU_Controller {
 			$items[$key] = array();
 			foreach ($value as $key1 => $value1) {
 				if($key == "dress"){
-					$ingredient = array("product"=>$value1,"quantity"=>1,"size"=>"On The Side",'serving'=>'Side');
+					$ingredient = array("product"=>$value1,"quantity"=>1,"size"=>"",'serving'=>'On The Side');
 				}else{
 					$ingredient = array("product"=>$value1,"quantity"=>1,"size"=>"",'serving'=>'');
 				}
